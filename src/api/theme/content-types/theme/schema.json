@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "Theme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "dark_mode_logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "light_mode_logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "otp_view_logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "primary_color": {
+      "type": "string",
+      "default": "#003B1F",
+      "required": true
+    },
+    "secondary_color": {
+      "type": "string",
+      "default": "#00AF76",
+      "required": true
+    },
+    "complementary_color": {
+      "type": "string",
+      "required": true,
+      "default": "#BEBEBE"
+    },
+    "text_color": {
+      "type": "string",
+      "required": true,
+      "default": "#F8F8F7"
+    }
+  }
+}
