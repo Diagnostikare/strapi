@@ -11,7 +11,6 @@ export interface BoeLoginData extends Struct.ComponentSchema {
     logo_auth_sidebar: Schema.Attribute.Media<'images'>;
     resume: Schema.Attribute.Text;
     subtitle: Schema.Attribute.String;
-    theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -31,7 +30,8 @@ export interface BoeNavbar extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<150>;
     tabs: Schema.Attribute.JSON & Schema.Attribute.Required;
-    theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
+    tabs_icons: Schema.Attribute.Media<'images', true> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -49,7 +49,6 @@ export interface BoeTableData extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<false>;
     table_titles: Schema.Attribute.JSON & Schema.Attribute.Required;
     tabs: Schema.Attribute.JSON;
-    theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
     three_dot_menu_options: Schema.Attribute.JSON;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };

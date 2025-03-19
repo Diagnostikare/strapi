@@ -4,35 +4,36 @@
   "info": {
     "singularName": "theme",
     "pluralName": "themes",
-    "displayName": "Theme"
+    "displayName": "Theme",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "dark_mode_logo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "light_mode_logo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "otp_view_logo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "primary_color": {
       "type": "string",
@@ -53,6 +54,31 @@
       "type": "string",
       "required": true,
       "default": "#F8F8F7"
+    },
+    "navbar": {
+      "type": "component",
+      "repeatable": false,
+      "component": "boe.navbar"
+    },
+    "table_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "boe.table-data"
+    },
+    "login_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "boe.login-data"
+    },
+    "site": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "site",
+      "required": true
     }
   }
 }
