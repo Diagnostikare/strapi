@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
   collectionName: 'themes';
   info: {
+    description: '';
     displayName: 'Theme';
     pluralName: 'themes';
     singularName: 'theme';
@@ -393,6 +394,8 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
+    login_data: Schema.Attribute.Component<'boe.login-data', true>;
+    navbar: Schema.Attribute.Component<'boe.navbar', false>;
     otp_view_logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     primary_color: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -401,6 +404,11 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#00AF76'>;
+    site: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    slug: Schema.Attribute.UID<'site'> & Schema.Attribute.Required;
+    table_data: Schema.Attribute.Component<'boe.table-data', true>;
     text_color: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#F8F8F7'>;

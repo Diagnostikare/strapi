@@ -31,11 +31,6 @@
     },
     "three_dot_menu_options": {
       "type": "json"
-    },
-    "theme": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::theme.theme"
     }
   }
 }

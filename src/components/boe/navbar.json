@@ -28,10 +28,13 @@
       "type": "json",
       "required": true
     },
-    "theme": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::theme.theme"
+    "tabs_icons": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
     }
   }
 }
