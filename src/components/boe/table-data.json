@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_boe_table_data",
+  "info": {
+    "displayName": "Table-Data",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "endpoint": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "table_titles": {
+      "type": "json",
+      "required": true
+    },
+    "filters": {
+      "type": "json",
+      "required": true
+    },
+    "have_tabs": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "tabs": {
+      "type": "json"
+    },
+    "three_dot_menu_options": {
+      "type": "json"
+    }
+  }
+}

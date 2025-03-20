@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_boe_navbars",
+  "info": {
+    "displayName": "Navbar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logo_widht": {
+      "type": "integer",
+      "default": 150,
+      "required": true
+    },
+    "logo_heigth": {
+      "type": "integer",
+      "default": 150,
+      "required": true
+    },
+    "tabs": {
+      "type": "json",
+      "required": true
+    },
+    "tabs_icons": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

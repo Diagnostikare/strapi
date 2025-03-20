@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_boe_login_data",
+  "info": {
+    "displayName": "Login-Data",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "highlight_text": {
+      "type": "json"
+    },
+    "resume": {
+      "type": "text",
+      "required": false
+    },
+    "logo_auth_sidebar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

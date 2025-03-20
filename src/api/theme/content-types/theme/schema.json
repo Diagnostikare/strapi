@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "Theme",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "dark_mode_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "light_mode_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "otp_view_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "primary_color": {
+      "type": "string",
+      "default": "#003B1F",
+      "required": true
+    },
+    "secondary_color": {
+      "type": "string",
+      "default": "#00AF76",
+      "required": true
+    },
+    "complementary_color": {
+      "type": "string",
+      "required": true,
+      "default": "#BEBEBE"
+    },
+    "text_color": {
+      "type": "string",
+      "required": true,
+      "default": "#F8F8F7"
+    },
+    "navbar": {
+      "type": "component",
+      "repeatable": false,
+      "component": "boe.navbar"
+    },
+    "table_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "boe.table-data"
+    },
+    "login_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "boe.login-data"
+    },
+    "site": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "site",
+      "required": true
+    }
+  }
+}
