@@ -54,12 +54,55 @@ export interface BoeTableData extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageHeader extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_headers';
+  info: {
+    displayName: 'Header';
+    icon: 'earth';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    Subnav: Schema.Attribute.Component<'webpage.subnav', true>;
+  };
+}
+
+export interface WebpageOptions extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_options';
+  info: {
+    displayName: 'options';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    href: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface WebpageSubnav extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_subnavs';
+  info: {
+    displayName: 'Subnav';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Options: Schema.Attribute.Component<'webpage.options', true>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'boe.login-data': BoeLoginData;
       'boe.navbar': BoeNavbar;
       'boe.table-data': BoeTableData;
+      'webpage.header': WebpageHeader;
+      'webpage.options': WebpageOptions;
+      'webpage.subnav': WebpageSubnav;
     }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_webpage_headers",
+  "info": {
+    "displayName": "Header",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "Subnav": {
+      "displayName": "Subnav",
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.subnav"
+    }
+  }
+}

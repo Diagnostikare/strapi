@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "webpages",
+  "info": {
+    "singularName": "webpage",
+    "pluralName": "webpages",
+    "displayName": "Webpage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Header": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.header"
+    }
+  }
+}
