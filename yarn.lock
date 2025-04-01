@@ -2369,10 +2369,11 @@
     lodash "4.17.21"
     qs "6.11.1"
     sift "16.0.1"
-"@strapi/plugin-graphql@^5.11.3":
-  version "5.11.3"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-5.11.3.tgz#5aac472ba9d33ebaa37aa14d707345ae7517155e"
-  integrity sha512-USzGgMqz2iZoQaRrs4CmLgfZxjuCfavwq+SaGfSevwV4J2n2NghfVzZ5PFOKB7urOmRILOCQtBj8Er3owK5wOA==
+
+"@strapi/plugin-graphql@^5.12.1":
+  version "5.12.1"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-5.12.1.tgz#6e9e48d81e5899de1bbcfe45a170b9a92ff0e42b"
+  integrity sha512-p1amQPR4OIyZmzqJeaYcedDMBTbLpSf41c4ygNjv2UFXEN2iFZlKtjWwxaC117V46ZLVvFg4KJbBKsjYXntGLQ==
   dependencies:
     "@apollo/server" "4.11.0"
     "@as-integrations/koa" "1.1.1"
@@ -2381,7 +2382,7 @@
     "@koa/cors" "5.0.0"
     "@strapi/design-system" "2.0.0-rc.18"
     "@strapi/icons" "2.0.0-rc.18"
-    "@strapi/utils" "5.11.3"
+    "@strapi/utils" "5.12.1"
     graphql "^16.8.1"
     graphql-depth-limit "^1.1.0"
     graphql-playground-middleware-koa "^1.6.21"
@@ -2391,6 +2392,11 @@
     lodash "4.17.21"
     nexus "1.3.0"
     pluralize "8.0.0"
+
+"@strapi/plugin-users-permissions@5.12.1":
+  version "5.12.1"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-users-permissions/-/plugin-users-permissions-5.12.1.tgz#555b8e444b81476c403344829c4638214160c03e"
+  integrity sha512-ax2wesCcqtiC1wS7fp/OIq+YNQlKZqCCKzjTYjNvlSH1O/aHUIHxmkyIjSpeU3WhkqNKg++kF7VPuwvN5+XZUQ==
   dependencies:
     "@strapi/design-system" "2.0.0-rc.18"
     "@strapi/icons" "2.0.0-rc.18"
@@ -2606,22 +2612,6 @@
   version "5.12.1"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-5.12.1.tgz#a6d0d3d268dafe9bb67e4619fa696323f7158d61"
   integrity sha512-A9z+M6zayNLDjRaz9dh6rTAemF0rDJAcqZRR+k723G2lEJB7DfM/jWIcfXAB6ignadxCpwT9JauPl9jLKWtXLQ==
-  dependencies:
-    "@sindresorhus/slugify" "1.1.0"
-    date-fns "2.30.0"
-    execa "5.1.1"
-    http-errors "2.0.0"
-    lodash "4.17.21"
-    node-machine-id "1.1.12"
-    p-map "4.0.0"
-    preferred-pm "3.1.2"
-    yup "0.32.9"
-    zod "^3.22.4"
-
-"@strapi/utils@5.11.3":
-  version "5.11.3"
-  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-5.11.3.tgz#c59cf40ce3d525bd5e4300f00dd2ec002fdfe2d7"
-  integrity sha512-84kTodVu/gaEZgGVssVj9qOlg3SuObhWDYxRPRVtqKLJlJAA73BtfW8Q97iKmiEbFfQA/wyZTPOfucUn9MCxRA==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
