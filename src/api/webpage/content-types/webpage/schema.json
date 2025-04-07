@@ -4,7 +4,8 @@
   "info": {
     "singularName": "webpage",
     "pluralName": "webpages",
-    "displayName": "Webpage"
+    "displayName": "Webpage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
