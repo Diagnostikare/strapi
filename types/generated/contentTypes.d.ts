@@ -421,6 +421,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
 export interface ApiWebpageWebpage extends Struct.CollectionTypeSchema {
   collectionName: 'webpages';
   info: {
+    description: '';
     displayName: 'Webpage';
     pluralName: 'webpages';
     singularName: 'webpage';
