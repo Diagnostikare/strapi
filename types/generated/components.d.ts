@@ -84,10 +84,12 @@ export interface WebpageOptions extends Struct.ComponentSchema {
 export interface WebpageSubnav extends Struct.ComponentSchema {
   collectionName: 'components_webpage_subnavs';
   info: {
+    description: '';
     displayName: 'Subnav';
     icon: 'apps';
   };
   attributes: {
+    background: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Options: Schema.Attribute.Component<'webpage.options', true>;
