@@ -2,7 +2,8 @@
   "collectionName": "components_webpage_headers",
   "info": {
     "displayName": "Header",
-    "icon": "earth"
+    "icon": "earth",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,6 +18,12 @@
       "type": "component",
       "repeatable": true,
       "component": "webpage.subnav"
+    },
+    "target": {
+      "type": "string"
+    },
+    "button": {
+      "type": "boolean"
     }
   }
 }

@@ -57,13 +57,16 @@ export interface BoeTableData extends Struct.ComponentSchema {
 export interface WebpageHeader extends Struct.ComponentSchema {
   collectionName: 'components_webpage_headers';
   info: {
+    description: '';
     displayName: 'Header';
     icon: 'earth';
   };
   attributes: {
+    button: Schema.Attribute.Boolean;
     href: Schema.Attribute.String;
     name: Schema.Attribute.String;
     Subnav: Schema.Attribute.Component<'webpage.subnav', true>;
+    target: Schema.Attribute.String;
   };
 }
 
