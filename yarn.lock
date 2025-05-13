@@ -249,10 +249,10 @@
   dependencies:
     "@ucast/mongo2js" "^1.3.0"
 
-"@chartbrew/plugin-strapi@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@chartbrew/plugin-strapi/-/plugin-strapi-2.0.1.tgz#1cf296c8f16e9d6ff5af8ab88dd69a195ea7e5f0"
-  integrity sha512-cu3pSqUAkSGqFUbXdPy7D+RCv8fSROqlOHOeSWeU/qy2zqLDKuzgqKL9frHv4iZX7D0EXK1deWHW88l91yFHTw==
+"@chartbrew/plugin-strapi@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@chartbrew/plugin-strapi/-/plugin-strapi-3.0.0.tgz#abc3af7258407be012d74297cf92411684f4e81e"
+  integrity sha512-7MgkQgjqZqI1svf4IxYgo2V4c11FpyOMDirzexUo1mzVt/um9i5tzdy0ncFSsoQ9qTDCNbIleDGPv1vv4XoRHg==
   dependencies:
     "@strapi/design-system" "^2.0.0-rc.11"
     "@strapi/icons" "^2.0.0-rc.11"
@@ -2729,22 +2729,6 @@
   version "5.11.3"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-5.11.3.tgz#c59cf40ce3d525bd5e4300f00dd2ec002fdfe2d7"
   integrity sha512-84kTodVu/gaEZgGVssVj9qOlg3SuObhWDYxRPRVtqKLJlJAA73BtfW8Q97iKmiEbFfQA/wyZTPOfucUn9MCxRA==
-  dependencies:
-    "@sindresorhus/slugify" "1.1.0"
-    date-fns "2.30.0"
-    execa "5.1.1"
-    http-errors "2.0.0"
-    lodash "4.17.21"
-    node-machine-id "1.1.12"
-    p-map "4.0.0"
-    preferred-pm "3.1.2"
-    yup "0.32.9"
-    zod "^3.22.4"
-
-"@strapi/utils@5.12.1":
-  version "5.12.1"
-  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-5.12.1.tgz#a6d0d3d268dafe9bb67e4619fa696323f7158d61"
-  integrity sha512-A9z+M6zayNLDjRaz9dh6rTAemF0rDJAcqZRR+k723G2lEJB7DfM/jWIcfXAB6ignadxCpwT9JauPl9jLKWtXLQ==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
