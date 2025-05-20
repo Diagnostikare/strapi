@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "Blog"
+    "displayName": "Blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,19 +28,20 @@
       "required": true
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "cover": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "speciality": {
       "type": "string",
@@ -47,6 +49,13 @@
     },
     "references": {
       "type": "richtext"
+    },
+    "app": {
+      "type": "uid"
+    },
+    "id_blog": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid"
     }
   }
 }
