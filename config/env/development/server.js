@@ -1,6 +1,6 @@
 module.exports = ({ env }) => ({
-    host: env('HOST', '0.0.0.0'),
-    port: env.int('PORT', 1337),
-    url: env('PUBLIC_URL', 'https://strapi-sandbox.diagnostikare.com'),
-    proxy: true
-  });
+  host: env("HOST", "0.0.0.0"),
+  port: env.int("PORT", 1337),
+  url: `http://127.0.0.1:1337`,
+  proxy: true,
+});
