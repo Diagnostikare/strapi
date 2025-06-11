@@ -95,6 +95,7 @@ export interface WebpageSubnav extends Struct.ComponentSchema {
     background: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
     Options: Schema.Attribute.Component<'webpage.options', true>;
   };
 }
