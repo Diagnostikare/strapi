@@ -405,6 +405,37 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPrincipalNavbarPrincipalNavbar
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'principal_navbars';
+  info: {
+    description: '';
+    displayName: 'Principal Navbar';
+    pluralName: 'principal-navbars';
+    singularName: 'principal-navbar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    item: Schema.Attribute.Component<'navbar.nav-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::principal-navbar.principal-navbar'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSiteSite extends Struct.CollectionTypeSchema {
   collectionName: 'sites';
   info: {
@@ -1019,6 +1050,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
       'api::site.site': ApiSiteSite;
       'api::theme.theme': ApiThemeTheme;
       'api::webpage.webpage': ApiWebpageWebpage;
