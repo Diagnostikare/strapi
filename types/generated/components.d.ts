@@ -54,6 +54,23 @@ export interface BoeTableData extends Struct.ComponentSchema {
   };
 }
 
+export interface NavbarNavItem extends Struct.ComponentSchema {
+  collectionName: 'components_navbar_nav_items';
+  info: {
+    description: '';
+    displayName: 'NavItem';
+    icon: '';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    iconFocused: Schema.Attribute.Media<'images'>;
+    primaryColor: Schema.Attribute.String & Schema.Attribute.Required;
+    secondaryColor: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface WebpageHeader extends Struct.ComponentSchema {
   collectionName: 'components_webpage_headers';
   info: {
@@ -106,6 +123,7 @@ declare module '@strapi/strapi' {
       'boe.login-data': BoeLoginData;
       'boe.navbar': BoeNavbar;
       'boe.table-data': BoeTableData;
+      'navbar.nav-item': NavbarNavItem;
       'webpage.header': WebpageHeader;
       'webpage.options': WebpageOptions;
       'webpage.subnav': WebpageSubnav;
