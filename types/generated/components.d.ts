@@ -71,6 +71,32 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageButton extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_buttons';
+  info: {
+    displayName: 'Button';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    theme: Schema.Attribute.String;
+    variant: Schema.Attribute.String;
+  };
+}
+
+export interface WebpageCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_carousels';
+  info: {
+    displayName: 'Carousel';
+  };
+  attributes: {
+    Images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
 export interface WebpageHeader extends Struct.ComponentSchema {
   collectionName: 'components_webpage_headers';
   info: {
@@ -124,6 +150,8 @@ declare module '@strapi/strapi' {
       'boe.navbar': BoeNavbar;
       'boe.table-data': BoeTableData;
       'navbar.nav-item': NavbarNavItem;
+      'webpage.button': WebpageButton;
+      'webpage.carousel': WebpageCarousel;
       'webpage.header': WebpageHeader;
       'webpage.options': WebpageOptions;
       'webpage.subnav': WebpageSubnav;
