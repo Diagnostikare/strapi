@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_webpage_titles",
+  "info": {
+    "displayName": "Title",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "HeroTitle": {
+      "type": "blocks"
+    }
+  }
+}

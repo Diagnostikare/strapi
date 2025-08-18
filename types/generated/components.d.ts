@@ -113,6 +113,28 @@ export interface WebpageHeader extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageHeaderSubtitle extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_header_subtitles';
+  info: {
+    displayName: 'Header Subtitle';
+  };
+  attributes: {
+    subtitle: Schema.Attribute.RichText;
+  };
+}
+
+export interface WebpageHeaderTitle extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_header_titles';
+  info: {
+    description: '';
+    displayName: 'Header Title';
+    icon: 'layout';
+  };
+  attributes: {
+    title: Schema.Attribute.RichText;
+  };
+}
+
 export interface WebpageOptions extends Struct.ComponentSchema {
   collectionName: 'components_webpage_options';
   info: {
@@ -143,6 +165,17 @@ export interface WebpageSubnav extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageTitle extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_titles';
+  info: {
+    displayName: 'Title';
+    icon: 'layer';
+  };
+  attributes: {
+    HeroTitle: Schema.Attribute.Blocks;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -153,8 +186,11 @@ declare module '@strapi/strapi' {
       'webpage.button': WebpageButton;
       'webpage.carousel': WebpageCarousel;
       'webpage.header': WebpageHeader;
+      'webpage.header-subtitle': WebpageHeaderSubtitle;
+      'webpage.header-title': WebpageHeaderTitle;
       'webpage.options': WebpageOptions;
       'webpage.subnav': WebpageSubnav;
+      'webpage.title': WebpageTitle;
     }
   }
 }

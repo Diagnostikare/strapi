@@ -19,6 +19,14 @@
       "components": [
         "webpage.carousel"
       ]
+    },
+    "Header": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.header-title",
+        "webpage.header-subtitle",
+        "webpage.button"
+      ]
     }
   }
 }
