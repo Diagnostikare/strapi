@@ -577,6 +577,14 @@ export interface ApiWebsiteWebsite extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    CardContainer: Schema.Attribute.DynamicZone<
+      [
+        'webpage.card-container',
+        'webpage.header-title',
+        'webpage.header-subtitle',
+        'webpage.image',
+      ]
+    >;
     Content: Schema.Attribute.DynamicZone<['webpage.carousel']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

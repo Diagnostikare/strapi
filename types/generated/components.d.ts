@@ -84,6 +84,35 @@ export interface WebpageButton extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageCard extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_cards';
+  info: {
+    description: '';
+    displayName: 'Card';
+    icon: 'apps';
+  };
+  attributes: {
+    CardDescription: Schema.Attribute.String;
+    CardIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    CardImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    CardTitle: Schema.Attribute.String;
+  };
+}
+
+export interface WebpageCardContainer extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_card_containers';
+  info: {
+    displayName: 'CardContainer';
+    icon: 'apps';
+  };
+  attributes: {
+    Card: Schema.Attribute.Component<'webpage.card', true>;
+  };
+}
+
 export interface WebpageCarousel extends Struct.ComponentSchema {
   collectionName: 'components_webpage_carousels';
   info: {
@@ -132,6 +161,17 @@ export interface WebpageHeaderTitle extends Struct.ComponentSchema {
   };
   attributes: {
     title: Schema.Attribute.RichText;
+  };
+}
+
+export interface WebpageImage extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_images';
+  info: {
+    displayName: 'Image';
+    icon: 'landscape';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -184,10 +224,13 @@ declare module '@strapi/strapi' {
       'boe.table-data': BoeTableData;
       'navbar.nav-item': NavbarNavItem;
       'webpage.button': WebpageButton;
+      'webpage.card': WebpageCard;
+      'webpage.card-container': WebpageCardContainer;
       'webpage.carousel': WebpageCarousel;
       'webpage.header': WebpageHeader;
       'webpage.header-subtitle': WebpageHeaderSubtitle;
       'webpage.header-title': WebpageHeaderTitle;
+      'webpage.image': WebpageImage;
       'webpage.options': WebpageOptions;
       'webpage.subnav': WebpageSubnav;
       'webpage.title': WebpageTitle;

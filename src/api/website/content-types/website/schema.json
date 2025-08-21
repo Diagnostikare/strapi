@@ -27,6 +27,15 @@
         "webpage.header-subtitle",
         "webpage.button"
       ]
+    },
+    "CardContainer": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.card-container",
+        "webpage.header-title",
+        "webpage.header-subtitle",
+        "webpage.image"
+      ]
     }
   }
 }
