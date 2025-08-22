@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_webpage_card_testimonials",
+  "info": {
+    "displayName": "CardTestimonial"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "specialty": {
+      "type": "richtext"
+    }
+  }
+}
