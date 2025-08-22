@@ -599,6 +599,7 @@ export interface ApiWebsiteWebsite extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    ScoreBoard: Schema.Attribute.DynamicZone<['webpage.score-board']>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

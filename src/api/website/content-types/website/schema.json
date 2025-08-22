@@ -36,6 +36,12 @@
         "webpage.header-subtitle",
         "webpage.image"
       ]
+    },
+    "ScoreBoard": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.score-board"
+      ]
     }
   }
 }

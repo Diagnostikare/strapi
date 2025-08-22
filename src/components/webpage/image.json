@@ -2,19 +2,9 @@
   "collectionName": "components_webpage_images",
   "info": {
     "displayName": "Image",
-    "icon": "landscape"
+    "icon": "landscape",
+    "description": ""
   },
   "options": {},
-  "attributes": {
-    "Image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    }
-  }
+  "attributes": {}
 }
