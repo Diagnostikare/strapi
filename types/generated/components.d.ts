@@ -171,7 +171,9 @@ export interface WebpageImage extends Struct.ComponentSchema {
     displayName: 'Image';
     icon: 'landscape';
   };
-  attributes: {};
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
 }
 
 export interface WebpageOptions extends Struct.ComponentSchema {

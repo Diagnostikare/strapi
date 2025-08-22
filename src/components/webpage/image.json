@@ -6,5 +6,11 @@
     "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "Image": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false
+    }
+  }
 }
