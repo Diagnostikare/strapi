@@ -36,6 +36,13 @@
         "webpage.header-subtitle",
         "webpage.image"
       ]
+    },
+    "TestimonialSection": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.title",
+        "webpage.card-testimonial"
+      ]
     }
   }
 }
