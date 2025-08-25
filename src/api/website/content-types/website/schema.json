@@ -37,6 +37,10 @@
         "webpage.image"
       ]
     },
+    "ScoreBoard": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.score-board"
     "TestimonialSection": {
       "type": "dynamiczone",
       "components": [

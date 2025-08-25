@@ -181,6 +181,7 @@ export interface WebpageHeaderTitle extends Struct.ComponentSchema {
 export interface WebpageImage extends Struct.ComponentSchema {
   collectionName: 'components_webpage_images';
   info: {
+    description: '';
     displayName: 'Image';
     icon: 'landscape';
   };
@@ -200,6 +201,34 @@ export interface WebpageOptions extends Struct.ComponentSchema {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
+  };
+}
+
+export interface WebpageScore extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_scores';
+  info: {
+    description: '';
+    displayName: 'Score';
+  };
+  attributes: {
+    after: Schema.Attribute.String;
+    before: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.Decimal & Schema.Attribute.Required;
+  };
+}
+
+export interface WebpageScoreBoard extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_score_boards';
+  info: {
+    description: '';
+    displayName: 'ScoreBoard';
+  };
+  attributes: {
+    disclaimer: Schema.Attribute.Text;
+    score: Schema.Attribute.Component<'webpage.score', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -247,6 +276,8 @@ declare module '@strapi/strapi' {
       'webpage.header-title': WebpageHeaderTitle;
       'webpage.image': WebpageImage;
       'webpage.options': WebpageOptions;
+      'webpage.score': WebpageScore;
+      'webpage.score-board': WebpageScoreBoard;
       'webpage.subnav': WebpageSubnav;
       'webpage.title': WebpageTitle;
     }

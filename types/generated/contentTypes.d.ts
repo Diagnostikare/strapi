@@ -599,6 +599,7 @@ export interface ApiWebsiteWebsite extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    ScoreBoard: Schema.Attribute.DynamicZone<['webpage.score-board']>;
     TestimonialSection: Schema.Attribute.DynamicZone<
       ['webpage.title', 'webpage.card-testimonial']
     >;
