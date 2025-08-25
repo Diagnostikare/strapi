@@ -577,6 +577,7 @@ export interface ApiWebsiteWebsite extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    AppSection: Schema.Attribute.DynamicZone<['webpage.app-block']>;
     CardContainer: Schema.Attribute.DynamicZone<
       [
         'webpage.card-container',

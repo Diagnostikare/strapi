@@ -71,6 +71,21 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageAppBlock extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_app_blocks';
+  info: {
+    description: '';
+    displayName: 'AppBlock';
+  };
+  attributes: {
+    cta: Schema.Attribute.Component<'webpage.cta', true>;
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+    variant: Schema.Attribute.Enumeration<['text', 'image']>;
+  };
+}
+
 export interface WebpageButton extends Struct.ComponentSchema {
   collectionName: 'components_webpage_buttons';
   info: {
@@ -123,6 +138,22 @@ export interface WebpageCarousel extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+  };
+}
+
+export interface WebpageCta extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_ctas';
+  info: {
+    description: '';
+    displayName: 'Cta';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    theme: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+    variant: Schema.Attribute.String;
   };
 }
 
@@ -252,10 +283,12 @@ declare module '@strapi/strapi' {
       'boe.navbar': BoeNavbar;
       'boe.table-data': BoeTableData;
       'navbar.nav-item': NavbarNavItem;
+      'webpage.app-block': WebpageAppBlock;
       'webpage.button': WebpageButton;
       'webpage.card': WebpageCard;
       'webpage.card-container': WebpageCardContainer;
       'webpage.carousel': WebpageCarousel;
+      'webpage.cta': WebpageCta;
       'webpage.header': WebpageHeader;
       'webpage.header-subtitle': WebpageHeaderSubtitle;
       'webpage.header-title': WebpageHeaderTitle;
