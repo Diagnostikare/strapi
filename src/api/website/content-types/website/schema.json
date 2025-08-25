@@ -43,6 +43,10 @@
         "webpage.score-board"
       ]
     },
+    "AppSection": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.app-block"
     "TestimonialSection": {
       "type": "dynamiczone",
       "components": [
