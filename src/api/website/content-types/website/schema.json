@@ -41,6 +41,11 @@
       "type": "dynamiczone",
       "components": [
         "webpage.score-board"
+    "TestimonialSection": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.title",
+        "webpage.card-testimonial"
       ]
     }
   }
