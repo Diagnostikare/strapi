@@ -47,6 +47,11 @@
       "type": "dynamiczone",
       "components": [
         "webpage.app-block"
+    "TestimonialSection": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.title",
+        "webpage.card-testimonial"
       ]
     }
   }

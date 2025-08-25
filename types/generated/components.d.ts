@@ -128,6 +128,20 @@ export interface WebpageCardContainer extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageCardTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_card_testimonials';
+  info: {
+    displayName: 'CardTestimonial';
+  };
+  attributes: {
+    age: Schema.Attribute.String;
+    city: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    name: Schema.Attribute.String;
+    specialty: Schema.Attribute.RichText;
+  };
+}
+
 export interface WebpageCarousel extends Struct.ComponentSchema {
   collectionName: 'components_webpage_carousels';
   info: {
@@ -287,6 +301,7 @@ declare module '@strapi/strapi' {
       'webpage.button': WebpageButton;
       'webpage.card': WebpageCard;
       'webpage.card-container': WebpageCardContainer;
+      'webpage.card-testimonial': WebpageCardTestimonial;
       'webpage.carousel': WebpageCarousel;
       'webpage.cta': WebpageCta;
       'webpage.header': WebpageHeader;
