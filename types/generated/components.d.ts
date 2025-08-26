@@ -86,6 +86,19 @@ export interface WebpageAppBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageAward extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_awards';
+  info: {
+    description: '';
+    displayName: 'Award';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Component<'webpage.image', false>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface WebpageButton extends Struct.ComponentSchema {
   collectionName: 'components_webpage_buttons';
   info: {
@@ -171,6 +184,17 @@ export interface WebpageCta extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageFooter extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    awards: Schema.Attribute.Component<'webpage.award', true>;
+    social: Schema.Attribute.Component<'webpage.social-icon', true>;
+  };
+}
+
 export interface WebpageHeader extends Struct.ComponentSchema {
   collectionName: 'components_webpage_headers';
   info: {
@@ -217,7 +241,10 @@ export interface WebpageImage extends Struct.ComponentSchema {
     icon: 'landscape';
   };
   attributes: {
+    className: Schema.Attribute.Text;
+    height: Schema.Attribute.Decimal;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    width: Schema.Attribute.Decimal;
   };
 }
 
@@ -263,6 +290,18 @@ export interface WebpageScoreBoard extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageSocialIcon extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_social_icons';
+  info: {
+    displayName: 'socialIcon';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface WebpageSubnav extends Struct.ComponentSchema {
   collectionName: 'components_webpage_subnavs';
   info: {
@@ -298,12 +337,14 @@ declare module '@strapi/strapi' {
       'boe.table-data': BoeTableData;
       'navbar.nav-item': NavbarNavItem;
       'webpage.app-block': WebpageAppBlock;
+      'webpage.award': WebpageAward;
       'webpage.button': WebpageButton;
       'webpage.card': WebpageCard;
       'webpage.card-container': WebpageCardContainer;
       'webpage.card-testimonial': WebpageCardTestimonial;
       'webpage.carousel': WebpageCarousel;
       'webpage.cta': WebpageCta;
+      'webpage.footer': WebpageFooter;
       'webpage.header': WebpageHeader;
       'webpage.header-subtitle': WebpageHeaderSubtitle;
       'webpage.header-title': WebpageHeaderTitle;
@@ -311,6 +352,7 @@ declare module '@strapi/strapi' {
       'webpage.options': WebpageOptions;
       'webpage.score': WebpageScore;
       'webpage.score-board': WebpageScoreBoard;
+      'webpage.social-icon': WebpageSocialIcon;
       'webpage.subnav': WebpageSubnav;
       'webpage.title': WebpageTitle;
     }

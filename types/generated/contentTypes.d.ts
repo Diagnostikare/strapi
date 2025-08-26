@@ -590,6 +590,7 @@ export interface ApiWebsiteWebsite extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Footer: Schema.Attribute.DynamicZone<['webpage.footer']>;
     Header: Schema.Attribute.DynamicZone<
       ['webpage.header-title', 'webpage.header-subtitle', 'webpage.button']
     >;

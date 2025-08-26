@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_webpage_footers",
+  "info": {
+    "displayName": "Footer"
+  },
+  "options": {},
+  "attributes": {
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.social-icon"
+    },
+    "awards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.award"
+    }
+  }
+}
