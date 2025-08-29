@@ -187,11 +187,14 @@ export interface WebpageCta extends Struct.ComponentSchema {
 export interface WebpageFooter extends Struct.ComponentSchema {
   collectionName: 'components_webpage_footers';
   info: {
+    description: '';
     displayName: 'Footer';
   };
   attributes: {
     awards: Schema.Attribute.Component<'webpage.award', true>;
+    sitemap: Schema.Attribute.Component<'webpage.site-map', true>;
     social: Schema.Attribute.Component<'webpage.social-icon', true>;
+    support: Schema.Attribute.Component<'webpage.support', true>;
   };
 }
 
@@ -248,6 +251,19 @@ export interface WebpageImage extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageLink extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_links';
+  info: {
+    description: '';
+    displayName: 'Link';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface WebpageOptions extends Struct.ComponentSchema {
   collectionName: 'components_webpage_options';
   info: {
@@ -290,6 +306,18 @@ export interface WebpageScoreBoard extends Struct.ComponentSchema {
   };
 }
 
+export interface WebpageSiteMap extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_site_maps';
+  info: {
+    description: '';
+    displayName: 'SiteMap';
+  };
+  attributes: {
+    options: Schema.Attribute.Component<'webpage.link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface WebpageSocialIcon extends Struct.ComponentSchema {
   collectionName: 'components_webpage_social_icons';
   info: {
@@ -315,6 +343,18 @@ export interface WebpageSubnav extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
     Options: Schema.Attribute.Component<'webpage.options', true>;
+  };
+}
+
+export interface WebpageSupport extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_supports';
+  info: {
+    description: '';
+    displayName: 'Support';
+  };
+  attributes: {
+    options: Schema.Attribute.Component<'webpage.link', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -349,11 +389,14 @@ declare module '@strapi/strapi' {
       'webpage.header-subtitle': WebpageHeaderSubtitle;
       'webpage.header-title': WebpageHeaderTitle;
       'webpage.image': WebpageImage;
+      'webpage.link': WebpageLink;
       'webpage.options': WebpageOptions;
       'webpage.score': WebpageScore;
       'webpage.score-board': WebpageScoreBoard;
+      'webpage.site-map': WebpageSiteMap;
       'webpage.social-icon': WebpageSocialIcon;
       'webpage.subnav': WebpageSubnav;
+      'webpage.support': WebpageSupport;
       'webpage.title': WebpageTitle;
     }
   }

@@ -59,7 +59,8 @@
     "Footer": {
       "type": "dynamiczone",
       "components": [
-        "webpage.footer"
+        "webpage.footer",
+        "webpage.support"
       ]
     }
   }

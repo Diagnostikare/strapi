@@ -1,7 +1,8 @@
 {
   "collectionName": "components_webpage_footers",
   "info": {
-    "displayName": "Footer"
+    "displayName": "Footer",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,16 @@
       "type": "component",
       "repeatable": true,
       "component": "webpage.award"
+    },
+    "sitemap": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.site-map"
+    },
+    "support": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.support"
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_webpage_site_maps",
+  "info": {
+    "displayName": "SiteMap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.link"
+    }
+  }
+}
