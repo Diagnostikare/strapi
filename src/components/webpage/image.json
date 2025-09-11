@@ -26,6 +26,9 @@
     },
     "height": {
       "type": "decimal"
+    },
+    "href": {
+      "type": "string"
     }
   }
 }

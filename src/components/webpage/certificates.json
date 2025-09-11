@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_webpage_certificates",
+  "info": {
+    "displayName": "Certificates",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.image"
+    }
+  }
+}
