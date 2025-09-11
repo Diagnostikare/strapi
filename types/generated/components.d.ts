@@ -144,11 +144,14 @@ export interface WebpageCardContainer extends Struct.ComponentSchema {
 export interface WebpageCardTestimonial extends Struct.ComponentSchema {
   collectionName: 'components_webpage_card_testimonials';
   info: {
+    description: '';
     displayName: 'CardTestimonial';
   };
   attributes: {
     age: Schema.Attribute.String;
+    background: Schema.Attribute.String;
     city: Schema.Attribute.String;
+    color: Schema.Attribute.String;
     description: Schema.Attribute.RichText;
     name: Schema.Attribute.String;
     specialty: Schema.Attribute.RichText;
@@ -165,6 +168,17 @@ export interface WebpageCarousel extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+  };
+}
+
+export interface WebpageCertificates extends Struct.ComponentSchema {
+  collectionName: 'components_webpage_certificates';
+  info: {
+    description: '';
+    displayName: 'Certificates';
+  };
+  attributes: {
+    image: Schema.Attribute.Component<'webpage.image', true>;
   };
 }
 
@@ -246,6 +260,7 @@ export interface WebpageImage extends Struct.ComponentSchema {
   attributes: {
     className: Schema.Attribute.Text;
     height: Schema.Attribute.Decimal;
+    href: Schema.Attribute.String;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     width: Schema.Attribute.Decimal;
   };
@@ -383,6 +398,7 @@ declare module '@strapi/strapi' {
       'webpage.card-container': WebpageCardContainer;
       'webpage.card-testimonial': WebpageCardTestimonial;
       'webpage.carousel': WebpageCarousel;
+      'webpage.certificates': WebpageCertificates;
       'webpage.cta': WebpageCta;
       'webpage.footer': WebpageFooter;
       'webpage.header': WebpageHeader;

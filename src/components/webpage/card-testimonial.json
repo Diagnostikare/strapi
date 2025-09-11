@@ -1,7 +1,8 @@
 {
   "collectionName": "components_webpage_card_testimonials",
   "info": {
-    "displayName": "CardTestimonial"
+    "displayName": "CardTestimonial",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -19,6 +20,12 @@
     },
     "specialty": {
       "type": "richtext"
+    },
+    "background": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
     }
   }
 }
