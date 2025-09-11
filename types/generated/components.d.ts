@@ -149,9 +149,11 @@ export interface WebpageCardTestimonial extends Struct.ComponentSchema {
   };
   attributes: {
     age: Schema.Attribute.String;
-    background: Schema.Attribute.String;
+    background: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     city: Schema.Attribute.String;
-    color: Schema.Attribute.String;
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     description: Schema.Attribute.RichText;
     name: Schema.Attribute.String;
     specialty: Schema.Attribute.RichText;
