@@ -64,8 +64,10 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   attributes: {
     icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     iconFocused: Schema.Attribute.Media<'images'>;
-    primaryColor: Schema.Attribute.String & Schema.Attribute.Required;
-    secondaryColor: Schema.Attribute.String & Schema.Attribute.Required;
+    primaryColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    secondaryColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -355,7 +357,8 @@ export interface WebpageSubnav extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    background: Schema.Attribute.String;
+    background: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
