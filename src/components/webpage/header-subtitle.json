@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_webpage_header_subtitles",
+  "info": {
+    "displayName": "Header Subtitle"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "richtext"
+    }
+  }
+}

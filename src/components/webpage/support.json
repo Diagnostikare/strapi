@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_webpage_supports",
+  "info": {
+    "displayName": "Support",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.link"
+    }
+  }
+}
