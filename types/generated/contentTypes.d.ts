@@ -464,6 +464,7 @@ export interface ApiPrincipalNavbarPrincipalNavbar
 export interface ApiSiteSite extends Struct.CollectionTypeSchema {
   collectionName: 'sites';
   info: {
+    description: '';
     displayName: 'Site';
     pluralName: 'sites';
     singularName: 'site';
@@ -475,11 +476,14 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    id_site: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::site.site'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    themes: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -505,16 +509,10 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    dark_mode_logo: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required;
-    light_mode_logo: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
-    login_data: Schema.Attribute.Component<'boe.login-data', true>;
-    navbar: Schema.Attribute.Component<'boe.navbar', false>;
-    otp_view_logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     primary_color: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#003B1F'>;
@@ -522,11 +520,8 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#00AF76'>;
-    site: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    slug: Schema.Attribute.UID<'site'> & Schema.Attribute.Required;
-    table_data: Schema.Attribute.Component<'boe.table-data', true>;
+    sites: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
     text_color: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#F8F8F7'>;
