@@ -48,8 +48,6 @@
       "relation": "manyToOne",
       "target": "api::site.site",
       "inversedBy": "themes"
-<<<<<<< Updated upstream
-=======
     },
     "primary_color": {
       "type": "customField",
@@ -80,7 +78,6 @@
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "customField": "plugin::color-picker.color"
->>>>>>> Stashed changes
     }
   }
 }
