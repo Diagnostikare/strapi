@@ -73,6 +73,22 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaSideNavItem extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_side_nav_items';
+  info: {
+    displayName: 'side_nav_item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    item_text: Schema.Attribute.String;
+    redirect: Schema.Attribute.String;
+  };
+}
+
 export interface WebpageAppBlock extends Struct.ComponentSchema {
   collectionName: 'components_webpage_app_blocks';
   info: {
@@ -396,6 +412,7 @@ declare module '@strapi/strapi' {
       'boe.navbar': BoeNavbar;
       'boe.table-data': BoeTableData;
       'navbar.nav-item': NavbarNavItem;
+      'pwa.side-nav-item': PwaSideNavItem;
       'webpage.app-block': WebpageAppBlock;
       'webpage.award': WebpageAward;
       'webpage.button': WebpageButton;
