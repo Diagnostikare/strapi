@@ -28,6 +28,12 @@
       "relation": "oneToMany",
       "target": "api::theme.theme",
       "mappedBy": "sites"
+    },
+    "side_navbars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::side-navbar.side-navbar",
+      "mappedBy": "site"
     }
   }
 }

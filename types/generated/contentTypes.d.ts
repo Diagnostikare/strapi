@@ -461,6 +461,36 @@ export interface ApiPrincipalNavbarPrincipalNavbar
   };
 }
 
+export interface ApiSideNavbarSideNavbar extends Struct.CollectionTypeSchema {
+  collectionName: 'side_navbars';
+  info: {
+    displayName: 'Side Navbar';
+    pluralName: 'side-navbars';
+    singularName: 'side-navbar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    item: Schema.Attribute.Component<'pwa.side-nav-item', true> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::side-navbar.side-navbar'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSiteSite extends Struct.CollectionTypeSchema {
   collectionName: 'sites';
   info: {
@@ -482,6 +512,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    side_navbars: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::side-navbar.side-navbar'
+    >;
     slug: Schema.Attribute.String;
     themes: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1123,6 +1157,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::home.home': ApiHomeHome;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
+      'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
       'api::theme.theme': ApiThemeTheme;
       'api::webpage.webpage': ApiWebpageWebpage;

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_pwa_side_nav_items",
+  "info": {
+    "displayName": "side_nav_item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "item_text": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "redirect": {
+      "type": "string"
+    }
+  }
+}
