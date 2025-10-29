@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "websites",
+  "info": {
+    "singularName": "website",
+    "pluralName": "websites",
+    "displayName": "Website",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.carousel"
+      ]
+    },
+    "Header": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.header-title",
+        "webpage.header-subtitle",
+        "webpage.button"
+      ]
+    },
+    "CardContainer": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.card-container",
+        "webpage.header-title",
+        "webpage.header-subtitle",
+        "webpage.image"
+      ]
+    },
+    "ScoreBoard": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.score-board"
+      ]
+    },
+    "AppSection": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.app-block"
+      ]
+    },
+    "TestimonialSection": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.title",
+        "webpage.card-testimonial"
+      ]
+    },
+    "Footer": {
+      "type": "dynamiczone",
+      "components": [
+        "webpage.footer",
+        "webpage.support",
+        "webpage.certificates"
+      ]
+    }
+  }
+}

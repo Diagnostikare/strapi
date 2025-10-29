@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_webpage_awards",
+  "info": {
+    "displayName": "Award",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "webpage.image"
+    }
+  }
+}

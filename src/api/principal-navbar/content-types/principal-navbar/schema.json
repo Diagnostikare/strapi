@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "principal_navbars",
+  "info": {
+    "singularName": "principal-navbar",
+    "pluralName": "principal-navbars",
+    "displayName": "Principal Navbar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navbar.nav-item"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

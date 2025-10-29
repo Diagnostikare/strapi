@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_navbar_nav_items",
+  "info": {
+    "displayName": "NavItem",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "iconFocused": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "primaryColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "secondaryColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

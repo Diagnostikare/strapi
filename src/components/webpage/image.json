@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_webpage_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "landscape",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "className": {
+      "type": "text"
+    },
+    "width": {
+      "type": "decimal"
+    },
+    "height": {
+      "type": "decimal"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

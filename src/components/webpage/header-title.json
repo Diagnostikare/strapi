@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_webpage_header_titles",
+  "info": {
+    "displayName": "Header Title",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_webpage_score_boards",
+  "info": {
+    "displayName": "ScoreBoard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "disclaimer": {
+      "type": "text"
+    },
+    "score": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.score"
+    }
+  }
+}

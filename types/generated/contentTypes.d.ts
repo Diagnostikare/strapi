@@ -405,9 +405,96 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Customers: Schema.Attribute.Component<'webpage.carousel', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrincipalNavbarPrincipalNavbar
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'principal_navbars';
+  info: {
+    description: '';
+    displayName: 'Principal Navbar';
+    pluralName: 'principal-navbars';
+    singularName: 'principal-navbar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    item: Schema.Attribute.Component<'navbar.nav-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::principal-navbar.principal-navbar'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSideNavbarSideNavbar extends Struct.CollectionTypeSchema {
+  collectionName: 'side_navbars';
+  info: {
+    displayName: 'Side Navbar';
+    pluralName: 'side-navbars';
+    singularName: 'side-navbar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    item: Schema.Attribute.Component<'pwa.side-nav-item', true> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::side-navbar.side-navbar'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSiteSite extends Struct.CollectionTypeSchema {
   collectionName: 'sites';
   info: {
+    description: '';
     displayName: 'Site';
     pluralName: 'sites';
     singularName: 'site';
@@ -419,11 +506,18 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    id_site: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::site.site'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    side_navbars: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::side-navbar.side-navbar'
+    >;
+    slug: Schema.Attribute.String;
+    themes: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -443,37 +537,30 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    accent_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     complementary_color: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'#BEBEBE'>;
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    dark_mode_logo: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required;
-    light_mode_logo: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.Required;
+    error_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    highlight_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
-    login_data: Schema.Attribute.Component<'boe.login-data', true>;
-    navbar: Schema.Attribute.Component<'boe.navbar', false>;
-    otp_view_logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     primary_color: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'#003B1F'>;
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     publishedAt: Schema.Attribute.DateTime;
     secondary_color: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'#00AF76'>;
-    site: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    slug: Schema.Attribute.UID<'site'> & Schema.Attribute.Required;
-    table_data: Schema.Attribute.Component<'boe.table-data', true>;
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    sites: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
     text_color: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'#F8F8F7'>;
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -503,6 +590,55 @@ export interface ApiWebpageWebpage extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWebsiteWebsite extends Struct.CollectionTypeSchema {
+  collectionName: 'websites';
+  info: {
+    description: '';
+    displayName: 'Website';
+    pluralName: 'websites';
+    singularName: 'website';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AppSection: Schema.Attribute.DynamicZone<['webpage.app-block']>;
+    CardContainer: Schema.Attribute.DynamicZone<
+      [
+        'webpage.card-container',
+        'webpage.header-title',
+        'webpage.header-subtitle',
+        'webpage.image',
+      ]
+    >;
+    Content: Schema.Attribute.DynamicZone<['webpage.carousel']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Footer: Schema.Attribute.DynamicZone<
+      ['webpage.footer', 'webpage.support', 'webpage.certificates']
+    >;
+    Header: Schema.Attribute.DynamicZone<
+      ['webpage.header-title', 'webpage.header-subtitle', 'webpage.button']
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::website.website'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    ScoreBoard: Schema.Attribute.DynamicZone<['webpage.score-board']>;
+    TestimonialSection: Schema.Attribute.DynamicZone<
+      ['webpage.title', 'webpage.card-testimonial']
+    >;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1019,9 +1155,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::home.home': ApiHomeHome;
+      'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
+      'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
       'api::theme.theme': ApiThemeTheme;
       'api::webpage.webpage': ApiWebpageWebpage;
+      'api::website.website': ApiWebsiteWebsite;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
