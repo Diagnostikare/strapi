@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_webpage_card_containers",
+  "info": {
+    "displayName": "CardContainer",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Card": {
+      "displayName": "Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.card"
+    }
+  }
+}

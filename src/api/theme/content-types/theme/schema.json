@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "dark_mode_logo": {
+    "logo": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -19,66 +19,52 @@
         "images"
       ]
     },
-    "light_mode_logo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "otp_view_logo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
+
     "primary_color": {
-      "type": "string",
-      "default": "#003B1F",
-      "required": true
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
     },
     "secondary_color": {
-      "type": "string",
-      "default": "#00AF76",
-      "required": true
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "accent_color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
     },
     "complementary_color": {
-      "type": "string",
-      "required": true,
-      "default": "#BEBEBE"
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
     },
+
     "text_color": {
-      "type": "string",
-      "required": true,
-      "default": "#F8F8F7"
-    },
-    "navbar": {
-      "type": "component",
-      "repeatable": false,
-      "component": "boe.navbar"
-    },
-    "table_data": {
-      "type": "component",
-      "repeatable": true,
-      "component": "boe.table-data"
-    },
-    "login_data": {
-      "type": "component",
-      "repeatable": true,
-      "component": "boe.login-data"
-    },
-    "site": {
-      "type": "string",
-      "required": true,
-      "unique": true
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
     },
     "slug": {
       "type": "uid",
-      "targetField": "site",
       "required": true
+    },
+    "sites": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::site.site",
+      "inversedBy": "themes"
+    },
+    "highlight_color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "error_color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
     }
   }
 }

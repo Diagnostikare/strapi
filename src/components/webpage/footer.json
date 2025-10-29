@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_webpage_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.social-icon"
+    },
+    "awards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.award"
+    },
+    "sitemap": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.site-map"
+    },
+    "support": {
+      "type": "component",
+      "repeatable": true,
+      "component": "webpage.support"
+    }
+  }
+}

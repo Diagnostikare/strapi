@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_webpage_buttons",
+  "info": {
+    "displayName": "Button"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string"
+    }
+  }
+}

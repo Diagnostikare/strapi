@@ -4,7 +4,8 @@
   "info": {
     "singularName": "site",
     "pluralName": "sites",
-    "displayName": "Site"
+    "displayName": "Site",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,24 @@
     },
     "url": {
       "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "id_site": {
+      "type": "integer"
+    },
+    "themes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::theme.theme",
+      "mappedBy": "sites"
+    },
+    "side_navbars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::side-navbar.side-navbar",
+      "mappedBy": "site"
     }
   }
 }
