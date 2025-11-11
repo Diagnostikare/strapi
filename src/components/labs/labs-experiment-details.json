@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_labs_labs_experiment_details",
+  "info": {
+    "displayName": "LabsExperimentDetails",
+    "icon": "wheelchair",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "LabsDetailsTitle": {
+      "type": "string"
+    },
+    "LabsDetailsDescription": {
+      "type": "text"
+    },
+    "LabsDetailsTimeIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "LabsDetailsTime": {
+      "type": "string"
+    },
+    "LabsDetailsType": {
+      "type": "string"
+    },
+    "LabsDetailsButtonText": {
+      "type": "string"
+    },
+    "LabsDetailsCover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "LabsDetailsTag": {
+      "type": "component",
+      "repeatable": true,
+      "component": "labs.labs-tag"
+    },
+    "LabsDetailsTitleFooter": {
+      "type": "string"
+    },
+    "LabsDetailsItems": {
+      "type": "blocks"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_labs_labs_tags",
+  "info": {
+    "displayName": "LabsTag",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "shortLabel": {
+      "type": "string"
+    },
+    "TagIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ColorTagPicker": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

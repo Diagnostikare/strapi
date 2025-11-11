@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_labs_main_sections",
+  "info": {
+    "displayName": "MainSection",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "iconlabs": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "WelcomeTitle": {
+      "type": "string"
+    },
+    "LabsName": {
+      "type": "string"
+    },
+    "LabsDescription": {
+      "type": "text"
+    }
+  }
+}

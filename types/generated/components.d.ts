@@ -54,6 +54,92 @@ export interface BoeTableData extends Struct.ComponentSchema {
   };
 }
 
+export interface LabsLabsAccess extends Struct.ComponentSchema {
+  collectionName: 'components_labs_labs_accesses';
+  info: {
+    displayName: 'LabsAccess';
+  };
+  attributes: {
+    AccessButtonText: Schema.Attribute.String;
+    AccessCodeTitle: Schema.Attribute.String;
+    AccessOptions: Schema.Attribute.Text;
+    AccessSubtitle: Schema.Attribute.String;
+    AccessSupportLink: Schema.Attribute.RichText;
+    AccessTitle: Schema.Attribute.String;
+  };
+}
+
+export interface LabsLabsCard extends Struct.ComponentSchema {
+  collectionName: 'components_labs_labs_cards';
+  info: {
+    displayName: 'LabsCard';
+    icon: 'doctor';
+  };
+  attributes: {
+    ImageLabsCard: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    TagLabsColorPicker: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface LabsLabsExperimentDetails extends Struct.ComponentSchema {
+  collectionName: 'components_labs_labs_experiment_details';
+  info: {
+    description: '';
+    displayName: 'LabsExperimentDetails';
+    icon: 'wheelchair';
+  };
+  attributes: {
+    LabsDetailsButtonText: Schema.Attribute.String;
+    LabsDetailsCover: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    LabsDetailsDescription: Schema.Attribute.Text;
+    LabsDetailsItems: Schema.Attribute.Blocks;
+    LabsDetailsTag: Schema.Attribute.Component<'labs.labs-tag', true>;
+    LabsDetailsTime: Schema.Attribute.String;
+    LabsDetailsTimeIcon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    LabsDetailsTitle: Schema.Attribute.String;
+    LabsDetailsTitleFooter: Schema.Attribute.String;
+    LabsDetailsType: Schema.Attribute.String;
+    slug: Schema.Attribute.String;
+  };
+}
+
+export interface LabsLabsTag extends Struct.ComponentSchema {
+  collectionName: 'components_labs_labs_tags';
+  info: {
+    displayName: 'LabsTag';
+    icon: 'book';
+  };
+  attributes: {
+    ColorTagPicker: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    label: Schema.Attribute.String;
+    shortLabel: Schema.Attribute.String;
+    TagIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface LabsMainSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_main_sections';
+  info: {
+    description: '';
+    displayName: 'MainSection';
+    icon: 'bulletList';
+  };
+  attributes: {
+    iconlabs: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    LabsDescription: Schema.Attribute.Text;
+    LabsName: Schema.Attribute.String;
+    WelcomeTitle: Schema.Attribute.String;
+  };
+}
+
 export interface NavbarNavItem extends Struct.ComponentSchema {
   collectionName: 'components_navbar_nav_items';
   info: {
@@ -411,6 +497,11 @@ declare module '@strapi/strapi' {
       'boe.login-data': BoeLoginData;
       'boe.navbar': BoeNavbar;
       'boe.table-data': BoeTableData;
+      'labs.labs-access': LabsLabsAccess;
+      'labs.labs-card': LabsLabsCard;
+      'labs.labs-experiment-details': LabsLabsExperimentDetails;
+      'labs.labs-tag': LabsLabsTag;
+      'labs.main-section': LabsMainSection;
       'navbar.nav-item': NavbarNavItem;
       'pwa.side-nav-item': PwaSideNavItem;
       'webpage.app-block': WebpageAppBlock;

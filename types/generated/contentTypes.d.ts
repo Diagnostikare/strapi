@@ -430,6 +430,37 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLabLab extends Struct.CollectionTypeSchema {
+  collectionName: 'labs';
+  info: {
+    description: '';
+    displayName: 'Labs';
+    pluralName: 'labs';
+    singularName: 'lab';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AccessCard: Schema.Attribute.Component<'labs.labs-access', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    LabsCards: Schema.Attribute.DynamicZone<['webpage.card', 'labs.labs-tag']>;
+    LabsExperimentsDetails: Schema.Attribute.DynamicZone<
+      ['labs.labs-experiment-details', 'labs.labs-tag']
+    >;
+    LabsMainSection: Schema.Attribute.Component<'labs.main-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::lab.lab'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPrincipalNavbarPrincipalNavbar
   extends Struct.CollectionTypeSchema {
   collectionName: 'principal_navbars';
@@ -1156,6 +1187,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
       'api::home.home': ApiHomeHome;
+      'api::lab.lab': ApiLabLab;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
