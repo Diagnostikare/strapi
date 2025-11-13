@@ -89,10 +89,11 @@ export interface LabsLabsCard extends Struct.ComponentSchema {
 export interface LabsLabsCode extends Struct.ComponentSchema {
   collectionName: 'components_labs_labs_codes';
   info: {
+    description: '';
     displayName: 'LabsCode';
   };
   attributes: {
-    LasbCodeInput: Schema.Attribute.String;
+    LabsCodeInput: Schema.Attribute.String;
   };
 }
 
