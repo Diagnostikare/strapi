@@ -446,7 +446,10 @@ export interface ApiLabLab extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    LabsCards: Schema.Attribute.DynamicZone<['webpage.card', 'labs.labs-tag']>;
+    LabsCards: Schema.Attribute.DynamicZone<
+      ['labs.labs-tag', 'labs.labs-card']
+    >;
+    LabsCodeInput: Schema.Attribute.Component<'labs.labs-code', false>;
     LabsExperimentsDetails: Schema.Attribute.DynamicZone<
       ['labs.labs-experiment-details', 'labs.labs-tag']
     >;

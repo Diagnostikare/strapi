@@ -2,24 +2,32 @@
   "collectionName": "components_labs_labs_cards",
   "info": {
     "displayName": "LabsCard",
-    "icon": "doctor"
+    "icon": "doctor",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "ImageLabsCard": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "TagLabsColorPicker": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "CardTitle": {
+      "type": "string"
+    },
+    "CardDescription": {
+      "type": "text"
+    },
+    "CardTag": {
+      "type": "component",
+      "repeatable": false,
+      "component": "labs.labs-tag"
     }
   }
 }

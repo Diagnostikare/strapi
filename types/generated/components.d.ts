@@ -72,15 +72,27 @@ export interface LabsLabsAccess extends Struct.ComponentSchema {
 export interface LabsLabsCard extends Struct.ComponentSchema {
   collectionName: 'components_labs_labs_cards';
   info: {
+    description: '';
     displayName: 'LabsCard';
     icon: 'doctor';
   };
   attributes: {
+    CardDescription: Schema.Attribute.Text;
+    CardTag: Schema.Attribute.Component<'labs.labs-tag', false>;
+    CardTitle: Schema.Attribute.String;
     ImageLabsCard: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    TagLabsColorPicker: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface LabsLabsCode extends Struct.ComponentSchema {
+  collectionName: 'components_labs_labs_codes';
+  info: {
+    displayName: 'LabsCode';
+  };
+  attributes: {
+    LasbCodeInput: Schema.Attribute.String;
   };
 }
 
@@ -92,11 +104,14 @@ export interface LabsLabsExperimentDetails extends Struct.ComponentSchema {
     icon: 'wheelchair';
   };
   attributes: {
+    LabsDetailsButtonLink: Schema.Attribute.String;
     LabsDetailsButtonText: Schema.Attribute.String;
     LabsDetailsCover: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     LabsDetailsDescription: Schema.Attribute.Text;
+    LabsDetailsHowTest: Schema.Attribute.String;
+    LabsDetailsHowTestItems: Schema.Attribute.Blocks;
     LabsDetailsItems: Schema.Attribute.Blocks;
     LabsDetailsTag: Schema.Attribute.Component<'labs.labs-tag', true>;
     LabsDetailsTime: Schema.Attribute.String;
@@ -499,6 +514,7 @@ declare module '@strapi/strapi' {
       'boe.table-data': BoeTableData;
       'labs.labs-access': LabsLabsAccess;
       'labs.labs-card': LabsLabsCard;
+      'labs.labs-code': LabsLabsCode;
       'labs.labs-experiment-details': LabsLabsExperimentDetails;
       'labs.labs-tag': LabsLabsTag;
       'labs.main-section': LabsMainSection;
