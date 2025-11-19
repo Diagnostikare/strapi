@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Development Commands
+## Development Commands 
 
 - `yarn dev` or `yarn develop` - Start Strapi in development mode
 - `yarn start` - Start Strapi in production mode 
