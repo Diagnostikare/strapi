@@ -54,6 +54,17 @@ export interface BoeTableData extends Struct.ComponentSchema {
   };
 }
 
+export interface LabsColorTagPicker extends Struct.ComponentSchema {
+  collectionName: 'components_labs_color_tag_pickers';
+  info: {
+    displayName: 'ColorTagPicker';
+  };
+  attributes: {
+    ColorTagPicker: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface LabsLabsAccess extends Struct.ComponentSchema {
   collectionName: 'components_labs_labs_accesses';
   info: {
@@ -134,6 +145,7 @@ export interface LabsLabsTag extends Struct.ComponentSchema {
     icon: 'book';
   };
   attributes: {
+    ColorTagPicker: Schema.Attribute.Component<'labs.color-tag-picker', false>;
     label: Schema.Attribute.String;
     shortLabel: Schema.Attribute.String;
     TagIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -512,6 +524,7 @@ declare module '@strapi/strapi' {
       'boe.login-data': BoeLoginData;
       'boe.navbar': BoeNavbar;
       'boe.table-data': BoeTableData;
+      'labs.color-tag-picker': LabsColorTagPicker;
       'labs.labs-access': LabsLabsAccess;
       'labs.labs-card': LabsLabsCard;
       'labs.labs-code': LabsLabsCode;

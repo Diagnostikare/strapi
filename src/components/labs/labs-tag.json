@@ -23,6 +23,11 @@
         "videos",
         "audios"
       ]
+    },
+    "ColorTagPicker": {
+      "type": "component",
+      "repeatable": false,
+      "component": "labs.color-tag-picker"
     }
   }
 }
