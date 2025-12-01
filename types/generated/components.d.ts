@@ -129,12 +129,11 @@ export interface LabsLabsExperimentDetails extends Struct.ComponentSchema {
 export interface LabsLabsTag extends Struct.ComponentSchema {
   collectionName: 'components_labs_labs_tags';
   info: {
+    description: '';
     displayName: 'LabsTag';
     icon: 'book';
   };
   attributes: {
-    ColorTagPicker: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     label: Schema.Attribute.String;
     shortLabel: Schema.Attribute.String;
     TagIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
