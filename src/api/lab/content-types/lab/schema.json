@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "labs",
+  "info": {
+    "singularName": "lab",
+    "pluralName": "labs",
+    "displayName": "Labs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "LabsMainSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "labs.main-section"
+    },
+    "AccessCard": {
+      "displayName": "LabsAccess",
+      "type": "component",
+      "repeatable": false,
+      "component": "labs.labs-access"
+    },
+    "LabsCards": {
+      "type": "dynamiczone",
+      "components": [
+        "labs.labs-tag",
+        "labs.labs-card"
+      ]
+    },
+    "LabsExperimentsDetails": {
+      "type": "dynamiczone",
+      "components": [
+        "labs.labs-experiment-details",
+        "labs.labs-tag"
+      ]
+    },
+    "LabsCodeInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "labs.labs-code"
+    }
+  }
+}

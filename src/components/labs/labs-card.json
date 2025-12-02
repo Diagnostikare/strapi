@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_labs_labs_cards",
+  "info": {
+    "displayName": "LabsCard",
+    "icon": "doctor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ImageLabsCard": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "CardTitle": {
+      "type": "string"
+    },
+    "CardDescription": {
+      "type": "text"
+    },
+    "CardTag": {
+      "type": "component",
+      "repeatable": false,
+      "component": "labs.labs-tag"
+    }
+  }
+}

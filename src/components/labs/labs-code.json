@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_labs_labs_codes",
+  "info": {
+    "displayName": "LabsCode",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "LabsCodeInput": {
+      "type": "string"
+    }
+  }
+}

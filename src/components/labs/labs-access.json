@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_labs_labs_accesses",
+  "info": {
+    "displayName": "LabsAccess"
+  },
+  "options": {},
+  "attributes": {
+    "AccessTitle": {
+      "type": "string"
+    },
+    "AccessSubtitle": {
+      "type": "string"
+    },
+    "AccessOptions": {
+      "type": "text"
+    },
+    "AccessCodeTitle": {
+      "type": "string"
+    },
+    "AccessButtonText": {
+      "type": "string"
+    },
+    "AccessSupportLink": {
+      "type": "richtext"
+    }
+  }
+}
