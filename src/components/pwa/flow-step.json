@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_pwa_flow_steps",
+  "info": {
+    "displayName": "FlowStep"
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "enumeration",
+      "enum": [
+        "intro",
+        "symptoms",
+        "reason",
+        "documents",
+        "schedule",
+        "confirm"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
