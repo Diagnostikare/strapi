@@ -19,9 +19,9 @@
     },
     "site": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::site.site",
-      "inversedBy": "service_flow"
+      "inversedBy": "service_flows"
     },
     "enable": {
       "type": "boolean"
