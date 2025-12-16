@@ -35,9 +35,9 @@
       "target": "api::side-navbar.side-navbar",
       "mappedBy": "site"
     },
-    "service_flow": {
+    "service_flows": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::service-flow.service-flow",
       "mappedBy": "site"
     }
