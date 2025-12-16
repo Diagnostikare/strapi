@@ -186,6 +186,21 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaFlowStep extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_flow_steps';
+  info: {
+    displayName: 'FlowStep';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    key: Schema.Attribute.Enumeration<
+      ['intro', 'symptoms', 'reason', 'documents', 'schedule', 'confirm']
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PwaSideNavItem extends Struct.ComponentSchema {
   collectionName: 'components_pwa_side_nav_items';
   info: {
@@ -532,6 +547,7 @@ declare module '@strapi/strapi' {
       'labs.labs-tag': LabsLabsTag;
       'labs.main-section': LabsMainSection;
       'navbar.nav-item': NavbarNavItem;
+      'pwa.flow-step': PwaFlowStep;
       'pwa.side-nav-item': PwaSideNavItem;
       'webpage.app-block': WebpageAppBlock;
       'webpage.award': WebpageAward;

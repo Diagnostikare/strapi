@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "service_flows": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-flow.service-flow",
+      "mappedBy": "service"
+    }
+  }
+}
