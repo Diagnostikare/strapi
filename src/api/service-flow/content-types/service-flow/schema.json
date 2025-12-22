@@ -33,6 +33,12 @@
       "type": "component",
       "repeatable": true,
       "component": "pwa.flow-step"
+    },
+    "service_theme": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service-theme.service-theme",
+      "inversedBy": "service_flows"
     }
   }
 }

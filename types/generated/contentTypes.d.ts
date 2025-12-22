@@ -520,8 +520,52 @@ export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     service: Schema.Attribute.Relation<'manyToOne', 'api::service.service'>;
+    service_theme: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::service-theme.service-theme'
+    >;
     site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
     steps: Schema.Attribute.Component<'pwa.flow-step', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceThemeServiceTheme
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'service_themes';
+  info: {
+    displayName: 'serviceTheme';
+    pluralName: 'service-themes';
+    singularName: 'service-theme';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bannerBg: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    buttonColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    buttonHighlight: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    buttonText: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-theme.service-theme'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    service_flows: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-flow.service-flow'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1273,6 +1317,7 @@ declare module '@strapi/strapi' {
       'api::lab.lab': ApiLabLab;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
       'api::service-flow.service-flow': ApiServiceFlowServiceFlow;
+      'api::service-theme.service-theme': ApiServiceThemeServiceTheme;
       'api::service.service': ApiServiceService;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
