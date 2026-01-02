@@ -28,4 +28,7 @@ module.exports = ({ env }) => ({
   "color-picker": {
     enabled: true,
   },
+  i18n: {
+    enabled: true,
+  },
 });
