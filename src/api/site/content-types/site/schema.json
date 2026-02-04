@@ -29,9 +29,9 @@
       "target": "api::side-navbar.side-navbar",
       "inversedBy": "sites"
     },
-    "service_flow": {
+    "service_flows": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::service-flow.service-flow",
       "inversedBy": "sites"
     },
