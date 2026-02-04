@@ -524,7 +524,7 @@ export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::service-theme.service-theme'
     >;
-    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     steps: Schema.Attribute.Component<'pwa.flow-step', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -656,8 +656,8 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    service_flows: Schema.Attribute.Relation<
-      'manyToMany',
+    service_flow: Schema.Attribute.Relation<
+      'manyToOne',
       'api::service-flow.service-flow'
     >;
     side_navbar: Schema.Attribute.Relation<
