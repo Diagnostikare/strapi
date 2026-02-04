@@ -23,17 +23,17 @@
     "id_site": {
       "type": "integer"
     },
-    "side_navbars": {
+    "side_navbar": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::side-navbar.side-navbar",
-      "mappedBy": "site"
+      "inversedBy": "sites"
     },
-    "service_flows": {
+    "service_flow": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::service-flow.service-flow",
-      "mappedBy": "site"
+      "inversedBy": "sites"
     },
     "theme": {
       "type": "relation",
