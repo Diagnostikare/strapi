@@ -10,17 +10,17 @@
     "draftAndPublish": true
   },
   "attributes": {
+    "site": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::site.site",
+      "inversedBy": "side_navbars"
+    },
     "item": {
       "type": "component",
       "repeatable": true,
       "component": "pwa.side-nav-item",
       "required": true
-    },
-    "sites": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::site.site",
-      "mappedBy": "side_navbar"
     }
   }
 }

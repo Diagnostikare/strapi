@@ -23,21 +23,21 @@
     "id_site": {
       "type": "integer"
     },
-    "side_navbar": {
+    "side_navbars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::side-navbar.side-navbar",
+      "mappedBy": "site"
+    },
+    "service_flow": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::side-navbar.side-navbar",
-      "inversedBy": "sites"
-    },
-    "service_flows": {
-      "type": "relation",
-      "relation": "manyToMany",
       "target": "api::service-flow.service-flow",
-      "inversedBy": "sites"
+      "mappedBy": "site"
     },
     "theme": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::theme.theme",
       "inversedBy": "sites"
     }

@@ -17,6 +17,12 @@
       "target": "api::service.service",
       "inversedBy": "service_flows"
     },
+     "site": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::site.site",
+      "inversedBy": "service_flows"
+    },
     "enable": {
       "type": "boolean"
     },
@@ -30,15 +36,9 @@
     },
     "service_theme": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::service-theme.service-theme",
-      "inversedBy": "service_flows"
-    },
-    "sites": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::site.site",
-      "mappedBy": "service_flows"
+      "inversedBy": "service_flow"
     }
   }
 }
