@@ -29,15 +29,15 @@
       "target": "api::side-navbar.side-navbar",
       "mappedBy": "site"
     },
-    "service_flow": {
+    "service_flows": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::service-flow.service-flow",
       "mappedBy": "site"
     },
     "theme": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::theme.theme",
       "inversedBy": "sites"
     }

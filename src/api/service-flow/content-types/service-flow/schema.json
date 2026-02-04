@@ -36,9 +36,9 @@
     },
     "service_theme": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::service-theme.service-theme",
-      "inversedBy": "service_flow"
+      "inversedBy": "service_flows"
     }
   }
 }

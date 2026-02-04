@@ -519,12 +519,12 @@ export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    service: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
+    service: Schema.Attribute.Relation<'manyToOne', 'api::service.service'>;
     service_theme: Schema.Attribute.Relation<
       'manyToOne',
       'api::service-theme.service-theme'
     >;
-    sites: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
     steps: Schema.Attribute.Component<'pwa.flow-step', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -656,8 +656,8 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    service_flow: Schema.Attribute.Relation<
-      'manyToOne',
+    service_flows: Schema.Attribute.Relation<
+      'oneToMany',
       'api::service-flow.service-flow'
     >;
     side_navbars: Schema.Attribute.Relation<
@@ -665,7 +665,7 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'api::side-navbar.side-navbar'
     >;
     slug: Schema.Attribute.String;
-    theme: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'>;
+    theme: Schema.Attribute.Relation<'manyToOne', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -715,7 +715,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    sites: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     text_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
