@@ -186,6 +186,22 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaButton extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_buttons';
+  info: {
+    displayName: 'button';
+    icon: 'layout';
+  };
+  attributes: {
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    icon_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    text_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaFlowStep extends Struct.ComponentSchema {
   collectionName: 'components_pwa_flow_steps';
   info: {
@@ -198,6 +214,48 @@ export interface PwaFlowStep extends Struct.ComponentSchema {
       ['intro', 'symptoms', 'reason', 'documents', 'schedule', 'confirm']
     >;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface PwaHeader extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_headers';
+  info: {
+    description: '';
+    displayName: 'header';
+    icon: 'layout';
+  };
+  attributes: {
+    highlight_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    primary_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    secondary_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    text_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface PwaInput extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_inputs';
+  info: {
+    description: '';
+    displayName: 'input';
+    icon: 'layout';
+  };
+  attributes: {
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    helper_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    icon_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    label_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    placeholder_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    text_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -214,6 +272,26 @@ export interface PwaSideNavItem extends Struct.ComponentSchema {
     >;
     item_text: Schema.Attribute.String;
     redirect: Schema.Attribute.String;
+  };
+}
+
+export interface PwaSplash extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_splashes';
+  info: {
+    description: '';
+    displayName: 'splash';
+    icon: 'layout';
+  };
+  attributes: {
+    bg_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    cta: Schema.Attribute.Component<'pwa.button', false>;
+    heading_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    subheading_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    text_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -547,8 +625,12 @@ declare module '@strapi/strapi' {
       'labs.labs-tag': LabsLabsTag;
       'labs.main-section': LabsMainSection;
       'navbar.nav-item': NavbarNavItem;
+      'pwa.button': PwaButton;
       'pwa.flow-step': PwaFlowStep;
+      'pwa.header': PwaHeader;
+      'pwa.input': PwaInput;
       'pwa.side-nav-item': PwaSideNavItem;
+      'pwa.splash': PwaSplash;
       'webpage.app-block': WebpageAppBlock;
       'webpage.award': WebpageAward;
       'webpage.button': WebpageButton;

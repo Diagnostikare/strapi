@@ -700,23 +700,40 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta_button: Schema.Attribute.Component<'pwa.button', false>;
+    dangerous_button: Schema.Attribute.Component<'pwa.button', false>;
+    disabled_button: Schema.Attribute.Component<'pwa.button', false>;
     error_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     footer_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    header: Schema.Attribute.Component<'pwa.header', false>;
     highlight_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    input_active: Schema.Attribute.Component<'pwa.input', false>;
+    input_default: Schema.Attribute.Component<'pwa.input', false>;
+    input_disabled: Schema.Attribute.Component<'pwa.input', false>;
+    input_error: Schema.Attribute.Component<'pwa.input', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    outline_button: Schema.Attribute.Component<'pwa.button', false>;
+    primary_button: Schema.Attribute.Component<'pwa.button', false>;
     primary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    progressbar_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     publishedAt: Schema.Attribute.DateTime;
+    secondary_bottom: Schema.Attribute.Component<'pwa.button', false>;
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     sites: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    splash: Schema.Attribute.Component<'pwa.splash', false>;
+    splash_title_color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    tertiary_button: Schema.Attribute.Component<'pwa.button', false>;
     text_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     updatedAt: Schema.Attribute.DateTime;

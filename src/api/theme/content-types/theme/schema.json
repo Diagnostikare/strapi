@@ -88,6 +88,81 @@
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "customField": "plugin::color-picker.color"
+    },
+    "splash_title_color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "progressbar_color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    },
+    "primary_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "secondary_bottom": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "tertiary_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "cta_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "dangerous_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "outline_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "disabled_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "splash": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.splash"
+    },
+    "input_default": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "input_active": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "input_error": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "input_disabled": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
     }
   }
 }
