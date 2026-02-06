@@ -495,6 +495,116 @@ export interface ApiPrincipalNavbarPrincipalNavbar
   };
 }
 
+export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
+  collectionName: 'service_flows';
+  info: {
+    description: '';
+    displayName: 'ServiceFlow';
+    pluralName: 'service-flows';
+    singularName: 'service-flow';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enable: Schema.Attribute.Boolean;
+    headerTitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-flow.service-flow'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    service: Schema.Attribute.Relation<'manyToOne', 'api::service.service'>;
+    service_theme: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::service-theme.service-theme'
+    >;
+    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    steps: Schema.Attribute.Component<'pwa.flow-step', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceThemeServiceTheme
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'service_themes';
+  info: {
+    displayName: 'serviceTheme';
+    pluralName: 'service-themes';
+    singularName: 'service-theme';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bannerBg: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    buttonColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    buttonHighlight: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    buttonText: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-theme.service-theme'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    service_flows: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-flow.service-flow'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Struct.CollectionTypeSchema {
+  collectionName: 'services';
+  info: {
+    displayName: 'Service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service.service'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    service_flows: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-flow.service-flow'
+    >;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSideNavbarSideNavbar extends Struct.CollectionTypeSchema {
   collectionName: 'side_navbars';
   info: {
@@ -546,6 +656,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    service_flows: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-flow.service-flow'
+    >;
     side_navbars: Schema.Attribute.Relation<
       'oneToMany',
       'api::side-navbar.side-navbar'
@@ -1202,6 +1316,9 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::lab.lab': ApiLabLab;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
+      'api::service-flow.service-flow': ApiServiceFlowServiceFlow;
+      'api::service-theme.service-theme': ApiServiceThemeServiceTheme;
+      'api::service.service': ApiServiceService;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
       'api::theme.theme': ApiThemeTheme;

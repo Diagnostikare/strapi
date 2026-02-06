@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_themes",
+  "info": {
+    "singularName": "service-theme",
+    "pluralName": "service-themes",
+    "displayName": "serviceTheme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "buttonColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "buttonText": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "bannerBg": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "buttonHighlight": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "service_flows": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service-flow.service-flow",
+      "mappedBy": "service_theme"
+    }
+  }
+}

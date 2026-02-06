@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_flows",
+  "info": {
+    "singularName": "service-flow",
+    "pluralName": "service-flows",
+    "displayName": "ServiceFlow",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "service_flows"
+    },
+    "site": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::site.site",
+      "inversedBy": "service_flows"
+    },
+    "enable": {
+      "type": "boolean"
+    },
+    "headerTitle": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.flow-step"
+    },
+    "service_theme": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service-theme.service-theme",
+      "inversedBy": "service_flows"
+    }
+  }
+}
