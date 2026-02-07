@@ -665,7 +665,7 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'api::side-navbar.side-navbar'
     >;
     slug: Schema.Attribute.String;
-    themes: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'>;
+    theme: Schema.Attribute.Relation<'manyToOne', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -715,7 +715,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    sites: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     text_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;

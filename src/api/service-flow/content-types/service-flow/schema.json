@@ -17,7 +17,7 @@
       "target": "api::service.service",
       "inversedBy": "service_flows"
     },
-    "site": {
+     "site": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::site.site",
