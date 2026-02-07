@@ -50,9 +50,9 @@
     },
     "sites": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::site.site",
-      "inversedBy": "themes"
+      "mappedBy": "theme"
     },
     "highlight_color": {
       "type": "customField",

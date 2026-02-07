@@ -524,7 +524,7 @@ export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::service-theme.service-theme'
     >;
-    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     steps: Schema.Attribute.Component<'pwa.flow-step', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -628,7 +628,7 @@ export interface ApiSideNavbarSideNavbar extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -657,15 +657,15 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     service_flows: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::service-flow.service-flow'
     >;
-    side_navbars: Schema.Attribute.Relation<
-      'oneToMany',
+    side_navbar: Schema.Attribute.Relation<
+      'manyToOne',
       'api::side-navbar.side-navbar'
     >;
     slug: Schema.Attribute.String;
-    themes: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'>;
+    theme: Schema.Attribute.Relation<'manyToOne', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -728,7 +728,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     secondary_bottom: Schema.Attribute.Component<'pwa.button', false>;
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    sites: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     splash: Schema.Attribute.Component<'pwa.splash', false>;
     splash_title_color: Schema.Attribute.String &
