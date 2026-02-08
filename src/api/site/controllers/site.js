@@ -15,7 +15,7 @@ module.exports = createCoreController('api::site.site', ({ strapi }) => ({
           populate: {
             logo: true,
             primaryButton: true,
-            secondaryBottom: true,
+            secondaryButton: true,
             tertiaryButton: true,
             ctaButton: true,
             dangerButton: true,
