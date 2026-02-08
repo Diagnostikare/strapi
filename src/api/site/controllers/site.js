@@ -14,7 +14,6 @@ module.exports = createCoreController('api::site.site', ({ strapi }) => ({
         themes: {
           populate: {
             logo: true,
-            header: true,
             primary_button: true,
             secondary_bottom: true,
             tertiary_button: true,
@@ -22,14 +21,19 @@ module.exports = createCoreController('api::site.site', ({ strapi }) => ({
             dangerous_button: true,
             outline_button: true,
             disabled_button: true,
-            splash: {
-              populate: '*', // incluye cta (pwa.button) dentro de splash
-            },
             input_default: true,
             input_active: true,
             input_error: true,
             input_disabled: true,
-            wizard: true,
+            header: {
+              populate: '*',
+            },
+            splash: {
+              populate: '*',
+            },
+            wizard: {
+              populate: '*',
+            }
           },
         },
       },
