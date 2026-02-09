@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@chartbrew/plugin-strapi": "^2.0.1",
-    "@strapi/plugin-color-picker": "^5.23.4",
-    "@strapi/plugin-graphql": "^5.11.3",
+    "@strapi/plugin-color-picker": "5.11.0",
+    "@strapi/plugin-graphql": "5.11.0",
     "@strapi/plugin-users-permissions": "5.11.0",
     "@strapi/provider-upload-local": "5.11.0",
     "@strapi/strapi": "5.11.0",
@@ -33,6 +33,9 @@
   "engines": {
     "node": ">=20.0.0 <=22.x.x",
     "npm": ">=6.0.0"
+  },
+  "resolutions": {
+    "@strapi/design-system": "2.0.0-rc.18"
   },
   "strapi": {
     "uuid": "ae97edc3-b9a5-4000-bd34-43b102ca9a04"
