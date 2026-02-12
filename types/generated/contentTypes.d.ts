@@ -495,6 +495,46 @@ export interface ApiPrincipalNavbarPrincipalNavbar
   };
 }
 
+export interface ApiPrivacyPrivacy extends Struct.CollectionTypeSchema {
+  collectionName: 'privacies';
+  info: {
+    description: '';
+    displayName: 'Privacy';
+    pluralName: 'privacies';
+    singularName: 'privacy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::rich-text-blocks-extended.rich-text-blocks-extended',
+        {
+          customColorsPresets: 'Primaru:#003B1F\nSecondary:#00AF76\nText:#4A4A4A';
+          customFontsPresets: 'Nunito Sans:nunito-sans';
+          disableDefaultColors: true;
+          disableDefaultFonts: true;
+        }
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy.privacy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
   collectionName: 'service_flows';
   info: {
@@ -670,6 +710,41 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiTermsPageTermsPage extends Struct.CollectionTypeSchema {
+  collectionName: 'terms_pages';
+  info: {
+    description: '';
+    displayName: 'TermsPage';
+    pluralName: 'terms-pages';
+    singularName: 'terms-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.Component<'pwa.terms-ui-text', true>;
+    content: Schema.Attribute.Component<'pwa.terms-content', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    definitions: Schema.Attribute.Component<'pwa.terms-definitions', true>;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-page.terms-page'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1316,11 +1391,13 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::lab.lab': ApiLabLab;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
+      'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::service-flow.service-flow': ApiServiceFlowServiceFlow;
       'api::service-theme.service-theme': ApiServiceThemeServiceTheme;
       'api::service.service': ApiServiceService;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
+      'api::terms-page.terms-page': ApiTermsPageTermsPage;
       'api::theme.theme': ApiThemeTheme;
       'api::webpage.webpage': ApiWebpageWebpage;
       'api::website.website': ApiWebsiteWebsite;
