@@ -217,6 +217,40 @@ export interface PwaSideNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaTermsContent extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_terms_contents';
+  info: {
+    description: '';
+    displayName: 'TermsContent';
+  };
+  attributes: {
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface PwaTermsDefinitions extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_terms_definitions';
+  info: {
+    displayName: 'TermsDefinitions';
+  };
+  attributes: {
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface PwaTermsUiText extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_terms_ui_texts';
+  info: {
+    description: '';
+    displayName: 'TermsUiText';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+  };
+}
+
 export interface WebpageAppBlock extends Struct.ComponentSchema {
   collectionName: 'components_webpage_app_blocks';
   info: {
@@ -549,6 +583,9 @@ declare module '@strapi/strapi' {
       'navbar.nav-item': NavbarNavItem;
       'pwa.flow-step': PwaFlowStep;
       'pwa.side-nav-item': PwaSideNavItem;
+      'pwa.terms-content': PwaTermsContent;
+      'pwa.terms-definitions': PwaTermsDefinitions;
+      'pwa.terms-ui-text': PwaTermsUiText;
       'webpage.app-block': WebpageAppBlock;
       'webpage.award': WebpageAward;
       'webpage.button': WebpageButton;
