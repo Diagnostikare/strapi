@@ -868,7 +868,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     selectedPillButton: Schema.Attribute.Component<'pwa.button', false>;
     sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
-    spash: Schema.Attribute.Component<'pwa.splash', false>;
+    splash: Schema.Attribute.Component<'pwa.splash', false>;
     tertiaryButton: Schema.Attribute.Component<'pwa.button', false>;
     text_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
