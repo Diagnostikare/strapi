@@ -202,6 +202,18 @@ export interface PwaButton extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaFaqs extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_faqs';
+  info: {
+    displayName: 'faqs';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+    faq_id: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PwaFlowStep extends Struct.ComponentSchema {
   collectionName: 'components_pwa_flow_steps';
   info: {
@@ -713,6 +725,7 @@ declare module '@strapi/strapi' {
       'labs.main-section': LabsMainSection;
       'navbar.nav-item': NavbarNavItem;
       'pwa.button': PwaButton;
+      'pwa.faqs': PwaFaqs;
       'pwa.flow-step': PwaFlowStep;
       'pwa.header': PwaHeader;
       'pwa.home': PwaHome;
