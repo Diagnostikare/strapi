@@ -809,28 +809,46 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ctaButton: Schema.Attribute.Component<'pwa.button', false>;
+    dangerButton: Schema.Attribute.Component<'pwa.button', false>;
+    defaultInput: Schema.Attribute.Component<'pwa.input', false>;
+    defaultPillButton: Schema.Attribute.Component<'pwa.button', false>;
+    disabledButton: Schema.Attribute.Component<'pwa.button', false>;
+    disabledInput: Schema.Attribute.Component<'pwa.input', false>;
     error_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    errorInput: Schema.Attribute.Component<'pwa.input', false>;
+    focusInput: Schema.Attribute.Component<'pwa.input', false>;
     footer_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    header: Schema.Attribute.Component<'pwa.header', false>;
     highlight_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    home: Schema.Attribute.Component<'pwa.home', false>;
+    link: Schema.Attribute.Component<'pwa.button', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    outlineButton: Schema.Attribute.Component<'pwa.button', false>;
     primary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    primaryButton: Schema.Attribute.Component<'pwa.button', false>;
     publishedAt: Schema.Attribute.DateTime;
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    secondaryButton: Schema.Attribute.Component<'pwa.button', false>;
+    selectedPillButton: Schema.Attribute.Component<'pwa.button', false>;
     sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    spash: Schema.Attribute.Component<'pwa.splash', false>;
+    tertiaryButton: Schema.Attribute.Component<'pwa.button', false>;
     text_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    wizard: Schema.Attribute.Component<'pwa.wizard', false>;
   };
 }
 

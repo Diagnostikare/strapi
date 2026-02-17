@@ -186,6 +186,22 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaButton extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_buttons';
+  info: {
+    description: '';
+    displayName: 'button';
+  };
+  attributes: {
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    iconColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaFlowStep extends Struct.ComponentSchema {
   collectionName: 'components_pwa_flow_steps';
   info: {
@@ -198,6 +214,78 @@ export interface PwaFlowStep extends Struct.ComponentSchema {
       ['intro', 'symptoms', 'reason', 'documents', 'schedule', 'confirm']
     >;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface PwaHeader extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_headers';
+  info: {
+    displayName: 'header';
+    icon: 'layout';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button: Schema.Attribute.Component<'pwa.button', false>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface PwaHome extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_homes';
+  info: {
+    displayName: 'home';
+    icon: 'layout';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    headingColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    serviceCardOne: Schema.Attribute.Component<'pwa.service-card', false>;
+    serviceCardTwo: Schema.Attribute.Component<'pwa.service-card', false>;
+    subheadingColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface PwaInput extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_inputs';
+  info: {
+    displayName: 'input';
+  };
+  attributes: {
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    endContentColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    helperColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    iconColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    labelColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    placeholderColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface PwaServiceCard extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_service_cards';
+  info: {
+    displayName: 'serviceCard';
+    icon: 'layout';
+  };
+  attributes: {
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -214,6 +302,25 @@ export interface PwaSideNavItem extends Struct.ComponentSchema {
     >;
     item_text: Schema.Attribute.String;
     redirect: Schema.Attribute.String;
+  };
+}
+
+export interface PwaSplash extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_splashes';
+  info: {
+    displayName: 'splash';
+    icon: 'layout';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button: Schema.Attribute.Component<'pwa.button', false>;
+    headingColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    subheadingColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -248,6 +355,30 @@ export interface PwaTermsUiText extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.RichText;
+  };
+}
+
+export interface PwaWizard extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_wizards';
+  info: {
+    displayName: 'wizard';
+    icon: 'layout';
+  };
+  attributes: {
+    headingColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    nextButton: Schema.Attribute.Component<'pwa.button', false>;
+    prevButton: Schema.Attribute.Component<'pwa.button', false>;
+    progressbarColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    subheadingColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    successIcon: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    termsColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -581,11 +712,18 @@ declare module '@strapi/strapi' {
       'labs.labs-tag': LabsLabsTag;
       'labs.main-section': LabsMainSection;
       'navbar.nav-item': NavbarNavItem;
+      'pwa.button': PwaButton;
       'pwa.flow-step': PwaFlowStep;
+      'pwa.header': PwaHeader;
+      'pwa.home': PwaHome;
+      'pwa.input': PwaInput;
+      'pwa.service-card': PwaServiceCard;
       'pwa.side-nav-item': PwaSideNavItem;
+      'pwa.splash': PwaSplash;
       'pwa.terms-content': PwaTermsContent;
       'pwa.terms-definitions': PwaTermsDefinitions;
       'pwa.terms-ui-text': PwaTermsUiText;
+      'pwa.wizard': PwaWizard;
       'webpage.app-block': WebpageAppBlock;
       'webpage.award': WebpageAward;
       'webpage.button': WebpageButton;

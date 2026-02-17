@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_pwa_homes",
+  "info": {
+    "displayName": "home",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "headingColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "subheadingColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "bgColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "serviceCardOne": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.service-card"
+    },
+    "serviceCardTwo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.service-card"
+    }
+  }
+}

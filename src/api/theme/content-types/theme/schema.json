@@ -88,6 +88,96 @@
       "relation": "manyToMany",
       "target": "api::site.site",
       "inversedBy": "themes"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    },
+    "spash": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.splash"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "tertiaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "outlineButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "dangerButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "disabledButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "defaultPillButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "selectedPillButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "defaultInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "focusInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "errorInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "disabledInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "wizard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.wizard"
+    },
+    "home": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.home"
     }
   }
 }
