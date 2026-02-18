@@ -320,6 +320,7 @@ export interface PwaSideNavItem extends Struct.ComponentSchema {
 export interface PwaSplash extends Struct.ComponentSchema {
   collectionName: 'components_pwa_splashes';
   info: {
+    description: '';
     displayName: 'splash';
     icon: 'layout';
   };
@@ -327,6 +328,8 @@ export interface PwaSplash extends Struct.ComponentSchema {
     bgColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     button: Schema.Attribute.Component<'pwa.button', false>;
+    footerColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     headingColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     subheadingColor: Schema.Attribute.String &
