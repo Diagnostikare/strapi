@@ -1,56 +1,46 @@
 'use strict';
 
-const { autoMigrateSchema } = require('../database/migrations/auto-migrate');
 const { runMigrations } = require('../database/migrations/run-migrations');
 
 module.exports = {
   /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
+   * Se ejecuta ANTES de la inicialización de Strapi
+   * En Strapi v5, aquí NO hay acceso a la BD aún
    */
-  register(/*{ strapi }*/) {},
+  register(/* { strapi } */) {
+    // Nota: register() se ejecuta antes de que Strapi conecte a la BD
+    // por lo tanto, no podemos ejecutar migraciones aquí
+  },
 
   /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
+   * Se ejecuta DESPUÉS de que Strapi inicializó y sincronizó el schema
+   * 
+   * IMPORTANTE: En Strapi v5, el schema sync ocurre ANTES de bootstrap()
+   * Por lo tanto, este sistema solo maneja:
+   * 1. Migraciones de DATOS (transformaciones, cálculos, etc.)
+   * 2. NO puede prevenir errores de schema NOT NULL
+   * 
+   * Para prevenir errores de NOT NULL al añadir campos:
+   * - Define `default` en tu schema.json
+   * - O usa migraciones manuales para añadir con ALTER TABLE
    */
   async bootstrap({ strapi }) {
-    console.log('\n🚀 Iniciando Strapi con auto-migración inteligente...\n');
+    console.log('\n🚀 Strapi iniciado - Ejecutando migraciones...\n');
     
     try {
-      // PASO 1: AUTO-MIGRACIÓN (Detecta cambios automáticamente)
-      console.log('═══════════════════════════════════════════════');
-      console.log('  PASO 1: Detección automática de cambios');
-      console.log('═══════════════════════════════════════════════\n');
-      
-      await autoMigrateSchema(strapi);
-      
-      // PASO 2: MIGRACIONES MANUALES (Si las creaste)
-      console.log('═══════════════════════════════════════════════');
-      console.log('  PASO 2: Migraciones manuales (opcional)');
-      console.log('═══════════════════════════════════════════════\n');
-      
       const migrationStats = await runMigrations(strapi);
       
-      if (migrationStats.executed === 0 && migrationStats.skipped === 0) {
-        console.log('⊘ No hay migraciones manuales\n');
+      if (migrationStats.total === 0) {
+        console.log('⊘ No hay migraciones pendientes\n');
+      } else {
+        console.log(`✅ ${migrationStats.executed} migraciones ejecutadas\n`);
       }
       
-      console.log('═══════════════════════════════════════════════');
-      console.log('✅ Sistema de migraciones listo');
-      console.log('═══════════════════════════════════════════════\n');
-      
     } catch (error) {
-      console.error('\n⚠️  Error en el sistema de migraciones:', error.message);
-      console.warn('⚠️  El servidor continuará funcionando...\n');
-      // No lanzar el error para permitir que el servidor inicie
+      console.error('\n⚠️  Error en migraciones:', error.message);
+      console.warn('⚠️  El servidor continuará...\n');
     }
     
-    console.log('✓ Strapi iniciado correctamente\n');
+    console.log('✓ Strapi listo\n');
   },
 };

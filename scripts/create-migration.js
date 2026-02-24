@@ -59,7 +59,7 @@ module.exports = {
         ''                    // ← Valor por defecto
       );
 
-      // MÁS EJEMPLOS EN: database/migrations/GUIA-REFERENCIA-RAPIDA.md
+      // Ver más ejemplos en: database/migrations/README.md
       
       console.log('✅ Migración ${migrationName} completada');
     } catch (error) {
@@ -101,7 +101,7 @@ try {
   console.log('   2. Prueba con: npm run dev');
   console.log('   3. Si funciona, haz commit y merge\n');
   console.log('📖 Documentación: database/migrations/README.md');
-  console.log('💡 Tip: Para cambios simples, el sistema AUTO-MIGRACIÓN ya lo hace por ti\n');
+  console.log('💡 Tip: Para casos simples, define `default` en tu schema.json\n');
 } catch (error) {
   console.error('❌ Error al crear el archivo:', error.message);
   process.exit(1);

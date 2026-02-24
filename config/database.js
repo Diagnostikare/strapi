@@ -22,8 +22,7 @@ module.exports = ({ env }) => ({
     useNullAsDefault: true,
   },
   settings: {
-    // Permitir que Strapi sincronice el schema automáticamente
-    // pero nuestro sistema aplicará valores por defecto antes
+    // Configuración de migraciones de Strapi
     forceMigration: env.bool('FORCE_MIGRATION', true),
     runMigrations: env.bool('RUN_MIGRATIONS', true),
   },

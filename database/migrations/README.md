@@ -1,79 +1,80 @@
-# 🔄 Sistema de Migraciones Automáticas
+# 🔄 Sistema de Migraciones para Strapi v5
 
-## 🤖 ¿Qué Hace?
+**Opción 1: Define `default` en tus schemas** (Recomendado)
 
-Este sistema **detecta automáticamente** cambios en tus content-types de Strapi y aplica valores por defecto seguros. **No necesitas escribir código** para la mayoría de los casos.
+Cuando añades un campo requerido, define el valor por defecto en el `schema.json`:
+
+```json
+{
+  "attributes": {
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "default": "draft"
+    }
+  }
+}
+```
+
+Strapi aplicará estos defaults automáticamente al sincronizar.
+
+**Opción 2: Usa migraciones manuales**
+
+Para transformaciones complejas o cuando no puedes usar defaults en schema.
 
 ---
 
-## ✨ Funcionamiento Automático
+## 🚀 Workflow Recomendado
 
-### Cuando modificas un content-type en Strapi:
-
-1. **El sistema detecta** el cambio al iniciar
-2. **Aplica valores por defecto** según el tipo de campo
-3. **Strapi continúa** sin errores
-4. **Deploy exitoso** en Railway
-
-### Valores por defecto aplicados:
-
-| Tipo | Valor por Defecto | Si es Required |
-|------|-------------------|----------------|
-| String/Text | `null` | `''` (vacío) |
-| Integer/Float | `null` | `0` |
-| Boolean | `null` | `false` |
-| Date/DateTime | `null` | `null` |
-| JSON | `null` | `{}` |
-| Enum | `null` | Primer valor |
-
----
-
-## 🚀 Uso Normal (Sin Hacer Nada)
-
-### 1. Modificas en Strapi Admin:
+### 1. Añadir campo en Strapi Admin:
 ```
 Content-Type Builder → Blog → Add Field
 → Boolean: "is_featured"
 → Required: Yes
-→ Save
 ```
 
-### 2. Commit y Push:
+### 2. Definir default en el schema.json generado:
+```json
+// src/api/blog/content-types/blog/schema.json
+{
+  "attributes": {
+    "is_featured": {
+      "type": "boolean",
+      "default": false,  // ← Añade esto
+      "required": true  
+    }
+  }
+}
+```
+
+### 3. Commit y Push:
 ```bash
-git add src/api/*/content-types/
-git commit -m "feat: add is_featured field"
+git add src/api/blog/content-types/
+git commit -m "feat: add is_featured with default"
 git push
 ```
 
-### 3. Merge a develop:
-```bash
-# Railway detecta el cambio y ejecuta automáticamente
+### 4. Railway ejecuta automáticamente:
+```
+✅ Strapi sincroniza schema
+✅ Aplica default: false a registros existentes
+✅ Deploy exitoso
 ```
 
-### 4. Al iniciar verás:
-```
-╔════════════════════════════════════════════╗
-║   🤖 AUTO-MIGRACIÓN INTELIGENTE          ║
-╚════════════════════════════════════════════╝
-
-🔍 Analizando: api::blog.blog (blogs)
-   → Campo nuevo: 'is_featured' (requerido)
-   ⚡ Aplicando valor por defecto a 42 registros...
-   ✓ Registros actualizados con: false
-
-✅ Valores por defecto aplicados
-✓ Strapi iniciado correctamente
-```
-
-**¡Listo!** No hiciste nada más.
+**¡Listo!** Strapi lo maneja automáticamente.
 
 ---
 
-## 📝 Migraciones Manuales (Casos Avanzados)
+## 📝 Migraciones Manuales (Cuando las Necesitas)
 
-Úsalas **solo** si necesitas lógica compleja que el sistema automático no puede manejar:
-- Calcular valores basados en otros campos
-- Transformar datos existentes
+Úsalas cuando:
+- Necesitas calcular valores basados en otros campos
+- Transformar datos existentes de forma compleja
+- NO puedes usar `default` en el schema
 - Operaciones en múltiples tablas
 
 ### Crear migración manual:
@@ -155,23 +156,22 @@ SELECT * FROM strapi_migrations_custom ORDER BY executed_at DESC;
 
 ## 📋 Resumen
 
-### ✅ El sistema hace automáticamente:
-- Detectar campos nuevos en content-types
-- Aplicar valores por defecto inteligentes
-- Actualizar registros existentes
-- Prevenir errores en deployment
+### ✅ Para campos simples (Recomendado):
+1. Añade `"default": valor` en tu schema.json
+2. Strapi aplica el default automáticamente
+3. ❌ **NO** intentes ejecutar código antes del schema sync
 
-### ❌ No necesitas:
-- Escribir SQL manualmente
-- Crear migraciones para cambios simples
-- Configurar nada en Railway
-- Detener el servidor
+### 🔧 Para transformaciones complejas:
+1. Crea una migración manual: `npm run migration:create nombre`
+2. Implementa la lógica en el archivo generado
+3. Se ejecuta en `bootstrap()` (después de schema sync)
+4. Útil para: cálculos, transformaciones, datos derivados
 
-### 🎯 Solo creas migraciones manuales si necesitas:
-- Lógica de negocio compleja
-- Cálculos basados en otros campos
-- Transformaciones de datos
+### ⚠️ Limitación de Strapi v5:
+- `bootstrap()` se ejecuta DESPUÉS del schema sync
+- NO puedes prevenir errores de NOT NULL dinámicamente
+- **Solución**: Usa `default` en schemas o migraciones SQL directas
 
 ---
 
-**Sistema listo**. Modifica tus content-types y deja que el sistema haga el resto. 🚀
+**Sistema configurado**. Usa defaults en schemas para casos simples. 🚀

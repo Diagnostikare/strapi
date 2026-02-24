@@ -1,20 +1,23 @@
 #!/usr/bin/env node
 
 /**
- * Script de prueba para el sistema de auto-migración
+ * Script de prueba para el sistema de migraciones Strapi v5
  * Verifica que todo esté configurado correctamente
  */
 
 const fs = require('fs');
 const path = require('path');
 
+console.log('\n╔════════════════════════════════════════════╗');
+console.log('║  🧪 TEST: Sistema de Migraciones v5      ║');
+console.log('╚════════════════════════════════════════════╝\n');
+
 let allPassed = true;
 
 // Test 1: Verificar archivos principales
-console.log('Test 1: Verificando archivos...');
+console.log('📂 Test 1: Verificando archivos...');
 
 const requiredFiles = [
-  'database/migrations/auto-migrate.js',
   'database/migrations/run-migrations.js',
   'database/migrations/utils/migration-helper.js',
   'src/index.js',
@@ -24,39 +27,18 @@ const requiredFiles = [
 for (const file of requiredFiles) {
   const filePath = path.join(__dirname, '..', file);
   if (fs.existsSync(filePath)) {
-    console.log(`✓ ${file}`);
+    console.log(`   ✓ ${file}`);
   } else {
-    console.log(`✗ ${file} - NO ENCONTRADO`);
+    console.log(`   ✗ ${file} - NO ENCONTRADO`);
     allPassed = false;
   }
 }
 
-// Test 2: Verificar que auto-migrate.js tiene las funciones correctas
-console.log('Test 2: Verificando funciones de auto-migración...');
+// Test 2: Verificar migration-helper.js
+console.log('\n🛠️  Test 2: Verificando helper de migraciones...');
 
-try {
-  const autoMigrate = require(path.join(__dirname, '..', 'database/migrations/auto-migrate.js'));
-  
-  if (typeof autoMigrate.autoMigrateSchema === 'function') {
-    console.log('✓ autoMigrateSchema() existe');
-  } else {
-    console.log('✗ autoMigrateSchema() no encontrada');
-    allPassed = false;
-  }
-  
-  if (typeof autoMigrate.getDefaultValueForType === 'function') {
-    console.log('✓ getDefaultValueForType() existe');
-  } else {
-    console.log('✗ getDefaultValueForType() no encontrada');
-    allPassed = false;
-  }
-} catch (error) {
-  console.log(`✗ Error al cargar auto-migrate.js: ${error.message}`);
-  allPassed = false;
-}
-
-// Test 3: Verificar migration-helper.js
-console.log('Test 3: Verificando helper de migraciones...');
+// Test 2: Verificar migration-helper.js
+console.log('\n🛠️  Test 2: Verificando helper de migraciones...');
 
 try {
   const helper = require(path.join(__dirname, '..', 'database/migrations/utils/migration-helper.js'));
@@ -72,106 +54,77 @@ try {
   
   for (const funcName of expectedFunctions) {
     if (typeof helper[funcName] === 'function') {
-      console.log(`✓ ${funcName}()`);
+      console.log(`   ✓ ${funcName}()`);
     } else {
-      console.log(`✗ ${funcName}() no encontrada`);
+      console.log(`   ✗ ${funcName}() no encontrada`);
       allPassed = false;
     }
   }
 } catch (error) {
-  console.log(`✗ Error al cargar migration-helper.js: ${error.message}`);
+  console.log(`   ✗ Error al cargar migration-helper.js: ${error.message}`);
   allPassed = false;
 }
 
-// Test 4: Verificar src/index.js
-console.log('Test 4: Verificando bootstrap de Strapi...');
+// Test 3: Verificar src/index.js
+console.log('\n⚡ Test 3: Verificando bootstrap de Strapi...');
 
 try {
   const indexPath = path.join(__dirname, '..', 'src/index.js');
   const indexContent = fs.readFileSync(indexPath, 'utf8');
   
-  if (indexContent.includes('autoMigrateSchema')) {
-    console.log('✓ autoMigrateSchema importado en src/index.js');
+  if (indexContent.includes('runMigrations')) {
+    console.log('   ✓ runMigrations importado en src/index.js');
   } else {
-    console.log('✗ autoMigrateSchema NO encontrado en src/index.js');
+    console.log('   ✗ runMigrations NO encontrado en src/index.js');
     allPassed = false;
   }
   
   if (indexContent.includes('bootstrap')) {
-    console.log('✓ Función bootstrap configurada');
+    console.log('   ✓ Función bootstrap configurada');
   } else {
-    console.log('✗ Función bootstrap no encontrada');
+    console.log('   ✗ Función bootstrap no encontrada');
     allPassed = false;
   }
 } catch (error) {
-  console.log(`✗ Error al leer src/index.js: ${error.message}`);
+  console.log(`   ✗ Error al leer src/index.js: ${error.message}`);
   allPassed = false;
 }
 
-// Test 5: Verificar package.json
-console.log('Test 5: Verificando scripts npm...');
+// Test 4: Verificar package.json
+console.log('\n📦 Test 4: Verificando scripts npm...');
 
 try {
   const packageJson = require(path.join(__dirname, '..', 'package.json'));
   
   if (packageJson.scripts['migration:create']) {
-    console.log('✓ Script "migration:create" disponible');
+    console.log('   ✓ Script "migration:create" disponible');
   } else {
-    console.log('⊘ Script "migration:create" no encontrado (opcional)');
+    console.log('   ⊘ Script "migration:create" no encontrado (opcional)');
   }
 } catch (error) {
-  console.log(`✗ Error al leer package.json: ${error.message}`);
-}
-
-// Test 6: Test de la función getDefaultValueForType
-console.log('Test 6: Probando generación de valores por defecto...');
-
-try {
-  const { getDefaultValueForType } = require(path.join(__dirname, '..', 'database/migrations/auto-migrate.js'));
-  
-  const testCases = [
-    { type: 'string', required: true, expected: '' },
-    { type: 'string', required: false, expected: null },
-    { type: 'integer', required: true, expected: 0 },
-    { type: 'boolean', required: true, expected: false },
-    { type: 'json', required: true, expected: {} },
-  ];
-  
-  let testsPassed = 0;
-  for (const test of testCases) {
-    const result = getDefaultValueForType(test);
-    const passed = JSON.stringify(result) === JSON.stringify(test.expected);
-    
-    if (passed) {
-      console.log(`   ✓ ${test.type} (required: ${test.required}) → ${JSON.stringify(result)}`);
-      testsPassed++;
-    } else {
-      console.log(`   ✗ ${test.type} esperado: ${test.expected}, obtenido: ${result}`);
-      allPassed = false;
-    }
-  }
-  
-  console.log(`   ${testsPassed}/${testCases.length} tests pasados`);
-  
-} catch (error) {
-  console.log(`   ✗ Error en pruebas: ${error.message}`);
-  allPassed = false;
+  console.log(`   ✗ Error al leer package.json: ${error.message}`);
 }
 
 // Resumen final
+console.log('\n╔════════════════════════════════════════════╗');
+console.log('║  📊 RESUMEN DE TESTS                      ║');
+console.log('╚════════════════════════════════════════════╝\n');
 
 if (allPassed) {
   console.log('✅ ¡Todos los tests pasaron!\n');
-  console.log('🎉 El sistema de auto-migración está listo para usar.\n');
-  console.log('Próximos pasos:');
-  console.log('  1. Prueba localmente: npm run dev');
-  console.log('  2. Verifica los logs en consola');
-  console.log('  3. Haz commit y push');
-  console.log('  4. ¡Merge a develop y listo!\n');
+  console.log('🎉 El sistema de migraciones está configurado para Strapi v5.\n');
+  console.log('⚠️  IMPORTANTE sobre Strapi v5:');
+  console.log('   - bootstrap() se ejecuta DESPUÉS del schema sync');
+  console.log('   - Define `default` en tus schema.json para campos requeridos');
+  console.log('   - Las migraciones manuales son para transformaciones de datos');
+  console.log('\nPróximos pasos:');
+  console.log('  1. Lee: database/migrations/README.md');
+  console.log('  2. Define defaults en tus schemas cuando añadas campos');
+  console.log('  3. Usa migraciones solo para lógica compleja\n');
   process.exit(0);
 } else {
   console.log('❌ Algunos tests fallaron.\n');
   console.log('Por favor, revisa los errores arriba.');
-  console.log('Documentación: database/migrations/AUTO-MIGRACION.md\n');
+  console.log('Documentación: database/migrations/README.md\n');
   process.exit(1);
 }
