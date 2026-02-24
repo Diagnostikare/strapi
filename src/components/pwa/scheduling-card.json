@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_pwa_service_cards",
+  "collectionName": "components_pwa_scheduling_cards",
   "info": {
-    "displayName": "serviceCard",
-    "icon": "layout",
-    "description": ""
+    "displayName": "schedulingCard",
+    "icon": "layout"
   },
   "options": {},
   "attributes": {
@@ -22,15 +21,10 @@
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "customField": "plugin::color-picker.color"
     },
-    "image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
     }
   }
 }

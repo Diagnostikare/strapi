@@ -2,7 +2,8 @@
   "collectionName": "components_pwa_homes",
   "info": {
     "displayName": "home",
-    "icon": "layout"
+    "icon": "layout",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -30,6 +31,26 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.service-card"
+    },
+    "sectionTitleColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "emergencyButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "schedulingCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.scheduling-card"
+    },
+    "articleCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.article-card"
     }
   }
 }

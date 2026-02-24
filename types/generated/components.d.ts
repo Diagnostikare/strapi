@@ -214,6 +214,25 @@ export interface PwaAccount extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaArticleCard extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_article_cards';
+  info: {
+    displayName: 'articleCard';
+    icon: 'layout';
+  };
+  attributes: {
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    dateColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    tag: Schema.Attribute.Component<'pwa.button', false>;
+    timeColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaButton extends Struct.ComponentSchema {
   collectionName: 'components_pwa_buttons';
   info: {
@@ -308,13 +327,19 @@ export interface PwaHeader extends Struct.ComponentSchema {
 export interface PwaHome extends Struct.ComponentSchema {
   collectionName: 'components_pwa_homes';
   info: {
+    description: '';
     displayName: 'home';
     icon: 'layout';
   };
   attributes: {
+    articleCard: Schema.Attribute.Component<'pwa.article-card', false>;
     bgColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    emergencyButton: Schema.Attribute.Component<'pwa.button', false>;
     headingColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    schedulingCard: Schema.Attribute.Component<'pwa.scheduling-card', false>;
+    sectionTitleColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     serviceCardOne: Schema.Attribute.Component<'pwa.service-card', false>;
     serviceCardTwo: Schema.Attribute.Component<'pwa.service-card', false>;
@@ -364,15 +389,34 @@ export interface PwaOption extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaSchedulingCard extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_scheduling_cards';
+  info: {
+    displayName: 'schedulingCard';
+    icon: 'layout';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'pwa.button', false>;
+    color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaServiceCard extends Struct.ComponentSchema {
   collectionName: 'components_pwa_service_cards';
   info: {
+    description: '';
     displayName: 'serviceCard';
     icon: 'layout';
   };
   attributes: {
     color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     textColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     titleColor: Schema.Attribute.String &
@@ -861,6 +905,7 @@ declare module '@strapi/strapi' {
       'labs.main-section': LabsMainSection;
       'navbar.nav-item': NavbarNavItem;
       'pwa.account': PwaAccount;
+      'pwa.article-card': PwaArticleCard;
       'pwa.button': PwaButton;
       'pwa.chevron-menu': PwaChevronMenu;
       'pwa.faqs': PwaFaqs;
@@ -870,6 +915,7 @@ declare module '@strapi/strapi' {
       'pwa.home': PwaHome;
       'pwa.input': PwaInput;
       'pwa.option': PwaOption;
+      'pwa.scheduling-card': PwaSchedulingCard;
       'pwa.service-card': PwaServiceCard;
       'pwa.side-nav-item': PwaSideNavItem;
       'pwa.splash': PwaSplash;
