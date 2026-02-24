@@ -178,6 +178,11 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.home"
+    },
+    "account": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.account"
     }
   }
 }
