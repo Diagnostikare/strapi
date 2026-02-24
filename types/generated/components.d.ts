@@ -196,12 +196,21 @@ export interface PwaAccount extends Struct.ComponentSchema {
   attributes: {
     avatarColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    chevronMenu: Schema.Attribute.Component<'pwa.chevron-menu', false>;
     dangerOption: Schema.Attribute.Component<'pwa.option', false>;
     defaultOption: Schema.Attribute.Component<'pwa.option', false>;
+    faqs: Schema.Attribute.Component<'pwa.faqs-ui', false>;
+    header: Schema.Attribute.Component<'pwa.header', false>;
+    identityConfirmationImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    support: Schema.Attribute.Component<'pwa.support', false>;
     titleColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     userNameColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    userSupport: Schema.Attribute.Component<'pwa.user-support', false>;
+    wallet: Schema.Attribute.Component<'pwa.wallet', false>;
   };
 }
 
@@ -221,6 +230,19 @@ export interface PwaButton extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaChevronMenu extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_chevron_menus';
+  info: {
+    displayName: 'chevronMenu';
+    icon: 'layout';
+  };
+  attributes: {
+    option: Schema.Attribute.Component<'pwa.option', false>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaFaqs extends Struct.ComponentSchema {
   collectionName: 'components_pwa_faqs';
   info: {
@@ -230,6 +252,26 @@ export interface PwaFaqs extends Struct.ComponentSchema {
     content: Schema.Attribute.Text;
     faq_id: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface PwaFaqsUi extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_faqs_uis';
+  info: {
+    displayName: 'faqsUi';
+    icon: 'layout';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'pwa.button', false>;
+    footerTextColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    footerTitleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    option: Schema.Attribute.Component<'pwa.option', false>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -376,6 +418,19 @@ export interface PwaSplash extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaSupport extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_supports';
+  info: {
+    displayName: 'support';
+    icon: 'layout';
+  };
+  attributes: {
+    option: Schema.Attribute.Component<'pwa.option', false>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaTermsContent extends Struct.ComponentSchema {
   collectionName: 'components_pwa_terms_contents';
   info: {
@@ -407,6 +462,23 @@ export interface PwaTermsUiText extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.RichText;
+  };
+}
+
+export interface PwaUserSupport extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_user_supports';
+  info: {
+    displayName: 'userSupport';
+    icon: 'layout';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'pwa.button', false>;
+    greetingColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -790,7 +862,9 @@ declare module '@strapi/strapi' {
       'navbar.nav-item': NavbarNavItem;
       'pwa.account': PwaAccount;
       'pwa.button': PwaButton;
+      'pwa.chevron-menu': PwaChevronMenu;
       'pwa.faqs': PwaFaqs;
+      'pwa.faqs-ui': PwaFaqsUi;
       'pwa.flow-step': PwaFlowStep;
       'pwa.header': PwaHeader;
       'pwa.home': PwaHome;
@@ -799,9 +873,11 @@ declare module '@strapi/strapi' {
       'pwa.service-card': PwaServiceCard;
       'pwa.side-nav-item': PwaSideNavItem;
       'pwa.splash': PwaSplash;
+      'pwa.support': PwaSupport;
       'pwa.terms-content': PwaTermsContent;
       'pwa.terms-definitions': PwaTermsDefinitions;
       'pwa.terms-ui-text': PwaTermsUiText;
+      'pwa.user-support': PwaUserSupport;
       'pwa.wallet': PwaWallet;
       'pwa.wizard': PwaWizard;
       'webpage.app-block': WebpageAppBlock;

@@ -31,6 +31,46 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.option"
+    },
+    "wallet": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.wallet"
+    },
+    "support": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.support"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.faqs-ui"
+    },
+    "userSupport": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.user-support"
+    },
+    "chevronMenu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.chevron-menu"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    },
+    "identityConfirmationImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
