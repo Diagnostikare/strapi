@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_pwa_terms_contents",
+  "info": {
+    "displayName": "TermsContent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
