@@ -25,7 +25,7 @@
     },
     "themes": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::theme.theme",
       "mappedBy": "sites"
     },
