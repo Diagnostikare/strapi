@@ -183,6 +183,16 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.account"
+    },
+    "feelingBad": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.feeling-bad"
+    },
+    "interview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview"
     }
   }
 }

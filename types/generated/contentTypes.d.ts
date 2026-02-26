@@ -846,6 +846,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     error_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     errorInput: Schema.Attribute.Component<'pwa.input', false>;
+    feelingBad: Schema.Attribute.Component<'pwa.feeling-bad', false>;
     focusInput: Schema.Attribute.Component<'pwa.input', false>;
     footer_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
@@ -853,6 +854,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     highlight_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     home: Schema.Attribute.Component<'pwa.home', false>;
+    interview: Schema.Attribute.Component<'pwa.interview', false>;
     link: Schema.Attribute.Component<'pwa.button', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
