@@ -186,6 +186,18 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaFaqs extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_faqs';
+  info: {
+    displayName: 'faqs';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+    faq_id: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PwaFlowStep extends Struct.ComponentSchema {
   collectionName: 'components_pwa_flow_steps';
   info: {
@@ -214,6 +226,40 @@ export interface PwaSideNavItem extends Struct.ComponentSchema {
     >;
     item_text: Schema.Attribute.String;
     redirect: Schema.Attribute.String;
+  };
+}
+
+export interface PwaTermsContent extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_terms_contents';
+  info: {
+    description: '';
+    displayName: 'TermsContent';
+  };
+  attributes: {
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface PwaTermsDefinitions extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_terms_definitions';
+  info: {
+    displayName: 'TermsDefinitions';
+  };
+  attributes: {
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface PwaTermsUiText extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_terms_ui_texts';
+  info: {
+    description: '';
+    displayName: 'TermsUiText';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
   };
 }
 
@@ -547,8 +593,12 @@ declare module '@strapi/strapi' {
       'labs.labs-tag': LabsLabsTag;
       'labs.main-section': LabsMainSection;
       'navbar.nav-item': NavbarNavItem;
+      'pwa.faqs': PwaFaqs;
       'pwa.flow-step': PwaFlowStep;
       'pwa.side-nav-item': PwaSideNavItem;
+      'pwa.terms-content': PwaTermsContent;
+      'pwa.terms-definitions': PwaTermsDefinitions;
+      'pwa.terms-ui-text': PwaTermsUiText;
       'webpage.app-block': WebpageAppBlock;
       'webpage.award': WebpageAward;
       'webpage.button': WebpageButton;

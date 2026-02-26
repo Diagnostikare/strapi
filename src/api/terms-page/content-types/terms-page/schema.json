@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "terms_pages",
+  "info": {
+    "singularName": "terms-page",
+    "pluralName": "terms-pages",
+    "displayName": "TermsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.terms-content"
+    },
+    "definitions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.terms-definitions"
+    },
+    "sites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::site.site"
+    },
+    "description": {
+      "type": "text"
+    },
+    "body": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.terms-ui-text"
+    }
+  }
+}
