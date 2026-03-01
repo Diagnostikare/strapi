@@ -37,9 +37,9 @@
     },
     "service_flows": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::service-flow.service-flow",
-      "mappedBy": "site"
+      "mappedBy": "sites"
     }
   }
 }
