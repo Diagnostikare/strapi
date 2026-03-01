@@ -621,11 +621,11 @@ export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     service: Schema.Attribute.Relation<'manyToOne', 'api::service.service'>;
-    service_themes: Schema.Attribute.Relation<
-      'manyToMany',
+    service_theme: Schema.Attribute.Relation<
+      'manyToOne',
       'api::service-theme.service-theme'
     >;
-    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     steps: Schema.Attribute.Component<'pwa.flow-step', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -664,7 +664,7 @@ export interface ApiServiceThemeServiceTheme
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     service_flows: Schema.Attribute.Relation<
-      'manyToMany',
+      'oneToMany',
       'api::service-flow.service-flow'
     >;
     updatedAt: Schema.Attribute.DateTime;
@@ -758,7 +758,7 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     service_flows: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::service-flow.service-flow'
     >;
     side_navbars: Schema.Attribute.Relation<

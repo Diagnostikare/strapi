@@ -17,9 +17,9 @@
       "target": "api::service.service",
       "inversedBy": "service_flows"
     },
-    "site": {
+    "sites": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::site.site",
       "inversedBy": "service_flows"
     },
@@ -34,9 +34,9 @@
       "repeatable": true,
       "component": "pwa.flow-step"
     },
-    "service_themes": {
+    "service_theme": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::service-theme.service-theme",
       "inversedBy": "service_flows"
     }
