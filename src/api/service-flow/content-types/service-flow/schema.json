@@ -34,9 +34,9 @@
       "repeatable": true,
       "component": "pwa.flow-step"
     },
-    "service_theme": {
+    "service_themes": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::service-theme.service-theme",
       "inversedBy": "service_flows"
     }

@@ -621,8 +621,8 @@ export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     service: Schema.Attribute.Relation<'manyToOne', 'api::service.service'>;
-    service_theme: Schema.Attribute.Relation<
-      'manyToOne',
+    service_themes: Schema.Attribute.Relation<
+      'manyToMany',
       'api::service-theme.service-theme'
     >;
     site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
@@ -664,7 +664,7 @@ export interface ApiServiceThemeServiceTheme
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     service_flows: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::service-flow.service-flow'
     >;
     updatedAt: Schema.Attribute.DateTime;

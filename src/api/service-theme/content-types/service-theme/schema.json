@@ -32,9 +32,9 @@
     },
     "service_flows": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::service-flow.service-flow",
-      "mappedBy": "service_theme"
+      "mappedBy": "service_themes"
     }
   }
 }
