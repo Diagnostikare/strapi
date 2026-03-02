@@ -29,17 +29,17 @@
       "target": "api::theme.theme",
       "mappedBy": "sites"
     },
-    "side_navbars": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::side-navbar.side-navbar",
-      "mappedBy": "site"
-    },
     "service_flows": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::service-flow.service-flow",
-      "mappedBy": "site"
+      "mappedBy": "sites"
+    },
+    "side_navbars": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::side-navbar.side-navbar",
+      "mappedBy": "sites"
     }
   }
 }

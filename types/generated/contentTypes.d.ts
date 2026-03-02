@@ -625,7 +625,7 @@ export interface ApiServiceFlowServiceFlow extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::service-theme.service-theme'
     >;
-    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     steps: Schema.Attribute.Component<'pwa.flow-step', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -709,6 +709,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
 export interface ApiSideNavbarSideNavbar extends Struct.CollectionTypeSchema {
   collectionName: 'side_navbars';
   info: {
+    description: '';
     displayName: 'Side Navbar';
     pluralName: 'side-navbars';
     singularName: 'side-navbar';
@@ -729,7 +730,7 @@ export interface ApiSideNavbarSideNavbar extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    site: Schema.Attribute.Relation<'manyToOne', 'api::site.site'>;
+    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -758,11 +759,11 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     service_flows: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::service-flow.service-flow'
     >;
     side_navbars: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::side-navbar.side-navbar'
     >;
     slug: Schema.Attribute.String;
