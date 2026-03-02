@@ -4,15 +4,16 @@
   "info": {
     "singularName": "side-navbar",
     "pluralName": "side-navbars",
-    "displayName": "Side Navbar"
+    "displayName": "Side Navbar",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "site": {
+    "sites": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::site.site",
       "inversedBy": "side_navbars"
     },
