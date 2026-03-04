@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_pwa_chevron_menus",
+  "info": {
+    "displayName": "chevronMenu",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "titleColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "option": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.option"
+    }
+  }
+}

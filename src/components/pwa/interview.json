@@ -1,0 +1,76 @@
+{
+  "collectionName": "components_pwa_interviews",
+  "info": {
+    "displayName": "interview",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "inputDefault": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "inputFocus": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "radioGroupDefault": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "radioGroupActive": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "slider": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "checkboxGroupDefault": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "checkboxGroupActive": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "methodDefault": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.box-button"
+    },
+    "methodActive": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.box-button"
+    },
+    "bookingDefault": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.box-button"
+    },
+    "bookingActive": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.box-button"
+    },
+    "buttonDefault": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "buttonActive": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    }
+  }
+}
