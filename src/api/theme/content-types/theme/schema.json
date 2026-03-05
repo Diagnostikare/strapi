@@ -193,6 +193,41 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.interview"
+    },
+    "myHealth": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.my-health"
+    },
+    "emergency": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.emergency"
+    },
+    "menu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.menu"
+    },
+    "meeting": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.meeting"
+    },
+    "warningModal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.warning-modal"
+    },
+    "nutrition": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "laboratory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
     }
   }
 }

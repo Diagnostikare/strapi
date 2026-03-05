@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_pwa_emergencies",
+  "info": {
+    "displayName": "emergency",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "headingColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "subheadingColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "footerTextColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "item": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.item"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.clean-button"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    }
+  }
+}

@@ -844,6 +844,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     defaultPillButton: Schema.Attribute.Component<'pwa.button', false>;
     disabledButton: Schema.Attribute.Component<'pwa.button', false>;
     disabledInput: Schema.Attribute.Component<'pwa.input', false>;
+    emergency: Schema.Attribute.Component<'pwa.emergency', false>;
     error_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     errorInput: Schema.Attribute.Component<'pwa.input', false>;
@@ -856,11 +857,16 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     home: Schema.Attribute.Component<'pwa.home', false>;
     interview: Schema.Attribute.Component<'pwa.interview', false>;
+    laboratory: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     link: Schema.Attribute.Component<'pwa.button', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    meeting: Schema.Attribute.Component<'pwa.meeting', false>;
+    menu: Schema.Attribute.Component<'pwa.menu', false>;
+    myHealth: Schema.Attribute.Component<'pwa.my-health', false>;
+    nutrition: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     outlineButton: Schema.Attribute.Component<'pwa.button', false>;
     primary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
@@ -879,6 +885,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    warningModal: Schema.Attribute.Component<'pwa.warning-modal', false>;
     wizard: Schema.Attribute.Component<'pwa.wizard', false>;
   };
 }

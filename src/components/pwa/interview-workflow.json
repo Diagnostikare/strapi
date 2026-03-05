@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_pwa_interview_workflows",
+  "info": {
+    "displayName": "interviewWorkflow",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    }
+  }
+}
