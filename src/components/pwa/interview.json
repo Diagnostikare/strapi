@@ -71,6 +71,21 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.button"
+    },
+    "uploadFile": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.upload-file"
+    },
+    "attachButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.attach-button"
+    },
+    "attachAdvice": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.attach-advice"
     }
   }
 }
