@@ -228,6 +228,16 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.interview-workflow"
+    },
+    "generalMedicine": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "improveHealth": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
     }
   }
 }

@@ -852,10 +852,15 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     focusInput: Schema.Attribute.Component<'pwa.input', false>;
     footer_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    generalMedicine: Schema.Attribute.Component<
+      'pwa.interview-workflow',
+      false
+    >;
     header: Schema.Attribute.Component<'pwa.header', false>;
     highlight_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     home: Schema.Attribute.Component<'pwa.home', false>;
+    improveHealth: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     interview: Schema.Attribute.Component<'pwa.interview', false>;
     laboratory: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     link: Schema.Attribute.Component<'pwa.button', false>;
