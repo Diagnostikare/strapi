@@ -572,10 +572,12 @@ export interface ApiPrivacyPrivacy extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::rich-text-blocks-extended.rich-text-blocks-extended',
         {
-          customColorsPresets: 'Primaru:#003B1F\nSecondary:#00AF76\nText:#4A4A4A';
+          customColorsPresets: 'GSPrimary:#1E184D\nGSSecondary:#5C51F7\nGSText:#4A4A4A\nPrimaru:#003B1F\nSecondary:#00AF76\nText:#4A4A4A';
           customFontsPresets: 'Nunito Sans:nunito-sans';
+          customSizesPresets: '12\n16';
           disableDefaultColors: true;
           disableDefaultFonts: true;
+          disableDefaultSizes: true;
         }
       >;
     createdAt: Schema.Attribute.DateTime;
