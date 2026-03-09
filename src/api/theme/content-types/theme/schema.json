@@ -238,6 +238,22 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.interview-workflow"
+    },
+    "logoMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pediatric": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
     }
   }
 }

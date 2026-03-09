@@ -868,11 +868,15 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    logoMobile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     meeting: Schema.Attribute.Component<'pwa.meeting', false>;
     menu: Schema.Attribute.Component<'pwa.menu', false>;
     myHealth: Schema.Attribute.Component<'pwa.my-health', false>;
     nutrition: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     outlineButton: Schema.Attribute.Component<'pwa.button', false>;
+    pediatric: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     primary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     primaryButton: Schema.Attribute.Component<'pwa.button', false>;
