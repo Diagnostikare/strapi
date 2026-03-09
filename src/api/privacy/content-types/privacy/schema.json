@@ -23,9 +23,11 @@
       "type": "customField",
       "options": {
         "disableDefaultColors": true,
-        "customColorsPresets": "Primaru:#003B1F\nSecondary:#00AF76\nText:#4A4A4A",
+        "customColorsPresets": "GSPrimary:#1E184D\nGSSecondary:#5C51F7\nGSText:#4A4A4A\nPrimaru:#003B1F\nSecondary:#00AF76\nText:#4A4A4A",
         "disableDefaultFonts": true,
-        "customFontsPresets": "Nunito Sans:nunito-sans"
+        "customFontsPresets": "Nunito Sans:nunito-sans",
+        "disableDefaultSizes": true,
+        "customSizesPresets": "12\n16"
       },
       "customField": "plugin::rich-text-blocks-extended.rich-text-blocks-extended"
     }
