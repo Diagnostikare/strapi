@@ -764,6 +764,7 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::service-flow.service-flow'
     >;
+    showMenu: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     side_navbars: Schema.Attribute.Relation<
       'manyToMany',
       'api::side-navbar.side-navbar'

@@ -40,6 +40,10 @@
       "relation": "manyToMany",
       "target": "api::side-navbar.side-navbar",
       "mappedBy": "sites"
+    },
+    "showMenu": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
