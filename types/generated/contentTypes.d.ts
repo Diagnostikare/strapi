@@ -829,6 +829,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     account: Schema.Attribute.Component<'pwa.account', false>;
     complementary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    contact: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     contact_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     contact_highlight: Schema.Attribute.String &
@@ -882,6 +883,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     primary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     primaryButton: Schema.Attribute.Component<'pwa.button', false>;
+    psychology: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     publishedAt: Schema.Attribute.DateTime;
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
