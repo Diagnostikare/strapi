@@ -364,6 +364,20 @@ export interface PwaDataCard extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaDayPill extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_day_pills';
+  info: {
+    displayName: 'dayPill';
+    icon: 'layout';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaEmergency extends Struct.ComponentSchema {
   collectionName: 'components_pwa_emergencies';
   info: {
@@ -531,6 +545,7 @@ export interface PwaInterview extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
+    activeDayPill: Schema.Attribute.Component<'pwa.day-pill', false>;
     attachAdvice: Schema.Attribute.Component<'pwa.attach-advice', false>;
     attachButton: Schema.Attribute.Component<'pwa.attach-button', false>;
     bookingActive: Schema.Attribute.Component<'pwa.box-button', false>;
@@ -539,6 +554,7 @@ export interface PwaInterview extends Struct.ComponentSchema {
     buttonDefault: Schema.Attribute.Component<'pwa.button', false>;
     checkboxGroupActive: Schema.Attribute.Component<'pwa.input', false>;
     checkboxGroupDefault: Schema.Attribute.Component<'pwa.input', false>;
+    defaultDayPill: Schema.Attribute.Component<'pwa.day-pill', false>;
     inputDefault: Schema.Attribute.Component<'pwa.input', false>;
     inputFocus: Schema.Attribute.Component<'pwa.input', false>;
     methodActive: Schema.Attribute.Component<'pwa.box-button', false>;
@@ -1261,6 +1277,7 @@ declare module '@strapi/strapi' {
       'pwa.chevron-menu': PwaChevronMenu;
       'pwa.clean-button': PwaCleanButton;
       'pwa.data-card': PwaDataCard;
+      'pwa.day-pill': PwaDayPill;
       'pwa.emergency': PwaEmergency;
       'pwa.faqs': PwaFaqs;
       'pwa.faqs-ui': PwaFaqsUi;
