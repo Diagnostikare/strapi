@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strategie_configs",
+  "info": {
+    "singularName": "strategie-config",
+    "pluralName": "strategie-configs",
+    "displayName": "StrategieConfig",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "paramKey": {
+      "type": "string"
+    },
+    "exchangeEndpoint": {
+      "type": "string"
+    },
+    "generalConfig": {
+      "type": "blocks"
+    }
+  }
+}

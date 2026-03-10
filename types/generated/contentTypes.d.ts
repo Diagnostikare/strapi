@@ -775,6 +775,73 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStrategieConfigStrategieConfig
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strategie_configs';
+  info: {
+    description: '';
+    displayName: 'StrategieConfig';
+    pluralName: 'strategie-configs';
+    singularName: 'strategie-config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    exchangeEndpoint: Schema.Attribute.String;
+    generalConfig: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::strategie-config.strategie-config'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    paramKey: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStrategieStrategie extends Struct.CollectionTypeSchema {
+  collectionName: 'strategies';
+  info: {
+    description: '';
+    displayName: 'Strategie';
+    pluralName: 'strategies';
+    singularName: 'strategie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::strategie.strategie'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    strategie_config: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::strategie-config.strategie-config'
+    >;
+    strategieName: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTermsPageTermsPage extends Struct.CollectionTypeSchema {
   collectionName: 'terms_pages';
   info: {
@@ -1494,6 +1561,8 @@ declare module '@strapi/strapi' {
       'api::service.service': ApiServiceService;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
+      'api::strategie-config.strategie-config': ApiStrategieConfigStrategieConfig;
+      'api::strategie.strategie': ApiStrategieStrategie;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
       'api::theme.theme': ApiThemeTheme;
       'api::webpage.webpage': ApiWebpageWebpage;
