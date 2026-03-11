@@ -504,6 +504,7 @@ export interface PwaHome extends Struct.ComponentSchema {
     emergencyButton: Schema.Attribute.Component<'pwa.button', false>;
     headingColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    meetingCard: Schema.Attribute.Component<'pwa.meeting-card', false>;
     schedulingCard: Schema.Attribute.Component<'pwa.scheduling-card', false>;
     sectionTitleColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
@@ -617,6 +618,25 @@ export interface PwaMeeting extends Struct.ComponentSchema {
     professionalCardLabelColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     professionalCardValueColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface PwaMeetingCard extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_meeting_cards';
+  info: {
+    displayName: 'meetingCard';
+    icon: 'layout';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button: Schema.Attribute.Component<'pwa.button', false>;
+    dateColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
@@ -1291,6 +1311,7 @@ declare module '@strapi/strapi' {
       'pwa.interview-workflow': PwaInterviewWorkflow;
       'pwa.item': PwaItem;
       'pwa.meeting': PwaMeeting;
+      'pwa.meeting-card': PwaMeetingCard;
       'pwa.menu': PwaMenu;
       'pwa.my-health': PwaMyHealth;
       'pwa.option': PwaOption;
