@@ -770,6 +770,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'api::side-navbar.side-navbar'
     >;
     slug: Schema.Attribute.String;
+    strategie: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::strategie.strategie'
+    >;
     themes: Schema.Attribute.Relation<'manyToMany', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -795,7 +799,7 @@ export interface ApiStrategieConfigStrategieConfig
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     exchangeEndpoint: Schema.Attribute.String;
-    generalConfig: Schema.Attribute.Blocks;
+    generalConfig: Schema.Attribute.JSON;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -816,7 +820,7 @@ export interface ApiStrategieStrategie extends Struct.CollectionTypeSchema {
   collectionName: 'strategies';
   info: {
     description: '';
-    displayName: 'Strategie';
+    displayName: 'StrategieAuth';
     pluralName: 'strategies';
     singularName: 'strategie';
   };
@@ -833,6 +837,8 @@ export interface ApiStrategieStrategie extends Struct.CollectionTypeSchema {
       'api::strategie.strategie'
     > &
       Schema.Attribute.Private;
+    nameInputLogin: Schema.Attribute.Component<'pwa.input-login', true>;
+    passwordType: Schema.Attribute.Component<'pwa.password-input', true>;
     publishedAt: Schema.Attribute.DateTime;
     strategie_config: Schema.Attribute.Relation<
       'oneToOne',

@@ -537,6 +537,18 @@ export interface PwaInput extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaInputLogin extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_input_logins';
+  info: {
+    description: '';
+    displayName: 'InputLogin';
+    icon: 'exit';
+  };
+  attributes: {
+    param: Schema.Attribute.String;
+  };
+}
+
 export interface PwaInterview extends Struct.ComponentSchema {
   collectionName: 'components_pwa_interviews';
   info: {
@@ -679,6 +691,17 @@ export interface PwaOption extends Struct.ComponentSchema {
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     valueColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface PwaPasswordInput extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_password_inputs';
+  info: {
+    displayName: 'passwordInput';
+    icon: 'eye';
+  };
+  attributes: {
+    param: Schema.Attribute.String;
   };
 }
 
@@ -1287,6 +1310,7 @@ declare module '@strapi/strapi' {
       'pwa.header-with-image': PwaHeaderWithImage;
       'pwa.home': PwaHome;
       'pwa.input': PwaInput;
+      'pwa.input-login': PwaInputLogin;
       'pwa.interview': PwaInterview;
       'pwa.interview-workflow': PwaInterviewWorkflow;
       'pwa.item': PwaItem;
@@ -1294,6 +1318,7 @@ declare module '@strapi/strapi' {
       'pwa.menu': PwaMenu;
       'pwa.my-health': PwaMyHealth;
       'pwa.option': PwaOption;
+      'pwa.password-input': PwaPasswordInput;
       'pwa.risk-card': PwaRiskCard;
       'pwa.scheduling-card': PwaSchedulingCard;
       'pwa.service-card': PwaServiceCard;
