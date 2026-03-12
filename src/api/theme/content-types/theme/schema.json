@@ -269,6 +269,7 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.cancellation"
+    },
     "errorPage": {
       "type": "component",
       "repeatable": false,
