@@ -265,6 +265,10 @@
       "repeatable": false,
       "component": "pwa.interview-workflow"
     },
+    "cancellationInterview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.cancellation"
     "errorPage": {
       "type": "component",
       "repeatable": false,
