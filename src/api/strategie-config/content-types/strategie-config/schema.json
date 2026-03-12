@@ -24,7 +24,7 @@
       "type": "string"
     },
     "generalConfig": {
-      "type": "blocks"
+      "type": "json"
     }
   }
 }

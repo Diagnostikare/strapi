@@ -4,7 +4,7 @@
   "info": {
     "singularName": "strategie",
     "pluralName": "strategies",
-    "displayName": "Strategie",
+    "displayName": "StrategieAuth",
     "description": ""
   },
   "options": {
@@ -18,6 +18,18 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::strategie-config.strategie-config"
+    },
+    "nameInputLogin": {
+      "displayName": "InputLogin",
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.input-login"
+    },
+    "passwordType": {
+      "displayName": "passwordInput",
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.password-input"
     }
   }
 }

@@ -44,6 +44,11 @@
     "showMenu": {
       "type": "boolean",
       "default": false
+    },
+    "strategie": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::strategie.strategie"
     }
   }
 }
