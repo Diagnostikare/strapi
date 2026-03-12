@@ -956,9 +956,9 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     >;
     menu: Schema.Attribute.Component<'pwa.menu', false>;
     myHealth: Schema.Attribute.Component<'pwa.my-health', false>;
-    nutrition: Schema.Attribute.Component<'pwa.interview-workflow', false>;
+    nutrition: Schema.Attribute.Component<'pwa.nutrition', true>;
     outlineButton: Schema.Attribute.Component<'pwa.button', false>;
-    pediatric: Schema.Attribute.Component<'pwa.interview-workflow', false>;
+    pediatric: Schema.Attribute.Component<'pwa.pediatric', false>;
     primary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     primaryButton: Schema.Attribute.Component<'pwa.button', false>;

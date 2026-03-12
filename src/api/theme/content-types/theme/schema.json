@@ -219,11 +219,6 @@
       "repeatable": false,
       "component": "pwa.warning-modal"
     },
-    "nutrition": {
-      "type": "component",
-      "repeatable": false,
-      "component": "pwa.interview-workflow"
-    },
     "laboratory": {
       "type": "component",
       "repeatable": false,
@@ -250,11 +245,6 @@
         "audios"
       ]
     },
-    "pediatric": {
-      "type": "component",
-      "repeatable": false,
-      "component": "pwa.interview-workflow"
-    },
     "psychology": {
       "type": "component",
       "repeatable": false,
@@ -279,6 +269,16 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.error-page"
+    },
+    "nutrition": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.nutrition"
+    },
+    "pediatric": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.pediatric"
     }
   }
 }

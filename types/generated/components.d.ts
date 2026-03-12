@@ -717,6 +717,19 @@ export interface PwaMyHealth extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaNutrition extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_nutritions';
+  info: {
+    displayName: 'nutrition';
+    icon: 'oneWay';
+  };
+  attributes: {
+    header: Schema.Attribute.Component<'pwa.header', false>;
+    wizardNextButton: Schema.Attribute.Component<'pwa.button', false>;
+    wizardPrevButton: Schema.Attribute.Component<'pwa.button', false>;
+  };
+}
+
 export interface PwaOption extends Struct.ComponentSchema {
   collectionName: 'components_pwa_options';
   info: {
@@ -743,6 +756,22 @@ export interface PwaPasswordInput extends Struct.ComponentSchema {
   };
   attributes: {
     param: Schema.Attribute.String;
+  };
+}
+
+export interface PwaPediatric extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_pediatrics';
+  info: {
+    displayName: 'pediatric';
+    icon: 'oneWay';
+  };
+  attributes: {
+    defaultPillButton: Schema.Attribute.Component<'pwa.button', false>;
+    header: Schema.Attribute.Component<'pwa.header', true>;
+    input: Schema.Attribute.Component<'pwa.input', false>;
+    selectedPillButton: Schema.Attribute.Component<'pwa.button', false>;
+    wizardQuestionColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -1379,8 +1408,10 @@ declare module '@strapi/strapi' {
       'pwa.meeting-card': PwaMeetingCard;
       'pwa.menu': PwaMenu;
       'pwa.my-health': PwaMyHealth;
+      'pwa.nutrition': PwaNutrition;
       'pwa.option': PwaOption;
       'pwa.password-input': PwaPasswordInput;
+      'pwa.pediatric': PwaPediatric;
       'pwa.risk-card': PwaRiskCard;
       'pwa.scheduled': PwaScheduled;
       'pwa.scheduling-card': PwaSchedulingCard;
