@@ -852,6 +852,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     error_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     errorInput: Schema.Attribute.Component<'pwa.input', false>;
+    errorPage: Schema.Attribute.Component<'pwa.error-page', false>;
     feelingBad: Schema.Attribute.Component<'pwa.feeling-bad', false>;
     focusInput: Schema.Attribute.Component<'pwa.input', false>;
     footer_color: Schema.Attribute.String &
@@ -876,6 +877,10 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     meeting: Schema.Attribute.Component<'pwa.meeting', false>;
+    meetingCancellation: Schema.Attribute.Component<
+      'pwa.interview-workflow',
+      false
+    >;
     menu: Schema.Attribute.Component<'pwa.menu', false>;
     myHealth: Schema.Attribute.Component<'pwa.my-health', false>;
     nutrition: Schema.Attribute.Component<'pwa.interview-workflow', false>;
@@ -886,6 +891,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     primaryButton: Schema.Attribute.Component<'pwa.button', false>;
     psychology: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     publishedAt: Schema.Attribute.DateTime;
+    reschedule: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     secondary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     secondaryButton: Schema.Attribute.Component<'pwa.button', false>;

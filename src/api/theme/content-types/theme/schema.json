@@ -264,6 +264,21 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.interview-workflow"
+    },
+    "reschedule": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "meetingCancellation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "errorPage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.error-page"
     }
   }
 }

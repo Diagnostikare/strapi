@@ -96,6 +96,11 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.day-pill"
+    },
+    "scheduled": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.scheduled"
     }
   }
 }
