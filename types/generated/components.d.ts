@@ -415,6 +415,25 @@ export interface PwaEmergency extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaErrorPage extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_error_pages';
+  info: {
+    displayName: 'errorPage';
+    icon: 'layout';
+  };
+  attributes: {
+    descriptionColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    footerTextColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    header: Schema.Attribute.Component<'pwa.header', false>;
+    primaryButton: Schema.Attribute.Component<'pwa.button', false>;
+    secondaryButton: Schema.Attribute.Component<'pwa.button', false>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaFaqs extends Struct.ComponentSchema {
   collectionName: 'components_pwa_faqs';
   info: {
@@ -522,6 +541,7 @@ export interface PwaHome extends Struct.ComponentSchema {
     emergencyButton: Schema.Attribute.Component<'pwa.button', false>;
     headingColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    meetingCard: Schema.Attribute.Component<'pwa.meeting-card', false>;
     schedulingCard: Schema.Attribute.Component<'pwa.scheduling-card', false>;
     sectionTitleColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
@@ -591,6 +611,7 @@ export interface PwaInterview extends Struct.ComponentSchema {
     methodDefault: Schema.Attribute.Component<'pwa.box-button', false>;
     radioGroupActive: Schema.Attribute.Component<'pwa.input', false>;
     radioGroupDefault: Schema.Attribute.Component<'pwa.input', false>;
+    scheduled: Schema.Attribute.Component<'pwa.scheduled', false>;
     slider: Schema.Attribute.Component<'pwa.input', false>;
     uploadFile: Schema.Attribute.Component<'pwa.upload-file', false>;
   };
@@ -599,6 +620,7 @@ export interface PwaInterview extends Struct.ComponentSchema {
 export interface PwaInterviewWorkflow extends Struct.ComponentSchema {
   collectionName: 'components_pwa_interview_workflows';
   info: {
+    description: '';
     displayName: 'interviewWorkflow';
     icon: 'layout';
   };
@@ -651,6 +673,25 @@ export interface PwaMeeting extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaMeetingCard extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_meeting_cards';
+  info: {
+    displayName: 'meetingCard';
+    icon: 'layout';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button: Schema.Attribute.Component<'pwa.button', false>;
+    dateColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaMenu extends Struct.ComponentSchema {
   collectionName: 'components_pwa_menus';
   info: {
@@ -694,6 +735,19 @@ export interface PwaMyHealth extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaNutrition extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_nutritions';
+  info: {
+    displayName: 'nutrition';
+    icon: 'oneWay';
+  };
+  attributes: {
+    header: Schema.Attribute.Component<'pwa.header', false>;
+    wizardNextButton: Schema.Attribute.Component<'pwa.button', false>;
+    wizardPrevButton: Schema.Attribute.Component<'pwa.button', false>;
+  };
+}
+
 export interface PwaOption extends Struct.ComponentSchema {
   collectionName: 'components_pwa_options';
   info: {
@@ -723,6 +777,22 @@ export interface PwaPasswordInput extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaPediatric extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_pediatrics';
+  info: {
+    displayName: 'pediatric';
+    icon: 'oneWay';
+  };
+  attributes: {
+    defaultPillButton: Schema.Attribute.Component<'pwa.button', false>;
+    header: Schema.Attribute.Component<'pwa.header', true>;
+    input: Schema.Attribute.Component<'pwa.input', false>;
+    selectedPillButton: Schema.Attribute.Component<'pwa.button', false>;
+    wizardQuestionColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaRiskCard extends Struct.ComponentSchema {
   collectionName: 'components_pwa_risk_cards';
   info: {
@@ -737,6 +807,25 @@ export interface PwaRiskCard extends Struct.ComponentSchema {
     negativeValueColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     positiveValueColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface PwaScheduled extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_scheduleds';
+  info: {
+    description: '';
+    displayName: 'scheduled';
+    icon: 'layout';
+  };
+  attributes: {
+    iconBgColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    iconColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    labelColor: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    valueColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
@@ -1321,6 +1410,7 @@ declare module '@strapi/strapi' {
       'pwa.data-card': PwaDataCard;
       'pwa.day-pill': PwaDayPill;
       'pwa.emergency': PwaEmergency;
+      'pwa.error-page': PwaErrorPage;
       'pwa.faqs': PwaFaqs;
       'pwa.faqs-ui': PwaFaqsUi;
       'pwa.feeling-bad': PwaFeelingBad;
@@ -1334,11 +1424,15 @@ declare module '@strapi/strapi' {
       'pwa.interview-workflow': PwaInterviewWorkflow;
       'pwa.item': PwaItem;
       'pwa.meeting': PwaMeeting;
+      'pwa.meeting-card': PwaMeetingCard;
       'pwa.menu': PwaMenu;
       'pwa.my-health': PwaMyHealth;
+      'pwa.nutrition': PwaNutrition;
       'pwa.option': PwaOption;
       'pwa.password-input': PwaPasswordInput;
+      'pwa.pediatric': PwaPediatric;
       'pwa.risk-card': PwaRiskCard;
+      'pwa.scheduled': PwaScheduled;
       'pwa.scheduling-card': PwaSchedulingCard;
       'pwa.service-card': PwaServiceCard;
       'pwa.side-nav-item': PwaSideNavItem;

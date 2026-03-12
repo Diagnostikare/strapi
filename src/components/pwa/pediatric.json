@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_pwa_pediatrics",
+  "info": {
+    "displayName": "pediatric",
+    "icon": "oneWay"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.header"
+    },
+    "input": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "defaultPillButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "selectedPillButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "wizardQuestionColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}
