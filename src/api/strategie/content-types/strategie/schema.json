@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strategies",
+  "info": {
+    "singularName": "strategie",
+    "pluralName": "strategies",
+    "displayName": "StrategieAuth",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "strategieName": {
+      "type": "string"
+    },
+    "strategie_config": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::strategie-config.strategie-config"
+    },
+    "nameInputLogin": {
+      "displayName": "InputLogin",
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.input-login"
+    },
+    "passwordType": {
+      "displayName": "passwordInput",
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.password-input"
+    }
+  }
+}

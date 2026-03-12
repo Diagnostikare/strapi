@@ -770,11 +770,84 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'api::side-navbar.side-navbar'
     >;
     slug: Schema.Attribute.String;
+    strategie: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::strategie.strategie'
+    >;
     themes: Schema.Attribute.Relation<'manyToMany', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiStrategieConfigStrategieConfig
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strategie_configs';
+  info: {
+    description: '';
+    displayName: 'StrategieConfig';
+    pluralName: 'strategie-configs';
+    singularName: 'strategie-config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    exchangeEndpoint: Schema.Attribute.String;
+    generalConfig: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::strategie-config.strategie-config'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    paramKey: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStrategieStrategie extends Struct.CollectionTypeSchema {
+  collectionName: 'strategies';
+  info: {
+    description: '';
+    displayName: 'StrategieAuth';
+    pluralName: 'strategies';
+    singularName: 'strategie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::strategie.strategie'
+    > &
+      Schema.Attribute.Private;
+    nameInputLogin: Schema.Attribute.Component<'pwa.input-login', true>;
+    passwordType: Schema.Attribute.Component<'pwa.password-input', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    strategie_config: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::strategie-config.strategie-config'
+    >;
+    strategieName: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1509,6 +1582,8 @@ declare module '@strapi/strapi' {
       'api::service.service': ApiServiceService;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
+      'api::strategie-config.strategie-config': ApiStrategieConfigStrategieConfig;
+      'api::strategie.strategie': ApiStrategieStrategie;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
       'api::theme.theme': ApiThemeTheme;
       'api::webpage.webpage': ApiWebpageWebpage;
