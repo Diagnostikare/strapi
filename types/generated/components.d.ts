@@ -321,6 +321,24 @@ export interface PwaButton extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaCancellation extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_cancellations';
+  info: {
+    description: '';
+    displayName: 'Cancellation';
+  };
+  attributes: {
+    cancelButton: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    continueButton: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    highlightText: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    text: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface PwaChevronMenu extends Struct.ComponentSchema {
   collectionName: 'components_pwa_chevron_menus';
   info: {
@@ -1297,6 +1315,7 @@ declare module '@strapi/strapi' {
       'pwa.attach-button': PwaAttachButton;
       'pwa.box-button': PwaBoxButton;
       'pwa.button': PwaButton;
+      'pwa.cancellation': PwaCancellation;
       'pwa.chevron-menu': PwaChevronMenu;
       'pwa.clean-button': PwaCleanButton;
       'pwa.data-card': PwaDataCard;

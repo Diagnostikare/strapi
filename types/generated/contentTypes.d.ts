@@ -901,6 +901,10 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     accent_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     account: Schema.Attribute.Component<'pwa.account', false>;
+    cancellationInterview: Schema.Attribute.Component<
+      'pwa.cancellation',
+      false
+    >;
     complementary_color: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     contact: Schema.Attribute.Component<'pwa.interview-workflow', false>;
