@@ -51,6 +51,11 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.article-card"
+    },
+    "meetingCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.meeting-card"
     }
   }
 }
