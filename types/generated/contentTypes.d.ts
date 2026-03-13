@@ -898,24 +898,18 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    accent_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    accent_color: Schema.Attribute.String;
     account: Schema.Attribute.Component<'pwa.account', false>;
     cancellationInterview: Schema.Attribute.Component<
       'pwa.cancellation',
       false
     >;
-    complementary_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    complementary_color: Schema.Attribute.String;
     contact: Schema.Attribute.Component<'pwa.interview-workflow', false>;
-    contact_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    contact_highlight: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    contact_subtitle: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    contact_title: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    contact_color: Schema.Attribute.String;
+    contact_highlight: Schema.Attribute.String;
+    contact_subtitle: Schema.Attribute.String;
+    contact_title: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -926,21 +920,18 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     disabledButton: Schema.Attribute.Component<'pwa.button', false>;
     disabledInput: Schema.Attribute.Component<'pwa.input', false>;
     emergency: Schema.Attribute.Component<'pwa.emergency', false>;
-    error_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    error_color: Schema.Attribute.String;
     errorInput: Schema.Attribute.Component<'pwa.input', false>;
     errorPage: Schema.Attribute.Component<'pwa.error-page', false>;
     feelingBad: Schema.Attribute.Component<'pwa.feeling-bad', false>;
     focusInput: Schema.Attribute.Component<'pwa.input', false>;
-    footer_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    footer_color: Schema.Attribute.String;
     generalMedicine: Schema.Attribute.Component<
       'pwa.interview-workflow',
       false
     >;
     header: Schema.Attribute.Component<'pwa.header', false>;
-    highlight_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    highlight_color: Schema.Attribute.String;
     home: Schema.Attribute.Component<'pwa.home', false>;
     improveHealth: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     interview: Schema.Attribute.Component<'pwa.interview', false>;
@@ -963,22 +954,19 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     nutrition: Schema.Attribute.Component<'pwa.nutrition', true>;
     outlineButton: Schema.Attribute.Component<'pwa.button', false>;
     pediatric: Schema.Attribute.Component<'pwa.pediatric', false>;
-    primary_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    primary_color: Schema.Attribute.String;
     primaryButton: Schema.Attribute.Component<'pwa.button', false>;
     psychology: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     publishedAt: Schema.Attribute.DateTime;
     reschedule: Schema.Attribute.Component<'pwa.interview-workflow', false>;
-    secondary_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    secondary_color: Schema.Attribute.String;
     secondaryButton: Schema.Attribute.Component<'pwa.button', false>;
     selectedPillButton: Schema.Attribute.Component<'pwa.button', false>;
     sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     splash: Schema.Attribute.Component<'pwa.splash', false>;
     tertiaryButton: Schema.Attribute.Component<'pwa.button', false>;
-    text_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    text_color: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

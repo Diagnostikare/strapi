@@ -60,8 +60,7 @@ export interface LabsColorTagPicker extends Struct.ComponentSchema {
     displayName: 'ColorTagPicker';
   };
   attributes: {
-    ColorTagPicker: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    ColorTagPicker: Schema.Attribute.String;
   };
 }
 
@@ -177,10 +176,8 @@ export interface NavbarNavItem extends Struct.ComponentSchema {
   attributes: {
     icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     iconFocused: Schema.Attribute.Media<'images'>;
-    primaryColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    secondaryColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    primaryColor: Schema.Attribute.String;
+    secondaryColor: Schema.Attribute.String;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -194,8 +191,7 @@ export interface PwaAccount extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    avatarColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    avatarColor: Schema.Attribute.String;
     chevronMenu: Schema.Attribute.Component<'pwa.chevron-menu', false>;
     dangerOption: Schema.Attribute.Component<'pwa.option', false>;
     defaultOption: Schema.Attribute.Component<'pwa.option', false>;
@@ -205,10 +201,8 @@ export interface PwaAccount extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     support: Schema.Attribute.Component<'pwa.support', false>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    userNameColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String;
+    userNameColor: Schema.Attribute.String;
     userSupport: Schema.Attribute.Component<'pwa.user-support', false>;
     wallet: Schema.Attribute.Component<'pwa.wallet', false>;
   };
@@ -221,14 +215,10 @@ export interface PwaAlert extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    boldTextColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
+    boldTextColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -239,15 +229,11 @@ export interface PwaArticleCard extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    dateColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    color: Schema.Attribute.String;
+    dateColor: Schema.Attribute.String;
     tag: Schema.Attribute.Component<'pwa.button', false>;
-    timeColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    timeColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -258,12 +244,9 @@ export interface PwaAttachAdvice extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -274,14 +257,10 @@ export interface PwaAttachButton extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    borderColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
+    borderColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -292,16 +271,11 @@ export interface PwaBoxButton extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconLeftColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconRightColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    labelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    valueColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
+    iconLeftColor: Schema.Attribute.String;
+    iconRightColor: Schema.Attribute.String;
+    labelColor: Schema.Attribute.String;
+    valueColor: Schema.Attribute.String;
   };
 }
 
@@ -312,12 +286,9 @@ export interface PwaButton extends Struct.ComponentSchema {
     displayName: 'button';
   };
   attributes: {
-    color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    color: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -328,14 +299,10 @@ export interface PwaCancellation extends Struct.ComponentSchema {
     displayName: 'Cancellation';
   };
   attributes: {
-    cancelButton: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    continueButton: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    highlightText: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    text: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    cancelButton: Schema.Attribute.String;
+    continueButton: Schema.Attribute.String;
+    highlightText: Schema.Attribute.String;
+    text: Schema.Attribute.String;
   };
 }
 
@@ -347,8 +314,7 @@ export interface PwaChevronMenu extends Struct.ComponentSchema {
   };
   attributes: {
     option: Schema.Attribute.Component<'pwa.option', false>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -359,10 +325,8 @@ export interface PwaCleanButton extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    color: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -373,12 +337,9 @@ export interface PwaDataCard extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    labelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    valueColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
+    labelColor: Schema.Attribute.String;
+    valueColor: Schema.Attribute.String;
   };
 }
 
@@ -389,10 +350,8 @@ export interface PwaDayPill extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -404,14 +363,11 @@ export interface PwaEmergency extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'pwa.clean-button', false>;
-    footerTextColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    footerTextColor: Schema.Attribute.String;
     header: Schema.Attribute.Component<'pwa.header', false>;
-    headingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    headingColor: Schema.Attribute.String;
     item: Schema.Attribute.Component<'pwa.item', false>;
-    subheadingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    subheadingColor: Schema.Attribute.String;
   };
 }
 
@@ -422,15 +378,12 @@ export interface PwaErrorPage extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    descriptionColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    footerTextColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    descriptionColor: Schema.Attribute.String;
+    footerTextColor: Schema.Attribute.String;
     header: Schema.Attribute.Component<'pwa.header', false>;
     primaryButton: Schema.Attribute.Component<'pwa.button', false>;
     secondaryButton: Schema.Attribute.Component<'pwa.button', false>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -454,15 +407,11 @@ export interface PwaFaqsUi extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'pwa.button', false>;
-    footerTextColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    footerTitleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    footerTextColor: Schema.Attribute.String;
+    footerTitleColor: Schema.Attribute.String;
     option: Schema.Attribute.Component<'pwa.option', false>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -476,8 +425,7 @@ export interface PwaFeelingBad extends Struct.ComponentSchema {
   attributes: {
     header: Schema.Attribute.Component<'pwa.header-with-image', false>;
     option: Schema.Attribute.Component<'pwa.option', false>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -503,11 +451,9 @@ export interface PwaHeader extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
     button: Schema.Attribute.Component<'pwa.button', false>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -518,12 +464,10 @@ export interface PwaHeaderWithImage extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
     button: Schema.Attribute.Component<'pwa.button', false>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -536,19 +480,15 @@ export interface PwaHome extends Struct.ComponentSchema {
   };
   attributes: {
     articleCard: Schema.Attribute.Component<'pwa.article-card', false>;
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
     emergencyButton: Schema.Attribute.Component<'pwa.button', false>;
-    headingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    headingColor: Schema.Attribute.String;
     meetingCard: Schema.Attribute.Component<'pwa.meeting-card', false>;
     schedulingCard: Schema.Attribute.Component<'pwa.scheduling-card', false>;
-    sectionTitleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    sectionTitleColor: Schema.Attribute.String;
     serviceCardOne: Schema.Attribute.Component<'pwa.service-card', false>;
     serviceCardTwo: Schema.Attribute.Component<'pwa.service-card', false>;
-    subheadingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    subheadingColor: Schema.Attribute.String;
   };
 }
 
@@ -558,20 +498,13 @@ export interface PwaInput extends Struct.ComponentSchema {
     displayName: 'input';
   };
   attributes: {
-    color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    endContentColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    helperColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    labelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    placeholderColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    color: Schema.Attribute.String;
+    endContentColor: Schema.Attribute.String;
+    helperColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    labelColor: Schema.Attribute.String;
+    placeholderColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -636,14 +569,10 @@ export interface PwaItem extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    descriptionColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconBgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    labelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    descriptionColor: Schema.Attribute.String;
+    iconBgColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    labelColor: Schema.Attribute.String;
   };
 }
 
@@ -654,22 +583,14 @@ export interface PwaMeeting extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    cardBorderColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    cardIconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    cardLabelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    cardValueColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    headerBgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    professionalCardIconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    professionalCardLabelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    professionalCardValueColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    cardBorderColor: Schema.Attribute.String;
+    cardIconColor: Schema.Attribute.String;
+    cardLabelColor: Schema.Attribute.String;
+    cardValueColor: Schema.Attribute.String;
+    headerBgColor: Schema.Attribute.String;
+    professionalCardIconColor: Schema.Attribute.String;
+    professionalCardLabelColor: Schema.Attribute.String;
+    professionalCardValueColor: Schema.Attribute.String;
   };
 }
 
@@ -680,15 +601,11 @@ export interface PwaMeetingCard extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
     button: Schema.Attribute.Component<'pwa.button', false>;
-    dateColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    dateColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -699,16 +616,11 @@ export interface PwaMenu extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    buttonColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    headingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    optionBorderColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    optionColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
+    buttonColor: Schema.Attribute.String;
+    headingColor: Schema.Attribute.String;
+    optionBorderColor: Schema.Attribute.String;
+    optionColor: Schema.Attribute.String;
   };
 }
 
@@ -720,18 +632,14 @@ export interface PwaMyHealth extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    avatarColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    avatarColor: Schema.Attribute.String;
     dataCard: Schema.Attribute.Component<'pwa.data-card', false>;
-    dataColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    dataColor: Schema.Attribute.String;
     editButton: Schema.Attribute.Component<'pwa.button', false>;
     header: Schema.Attribute.Component<'pwa.header', false>;
     riskCard: Schema.Attribute.Component<'pwa.risk-card', false>;
-    sectionTitleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    usernameColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    sectionTitleColor: Schema.Attribute.String;
+    usernameColor: Schema.Attribute.String;
   };
 }
 
@@ -755,14 +663,10 @@ export interface PwaOption extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    iconLeftColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconRightColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    labelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    valueColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    iconLeftColor: Schema.Attribute.String;
+    iconRightColor: Schema.Attribute.String;
+    labelColor: Schema.Attribute.String;
+    valueColor: Schema.Attribute.String;
   };
 }
 
@@ -788,8 +692,7 @@ export interface PwaPediatric extends Struct.ComponentSchema {
     header: Schema.Attribute.Component<'pwa.header', true>;
     input: Schema.Attribute.Component<'pwa.input', false>;
     selectedPillButton: Schema.Attribute.Component<'pwa.button', false>;
-    wizardQuestionColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    wizardQuestionColor: Schema.Attribute.String;
   };
 }
 
@@ -800,14 +703,10 @@ export interface PwaRiskCard extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    iconLeftColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    labelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    negativeValueColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    positiveValueColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    iconLeftColor: Schema.Attribute.String;
+    labelColor: Schema.Attribute.String;
+    negativeValueColor: Schema.Attribute.String;
+    positiveValueColor: Schema.Attribute.String;
   };
 }
 
@@ -819,14 +718,10 @@ export interface PwaScheduled extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    iconBgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    labelColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    valueColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    iconBgColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    labelColor: Schema.Attribute.String;
+    valueColor: Schema.Attribute.String;
   };
 }
 
@@ -838,12 +733,9 @@ export interface PwaSchedulingCard extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'pwa.button', false>;
-    color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    color: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -855,13 +747,10 @@ export interface PwaServiceCard extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    color: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    textColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -889,17 +778,12 @@ export interface PwaSplash extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
     button: Schema.Attribute.Component<'pwa.button', false>;
-    footerColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    headingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    subheadingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    footerColor: Schema.Attribute.String;
+    headingColor: Schema.Attribute.String;
+    subheadingColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -911,8 +795,7 @@ export interface PwaSupport extends Struct.ComponentSchema {
   };
   attributes: {
     option: Schema.Attribute.Component<'pwa.option', false>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -957,18 +840,12 @@ export interface PwaUploadFile extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    borderColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    footerColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    bgColor: Schema.Attribute.String;
+    borderColor: Schema.Attribute.String;
+    footerColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -980,12 +857,9 @@ export interface PwaUserSupport extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'pwa.button', false>;
-    greetingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    greetingColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -996,20 +870,13 @@ export interface PwaWallet extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    boxBgColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    boxTextColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    primaryIconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    secondaryIconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    termsTextColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    termsTitleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    boxBgColor: Schema.Attribute.String;
+    boxTextColor: Schema.Attribute.String;
+    primaryIconColor: Schema.Attribute.String;
+    secondaryIconColor: Schema.Attribute.String;
+    termsTextColor: Schema.Attribute.String;
+    termsTitleColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -1020,14 +887,10 @@ export interface PwaWarningModal extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
-    descriptionColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    subtitleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    titleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    descriptionColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    subtitleColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
   };
 }
 
@@ -1040,30 +903,19 @@ export interface PwaWizard extends Struct.ComponentSchema {
   };
   attributes: {
     emergencyAlert: Schema.Attribute.Component<'pwa.alert', false>;
-    headingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    instructionDescriptionColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    instructionProgressbarColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    instructionTitleColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    headingColor: Schema.Attribute.String;
+    instructionDescriptionColor: Schema.Attribute.String;
+    instructionProgressbarColor: Schema.Attribute.String;
+    instructionTitleColor: Schema.Attribute.String;
     nextButton: Schema.Attribute.Component<'pwa.button', false>;
     prevButton: Schema.Attribute.Component<'pwa.button', false>;
-    progressbarColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    questionColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    spinnerColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    subheadingColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    successIcon: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    termsColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    progressbarColor: Schema.Attribute.String;
+    questionColor: Schema.Attribute.String;
+    spinnerColor: Schema.Attribute.String;
+    subheadingColor: Schema.Attribute.String;
+    successIcon: Schema.Attribute.String;
+    termsColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
   };
 }
 
@@ -1145,11 +997,9 @@ export interface WebpageCardTestimonial extends Struct.ComponentSchema {
   };
   attributes: {
     age: Schema.Attribute.String;
-    background: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    background: Schema.Attribute.String;
     city: Schema.Attribute.String;
-    color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    color: Schema.Attribute.String;
     description: Schema.Attribute.RichText;
     name: Schema.Attribute.String;
     specialty: Schema.Attribute.RichText;
@@ -1351,8 +1201,7 @@ export interface WebpageSubnav extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    background: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    background: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
