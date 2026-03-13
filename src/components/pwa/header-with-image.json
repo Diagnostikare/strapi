@@ -2,34 +2,32 @@
   "collectionName": "components_pwa_header_with_images",
   "info": {
     "displayName": "headerWithImage",
-    "icon": "layout"
+    "icon": "layout",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "bgColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "textColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
     "button": {
       "type": "component",
       "repeatable": false,
       "component": "pwa.button"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "bgColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
     }
   }
 }

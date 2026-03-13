@@ -2,29 +2,22 @@
   "collectionName": "components_pwa_alerts",
   "info": {
     "displayName": "alert",
-    "icon": "layout"
+    "icon": "layout",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "bgColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "textColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "boldTextColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "iconColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     }
   }
 }

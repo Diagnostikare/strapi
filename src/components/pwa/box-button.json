@@ -2,34 +2,25 @@
   "collectionName": "components_pwa_box_buttons",
   "info": {
     "displayName": "boxButton",
-    "icon": "layout"
+    "icon": "layout",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "bgColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "iconLeftColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "iconRightColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "labelColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "valueColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     }
   }
 }

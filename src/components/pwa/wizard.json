@@ -7,36 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "progressbarColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "headingColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "subheadingColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "textColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "successIcon": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "termsColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
     "nextButton": {
       "type": "component",
       "repeatable": false,
@@ -47,35 +17,43 @@
       "repeatable": false,
       "component": "pwa.button"
     },
-    "questionColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "instructionProgressbarColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "instructionTitleColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "instructionDescriptionColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "spinnerColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
     "emergencyAlert": {
       "type": "component",
       "repeatable": false,
       "component": "pwa.alert"
+    },
+    "progressbarColor": {
+      "type": "string"
+    },
+    "headingColor": {
+      "type": "string"
+    },
+    "subheadingColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "successIcon": {
+      "type": "string"
+    },
+    "termsColor": {
+      "type": "string"
+    },
+    "questionColor": {
+      "type": "string"
+    },
+    "instructionProgressbarColor": {
+      "type": "string"
+    },
+    "instructionTitleColor": {
+      "type": "string"
+    },
+    "instructionDescriptionColor": {
+      "type": "string"
+    },
+    "spinnerColor": {
+      "type": "string"
     }
   }
 }
