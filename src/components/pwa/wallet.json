@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_pwa_wallets",
+  "info": {
+    "displayName": "wallet",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "titleColor": {
+      "type": "string"
+    },
+    "primaryIconColor": {
+      "type": "string"
+    },
+    "secondaryIconColor": {
+      "type": "string"
+    },
+    "termsTitleColor": {
+      "type": "string"
+    },
+    "termsTextColor": {
+      "type": "string"
+    },
+    "boxBgColor": {
+      "type": "string"
+    },
+    "boxTextColor": {
+      "type": "string"
+    }
+  }
+}

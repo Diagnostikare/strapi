@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_pwa_menus",
+  "info": {
+    "displayName": "menu",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "headingColor": {
+      "type": "string"
+    },
+    "optionColor": {
+      "type": "string"
+    },
+    "optionBorderColor": {
+      "type": "string"
+    },
+    "buttonColor": {
+      "type": "string"
+    }
+  }
+}

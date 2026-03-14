@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pwa_attach_advices",
+  "info": {
+    "displayName": "attachAdvice",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    }
+  }
+}

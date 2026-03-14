@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_pwa_article_cards",
+  "info": {
+    "displayName": "articleCard",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "dateColor": {
+      "type": "string"
+    },
+    "timeColor": {
+      "type": "string"
+    },
+    "tag": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    }
+  }
+}

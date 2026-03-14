@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_pwa_cancellations",
+  "info": {
+    "displayName": "Cancellation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cancelButton": {
+      "type": "string"
+    },
+    "continueButton": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "highlightText": {
+      "type": "string"
+    }
+  }
+}

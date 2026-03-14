@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_pwa_faqs_uis",
+  "info": {
+    "displayName": "faqsUi",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "titleColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "footerTitleColor": {
+      "type": "string"
+    },
+    "footerTextColor": {
+      "type": "string"
+    },
+    "option": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.option"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    }
+  }
+}

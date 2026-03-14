@@ -1,0 +1,70 @@
+{
+  "collectionName": "components_pwa_accounts",
+  "info": {
+    "displayName": "account",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleColor": {
+      "type": "string"
+    },
+    "avatarColor": {
+      "type": "string"
+    },
+    "userNameColor": {
+      "type": "string"
+    },
+    "defaultOption": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.option"
+    },
+    "dangerOption": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.option"
+    },
+    "wallet": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.wallet"
+    },
+    "support": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.support"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.faqs-ui"
+    },
+    "userSupport": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.user-support"
+    },
+    "chevronMenu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.chevron-menu"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    },
+    "identityConfirmationImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

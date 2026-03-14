@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_pwa_clean_buttons",
+  "info": {
+    "displayName": "cleanButton",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    }
+  }
+}

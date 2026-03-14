@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_pwa_meeting_cards",
+  "info": {
+    "displayName": "meetingCard",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "dateColor": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_pwa_warning_modals",
+  "info": {
+    "displayName": "warningModal",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "titleColor": {
+      "type": "string"
+    },
+    "subtitleColor": {
+      "type": "string"
+    },
+    "descriptionColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    }
+  }
+}

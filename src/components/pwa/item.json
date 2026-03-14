@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_pwa_items",
+  "info": {
+    "displayName": "item",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "iconBgColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "labelColor": {
+      "type": "string"
+    },
+    "descriptionColor": {
+      "type": "string"
+    }
+  }
+}
