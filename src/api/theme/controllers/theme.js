@@ -172,7 +172,8 @@ module.exports = createCoreController('api::theme.theme', ({ strapi }) => ({
   async findOne(ctx) {
     const { id } = ctx.params;
 
-    const entity = await strapi.entityService.findOne('api::theme.theme', id, {
+    const entity = await strapi.documents('api::theme.theme').findOne({
+      documentId: id,
       populate: THEME_POPULATE,
     });
 
