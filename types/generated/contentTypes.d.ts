@@ -572,10 +572,12 @@ export interface ApiPrivacyPrivacy extends Struct.CollectionTypeSchema {
       Schema.Attribute.CustomField<
         'plugin::rich-text-blocks-extended.rich-text-blocks-extended',
         {
-          customColorsPresets: 'Primaru:#003B1F\nSecondary:#00AF76\nText:#4A4A4A';
+          customColorsPresets: 'GSPrimary:#1E184D\nGSSecondary:#5C51F7\nGSText:#4A4A4A\nPrimaru:#003B1F\nSecondary:#00AF76\nText:#4A4A4A';
           customFontsPresets: 'Nunito Sans:nunito-sans';
+          customSizesPresets: '12\n16';
           disableDefaultColors: true;
           disableDefaultFonts: true;
+          disableDefaultSizes: true;
         }
       >;
     createdAt: Schema.Attribute.DateTime;
@@ -762,16 +764,90 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::service-flow.service-flow'
     >;
+    showMenu: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     side_navbars: Schema.Attribute.Relation<
       'manyToMany',
       'api::side-navbar.side-navbar'
     >;
     slug: Schema.Attribute.String;
+    strategie: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::strategie.strategie'
+    >;
     themes: Schema.Attribute.Relation<'manyToMany', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiStrategieConfigStrategieConfig
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'strategie_configs';
+  info: {
+    description: '';
+    displayName: 'StrategieConfig';
+    pluralName: 'strategie-configs';
+    singularName: 'strategie-config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    exchangeEndpoint: Schema.Attribute.String;
+    generalConfig: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::strategie-config.strategie-config'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    paramKey: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStrategieStrategie extends Struct.CollectionTypeSchema {
+  collectionName: 'strategies';
+  info: {
+    description: '';
+    displayName: 'StrategieAuth';
+    pluralName: 'strategies';
+    singularName: 'strategie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::strategie.strategie'
+    > &
+      Schema.Attribute.Private;
+    nameInputLogin: Schema.Attribute.Component<'pwa.input-login', true>;
+    passwordType: Schema.Attribute.Component<'pwa.password-input', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    strategie_config: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::strategie-config.strategie-config'
+    >;
+    strategieName: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -822,43 +898,80 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    accent_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    complementary_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    contact_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    contact_highlight: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    contact_subtitle: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    contact_title: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    accent_color: Schema.Attribute.String;
+    account: Schema.Attribute.Component<'pwa.account', false>;
+    cancellationInterview: Schema.Attribute.Component<
+      'pwa.cancellation',
+      false
+    >;
+    complementary_color: Schema.Attribute.String;
+    contact: Schema.Attribute.Component<'pwa.interview-workflow', false>;
+    contact_color: Schema.Attribute.String;
+    contact_highlight: Schema.Attribute.String;
+    contact_subtitle: Schema.Attribute.String;
+    contact_title: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    error_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    footer_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
-    highlight_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    ctaButton: Schema.Attribute.Component<'pwa.button', false>;
+    dangerButton: Schema.Attribute.Component<'pwa.button', false>;
+    defaultInput: Schema.Attribute.Component<'pwa.input', false>;
+    defaultPillButton: Schema.Attribute.Component<'pwa.button', false>;
+    disabledButton: Schema.Attribute.Component<'pwa.button', false>;
+    disabledInput: Schema.Attribute.Component<'pwa.input', false>;
+    emergency: Schema.Attribute.Component<'pwa.emergency', false>;
+    error_color: Schema.Attribute.String;
+    errorInput: Schema.Attribute.Component<'pwa.input', false>;
+    errorPage: Schema.Attribute.Component<'pwa.error-page', false>;
+    feelingBad: Schema.Attribute.Component<'pwa.feeling-bad', false>;
+    focusInput: Schema.Attribute.Component<'pwa.input', false>;
+    footer_color: Schema.Attribute.String;
+    generalMedicine: Schema.Attribute.Component<
+      'pwa.interview-workflow',
+      false
+    >;
+    header: Schema.Attribute.Component<'pwa.header', false>;
+    highlight_color: Schema.Attribute.String;
+    home: Schema.Attribute.Component<'pwa.home', false>;
+    improveHealth: Schema.Attribute.Component<'pwa.interview-workflow', false>;
+    interview: Schema.Attribute.Component<'pwa.interview', false>;
+    laboratory: Schema.Attribute.Component<'pwa.interview-workflow', false>;
+    link: Schema.Attribute.Component<'pwa.button', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    primary_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    logoMobile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    meeting: Schema.Attribute.Component<'pwa.meeting', false>;
+    meetingCancellation: Schema.Attribute.Component<
+      'pwa.interview-workflow',
+      false
+    >;
+    menu: Schema.Attribute.Component<'pwa.menu', false>;
+    myHealth: Schema.Attribute.Component<'pwa.my-health', false>;
+    nutrition: Schema.Attribute.Component<'pwa.nutrition', true>;
+    outlineButton: Schema.Attribute.Component<'pwa.button', false>;
+    pediatric: Schema.Attribute.Component<'pwa.pediatric', false>;
+    primary_color: Schema.Attribute.String;
+    primaryButton: Schema.Attribute.Component<'pwa.button', false>;
+    psychology: Schema.Attribute.Component<'pwa.interview-workflow', false>;
     publishedAt: Schema.Attribute.DateTime;
-    secondary_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    reschedule: Schema.Attribute.Component<'pwa.interview-workflow', false>;
+    secondary_color: Schema.Attribute.String;
+    secondaryButton: Schema.Attribute.Component<'pwa.button', false>;
+    selectedPillButton: Schema.Attribute.Component<'pwa.button', false>;
     sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
-    text_color: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    splash: Schema.Attribute.Component<'pwa.splash', false>;
+    tertiaryButton: Schema.Attribute.Component<'pwa.button', false>;
+    text_color: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    warningModal: Schema.Attribute.Component<'pwa.warning-modal', false>;
+    wizard: Schema.Attribute.Component<'pwa.wizard', false>;
   };
 }
 
@@ -1461,6 +1574,8 @@ declare module '@strapi/strapi' {
       'api::service.service': ApiServiceService;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
+      'api::strategie-config.strategie-config': ApiStrategieConfigStrategieConfig;
+      'api::strategie.strategie': ApiStrategieStrategie;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
       'api::theme.theme': ApiThemeTheme;
       'api::webpage.webpage': ApiWebpageWebpage;

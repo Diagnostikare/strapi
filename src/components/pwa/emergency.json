@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_pwa_emergencies",
+  "info": {
+    "displayName": "emergency",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "headingColor": {
+      "type": "string"
+    },
+    "subheadingColor": {
+      "type": "string"
+    },
+    "footerTextColor": {
+      "type": "string"
+    },
+    "item": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.item"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.clean-button"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    }
+  }
+}

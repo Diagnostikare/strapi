@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_pwa_wizards",
+  "info": {
+    "displayName": "wizard",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "progressbarColor": {
+      "type": "string"
+    },
+    "headingColor": {
+      "type": "string"
+    },
+    "subheadingColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "successIcon": {
+      "type": "string"
+    },
+    "termsColor": {
+      "type": "string"
+    },
+    "nextButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "prevButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "questionColor": {
+      "type": "string"
+    },
+    "instructionProgressbarColor": {
+      "type": "string"
+    },
+    "instructionTitleColor": {
+      "type": "string"
+    },
+    "instructionDescriptionColor": {
+      "type": "string"
+    },
+    "spinnerColor": {
+      "type": "string"
+    },
+    "emergencyAlert": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.alert"
+    }
+  }
+}

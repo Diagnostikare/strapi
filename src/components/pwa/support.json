@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_pwa_supports",
+  "info": {
+    "displayName": "support",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "titleColor": {
+      "type": "string"
+    },
+    "option": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.option"
+    }
+  }
+}

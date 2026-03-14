@@ -20,74 +20,246 @@
       ]
     },
     "primary_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "secondary_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "accent_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "complementary_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "text_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "slug": {
       "type": "uid",
       "required": true
     },
     "highlight_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "error_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "contact_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "footer_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "contact_title": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "contact_subtitle": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "contact_highlight": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string"
     },
     "sites": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::site.site",
       "inversedBy": "themes"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    },
+    "splash": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.splash"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "tertiaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "outlineButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "dangerButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "disabledButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "defaultPillButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "selectedPillButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "defaultInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "focusInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "errorInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "disabledInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input"
+    },
+    "wizard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.wizard"
+    },
+    "home": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.home"
+    },
+    "account": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.account"
+    },
+    "feelingBad": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.feeling-bad"
+    },
+    "interview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview"
+    },
+    "myHealth": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.my-health"
+    },
+    "emergency": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.emergency"
+    },
+    "menu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.menu"
+    },
+    "meeting": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.meeting"
+    },
+    "warningModal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.warning-modal"
+    },
+    "laboratory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "generalMedicine": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "improveHealth": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "logoMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "psychology": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "reschedule": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "meetingCancellation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow"
+    },
+    "cancellationInterview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.cancellation"
+    },
+    "errorPage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.error-page"
+    },
+    "nutrition": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.nutrition"
+    },
+    "pediatric": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.pediatric"
     }
   }
 }

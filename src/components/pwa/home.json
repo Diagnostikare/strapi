@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_pwa_homes",
+  "info": {
+    "displayName": "home",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headingColor": {
+      "type": "string"
+    },
+    "subheadingColor": {
+      "type": "string"
+    },
+    "bgColor": {
+      "type": "string"
+    },
+    "serviceCardOne": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.service-card"
+    },
+    "serviceCardTwo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.service-card"
+    },
+    "sectionTitleColor": {
+      "type": "string"
+    },
+    "emergencyButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "schedulingCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.scheduling-card"
+    },
+    "articleCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.article-card"
+    },
+    "meetingCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.meeting-card"
+    }
+  }
+}

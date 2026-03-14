@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_pwa_scheduleds",
+  "info": {
+    "displayName": "scheduled",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "iconBgColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "labelColor": {
+      "type": "string"
+    },
+    "valueColor": {
+      "type": "string"
+    }
+  }
+}

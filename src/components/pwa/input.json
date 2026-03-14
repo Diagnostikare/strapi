@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_pwa_inputs",
+  "info": {
+    "displayName": "input"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "labelColor": {
+      "type": "string"
+    },
+    "placeholderColor": {
+      "type": "string"
+    },
+    "helperColor": {
+      "type": "string"
+    },
+    "endContentColor": {
+      "type": "string"
+    }
+  }
+}
