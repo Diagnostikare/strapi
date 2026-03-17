@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extra_terms_configs",
+  "info": {
+    "singularName": "extra-terms-config",
+    "pluralName": "extra-terms-configs",
+    "displayName": "ExtraTermsConfig",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "generalConfig": {
+      "type": "json"
+    }
+  }
+}

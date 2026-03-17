@@ -49,6 +49,12 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::strategie.strategie"
+    },
+    "extra_terms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::extra-term.extra-term",
+      "mappedBy": "sites"
     }
   }
 }

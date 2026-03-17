@@ -799,6 +799,20 @@ export interface PwaSupport extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaTermCheckbox extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_term_checkboxes';
+  info: {
+    description: '';
+    displayName: 'TermCheckbox';
+  };
+  attributes: {
+    fieldName: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    required: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 export interface PwaTermsContent extends Struct.ComponentSchema {
   collectionName: 'components_pwa_terms_contents';
   info: {
@@ -1287,6 +1301,7 @@ declare module '@strapi/strapi' {
       'pwa.side-nav-item': PwaSideNavItem;
       'pwa.splash': PwaSplash;
       'pwa.support': PwaSupport;
+      'pwa.term-checkbox': PwaTermCheckbox;
       'pwa.terms-content': PwaTermsContent;
       'pwa.terms-definitions': PwaTermsDefinitions;
       'pwa.terms-ui-text': PwaTermsUiText;
