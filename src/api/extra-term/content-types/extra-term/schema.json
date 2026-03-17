@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extra_terms",
+  "info": {
+    "singularName": "extra-term",
+    "pluralName": "extra-terms",
+    "displayName": "ExtraTerms",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "extra_terms_config": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::extra-terms-config.extra-terms-config"
+    },
+    "terms": {
+      "displayName": "TermCheckbox",
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.term-checkbox"
+    },
+    "sites": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::site.site",
+      "inversedBy": "extra_terms"
+    }
+  }
+}
