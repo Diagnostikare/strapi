@@ -1,4 +1,7 @@
 module.exports = ({ env }) => ({
+  i18n: {
+    enabled: true,
+  },
   "users-permissions": {
     config: {
       jwtSecret: env("JWT_SECRET"),

@@ -10,6 +10,11 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "service": {
       "type": "relation",
@@ -24,15 +29,30 @@
       "inversedBy": "service_flows"
     },
     "enable": {
-      "type": "boolean"
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "headerTitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "steps": {
       "type": "component",
       "repeatable": true,
-      "component": "pwa.flow-step"
+      "component": "pwa.flow-step",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "service_theme": {
       "type": "relation",

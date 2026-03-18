@@ -10,9 +10,19 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "sites": {
       "type": "relation",
@@ -29,7 +39,12 @@
         "disableDefaultSizes": true,
         "customSizesPresets": "12\n16"
       },
-      "customField": "plugin::rich-text-blocks-extended.rich-text-blocks-extended"
+      "customField": "plugin::rich-text-blocks-extended.rich-text-blocks-extended",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
