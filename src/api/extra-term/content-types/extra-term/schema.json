@@ -10,9 +10,19 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "extra_terms_config": {
       "type": "relation",
@@ -23,7 +33,12 @@
       "displayName": "TermCheckbox",
       "type": "component",
       "repeatable": true,
-      "component": "pwa.term-checkbox"
+      "component": "pwa.term-checkbox",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "sites": {
       "type": "relation",

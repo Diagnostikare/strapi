@@ -10,36 +10,66 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "LabsMainSection": {
       "type": "component",
       "repeatable": false,
-      "component": "labs.main-section"
+      "component": "labs.main-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "AccessCard": {
       "displayName": "LabsAccess",
       "type": "component",
       "repeatable": false,
-      "component": "labs.labs-access"
+      "component": "labs.labs-access",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "LabsCards": {
       "type": "dynamiczone",
       "components": [
         "labs.labs-tag",
         "labs.labs-card"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "LabsExperimentsDetails": {
       "type": "dynamiczone",
       "components": [
         "labs.labs-experiment-details",
         "labs.labs-tag"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "LabsCodeInput": {
       "type": "component",
       "repeatable": false,
-      "component": "labs.labs-code"
+      "component": "labs.labs-code",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
