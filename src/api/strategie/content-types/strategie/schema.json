@@ -10,9 +10,19 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "strategieName": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "strategie_config": {
       "type": "relation",
@@ -23,13 +33,23 @@
       "displayName": "InputLogin",
       "type": "component",
       "repeatable": true,
-      "component": "pwa.input-login"
+      "component": "pwa.input-login",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "passwordType": {
       "displayName": "passwordInput",
       "type": "component",
       "repeatable": true,
-      "component": "pwa.password-input"
+      "component": "pwa.password-input",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

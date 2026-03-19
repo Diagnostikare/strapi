@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "strategie_configs",
+  "collectionName": "extra_terms_configs",
   "info": {
-    "singularName": "strategie-config",
-    "pluralName": "strategie-configs",
-    "displayName": "StrategieConfig",
+    "singularName": "extra-terms-config",
+    "pluralName": "extra-terms-configs",
+    "displayName": "ExtraTermsConfig",
     "description": ""
   },
   "options": {
@@ -25,22 +25,6 @@
       }
     },
     "type": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "paramKey": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
-    "exchangeEndpoint": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
