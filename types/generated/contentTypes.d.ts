@@ -439,6 +439,73 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiExtraTermExtraTerm extends Struct.CollectionTypeSchema {
+  collectionName: 'extra_terms';
+  info: {
+    description: '';
+    displayName: 'ExtraTerms';
+    pluralName: 'extra-terms';
+    singularName: 'extra-term';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    extra_terms_config: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::extra-terms-config.extra-terms-config'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::extra-term.extra-term'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
+    terms: Schema.Attribute.Component<'pwa.term-checkbox', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiExtraTermsConfigExtraTermsConfig
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'extra_terms_configs';
+  info: {
+    description: '';
+    displayName: 'ExtraTermsConfig';
+    pluralName: 'extra-terms-configs';
+    singularName: 'extra-terms-config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    generalConfig: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::extra-terms-config.extra-terms-config'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -754,6 +821,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    extra_terms: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::extra-term.extra-term'
+    >;
     id_site: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::site.site'> &
@@ -1564,6 +1635,8 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::blog.blog': ApiBlogBlog;
+      'api::extra-term.extra-term': ApiExtraTermExtraTerm;
+      'api::extra-terms-config.extra-terms-config': ApiExtraTermsConfigExtraTermsConfig;
       'api::faq.faq': ApiFaqFaq;
       'api::home.home': ApiHomeHome;
       'api::lab.lab': ApiLabLab;
