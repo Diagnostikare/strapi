@@ -1199,6 +1199,7 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    api_slug: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
