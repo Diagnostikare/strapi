@@ -85,6 +85,9 @@
       "relation": "manyToMany",
       "target": "api::extra-term.extra-term",
       "mappedBy": "sites"
+    },
+    "api_slug": {
+      "type": "string"
     }
   }
 }
