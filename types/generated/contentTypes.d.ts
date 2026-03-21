@@ -676,6 +676,107 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHiddenFeatureConfigHiddenFeatureConfig
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'hidden_feature_configs';
+  info: {
+    description: '';
+    displayName: 'HiddenFeatureConfig';
+    pluralName: 'hidden-feature-configs';
+    singularName: 'hidden-feature-config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    generalConfig: Schema.Attribute.JSON &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hidden-feature-config.hidden-feature-config'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHiddenFeatureHiddenFeature
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'hidden_features';
+  info: {
+    description: '';
+    displayName: 'HiddenFeature';
+    pluralName: 'hidden-features';
+    singularName: 'hidden-feature';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hidden_feature_config: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::hidden-feature-config.hidden-feature-config'
+    >;
+    key: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hidden-feature.hidden-feature'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -1105,6 +1206,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     extra_terms: Schema.Attribute.Relation<
       'manyToMany',
       'api::extra-term.extra-term'
+    >;
+    hidden_features: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::hidden-feature.hidden-feature'
     >;
     id_site: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
@@ -2345,6 +2450,8 @@ declare module '@strapi/strapi' {
       'api::extra-term.extra-term': ApiExtraTermExtraTerm;
       'api::extra-terms-config.extra-terms-config': ApiExtraTermsConfigExtraTermsConfig;
       'api::faq.faq': ApiFaqFaq;
+      'api::hidden-feature-config.hidden-feature-config': ApiHiddenFeatureConfigHiddenFeatureConfig;
+      'api::hidden-feature.hidden-feature': ApiHiddenFeatureHiddenFeature;
       'api::home.home': ApiHomeHome;
       'api::lab.lab': ApiLabLab;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;

@@ -86,6 +86,11 @@
       "target": "api::extra-term.extra-term",
       "mappedBy": "sites"
     },
+    "hidden_features": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hidden-feature.hidden-feature",
+      "mappedBy": "sites"
     "api_slug": {
       "type": "string"
     }
