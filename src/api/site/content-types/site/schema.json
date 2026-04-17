@@ -94,6 +94,12 @@
     },
     "api_slug": {
       "type": "string"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "sites"
     }
   }
 }
