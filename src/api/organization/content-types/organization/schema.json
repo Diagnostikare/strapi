@@ -26,6 +26,17 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::theme.theme"
+    },
+    "organization_id": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "sites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::site.site",
+      "mappedBy": "organization"
     }
   }
 }

@@ -898,7 +898,11 @@ export interface ApiOrganizationOrganization
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    organization_id: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1258,6 +1262,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    organization: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::organization.organization'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     service_flows: Schema.Attribute.Relation<
       'manyToMany',
