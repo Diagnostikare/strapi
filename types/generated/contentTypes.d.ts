@@ -874,6 +874,43 @@ export interface ApiLabLab extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOrganizationOrganization
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'organizations';
+  info: {
+    description: '';
+    displayName: 'Organization';
+    pluralName: 'organizations';
+    singularName: 'organization';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    domain: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organization.organization'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    organization_id: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<0>;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPrincipalNavbarPrincipalNavbar
   extends Struct.CollectionTypeSchema {
   collectionName: 'principal_navbars';
@@ -1225,6 +1262,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    organization: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::organization.organization'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     service_flows: Schema.Attribute.Relation<
       'manyToMany',
@@ -2454,6 +2495,7 @@ declare module '@strapi/strapi' {
       'api::hidden-feature.hidden-feature': ApiHiddenFeatureHiddenFeature;
       'api::home.home': ApiHomeHome;
       'api::lab.lab': ApiLabLab;
+      'api::organization.organization': ApiOrganizationOrganization;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
       'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::service-flow.service-flow': ApiServiceFlowServiceFlow;
