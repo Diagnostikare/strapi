@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ai_assistant_themes",
+  "info": {
+    "singularName": "ai-assistant-theme",
+    "pluralName": "ai-assistant-themes",
+    "displayName": "AI Assistant Theme",
+    "description": "Color tokens for the AI Assistant view (Cora). Stored as JSON to mirror the front-end mock.json shape exactly."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "config": {
+      "type": "json",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "sites": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::site.site",
+      "inversedBy": "ai_assistant_themes"
+    }
+  }
+}

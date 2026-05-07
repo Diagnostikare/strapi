@@ -100,6 +100,12 @@
       "relation": "manyToOne",
       "target": "api::organization.organization",
       "inversedBy": "sites"
+    },
+    "ai_assistant_themes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ai-assistant-theme.ai-assistant-theme",
+      "mappedBy": "sites"
     }
   }
 }
