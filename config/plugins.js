@@ -16,7 +16,12 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  chartbrew: true,
+  chartbrew: {
+    enabled: false,
+  },
+  "strapi-import-export": {
+    enabled: false,
+  },
   graphql: {
     enabled: true, // Es buena práctica asegurarse de que el plugin esté habilitado
     config: {
