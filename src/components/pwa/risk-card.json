@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_pwa_risk_cards",
+  "info": {
+    "displayName": "riskCard",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "labelColor": {
+      "type": "string"
+    },
+    "negativeValueColor": {
+      "type": "string"
+    },
+    "positiveValueColor": {
+      "type": "string"
+    },
+    "iconLeftColor": {
+      "type": "string"
+    }
+  }
+}

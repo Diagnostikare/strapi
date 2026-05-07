@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hidden_feature_configs",
+  "info": {
+    "singularName": "hidden-feature-config",
+    "pluralName": "hidden-feature-configs",
+    "displayName": "HiddenFeatureConfig",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "generalConfig": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    }
+  }
+}

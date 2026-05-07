@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strategies",
+  "info": {
+    "singularName": "strategie",
+    "pluralName": "strategies",
+    "displayName": "StrategieAuth",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "strategieName": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "strategie_config": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::strategie-config.strategie-config"
+    },
+    "nameInputLogin": {
+      "displayName": "InputLogin",
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.input-login",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "passwordType": {
+      "displayName": "passwordInput",
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.password-input",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

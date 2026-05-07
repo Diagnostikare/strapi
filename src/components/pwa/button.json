@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pwa_buttons",
+  "info": {
+    "displayName": "button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    }
+  }
+}

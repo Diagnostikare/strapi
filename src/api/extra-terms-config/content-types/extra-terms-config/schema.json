@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extra_terms_configs",
+  "info": {
+    "singularName": "extra-terms-config",
+    "pluralName": "extra-terms-configs",
+    "displayName": "ExtraTermsConfig",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "generalConfig": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    }
+  }
+}

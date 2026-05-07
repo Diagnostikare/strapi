@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_pwa_term_checkboxes",
+  "info": {
+    "displayName": "TermCheckbox",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "fieldName": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

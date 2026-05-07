@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_pwa_terms_definitions",
+  "info": {
+    "displayName": "TermsDefinitions"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

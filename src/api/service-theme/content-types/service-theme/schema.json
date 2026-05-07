@@ -9,26 +9,51 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "buttonColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "customField": "plugin::color-picker.color",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "buttonText": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "customField": "plugin::color-picker.color",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "bannerBg": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "customField": "plugin::color-picker.color",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "buttonHighlight": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "customField": "plugin::color-picker.color",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "service_flows": {
       "type": "relation",

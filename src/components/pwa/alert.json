@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_pwa_alerts",
+  "info": {
+    "displayName": "alert",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "boldTextColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    }
+  }
+}

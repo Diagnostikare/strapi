@@ -51,7 +51,7 @@ Reusable components are defined in `src/components/`:
 For local development with Railway:
 1. Install dependencies: `yarn install`
 2. Link to Railway service: `railway link`
-3. Start development: `railway run yarn develop`
+3. Start development: `railway run bash -c 'URL=http://localhost:1337 yarn develop'`
 4. Access admin at `http://127.0.0.1:1337/admin`
 
 ### File Structure

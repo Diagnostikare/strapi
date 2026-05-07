@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_pwa_input_logins",
+  "info": {
+    "displayName": "InputLogin",
+    "icon": "exit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "param": {
+      "type": "string"
+    }
+  }
+}

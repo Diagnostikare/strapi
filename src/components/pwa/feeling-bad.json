@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_pwa_feeling_bads",
+  "info": {
+    "displayName": "feelingBad",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleColor": {
+      "type": "string"
+    },
+    "option": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.option"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header-with-image"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pwa_data_cards",
+  "info": {
+    "displayName": "dataCard",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "labelColor": {
+      "type": "string"
+    },
+    "valueColor": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_pwa_meetings",
+  "info": {
+    "displayName": "meeting",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "headerBgColor": {
+      "type": "string"
+    },
+    "cardLabelColor": {
+      "type": "string"
+    },
+    "cardValueColor": {
+      "type": "string"
+    },
+    "cardIconColor": {
+      "type": "string"
+    },
+    "cardBorderColor": {
+      "type": "string"
+    },
+    "professionalCardLabelColor": {
+      "type": "string"
+    },
+    "professionalCardValueColor": {
+      "type": "string"
+    },
+    "professionalCardIconColor": {
+      "type": "string"
+    }
+  }
+}

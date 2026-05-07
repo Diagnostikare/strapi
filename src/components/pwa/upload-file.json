@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_pwa_upload_files",
+  "info": {
+    "displayName": "uploadFile",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "footerColor": {
+      "type": "string"
+    }
+  }
+}

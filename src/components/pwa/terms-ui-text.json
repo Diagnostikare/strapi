@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_pwa_terms_ui_texts",
+  "info": {
+    "displayName": "TermsUiText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

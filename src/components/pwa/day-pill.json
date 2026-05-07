@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_pwa_day_pills",
+  "info": {
+    "displayName": "dayPill",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    }
+  }
+}

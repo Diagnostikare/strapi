@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_pwa_user_supports",
+  "info": {
+    "displayName": "userSupport",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "titleColor": {
+      "type": "string"
+    },
+    "greetingColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    }
+  }
+}

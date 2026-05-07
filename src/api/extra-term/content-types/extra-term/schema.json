@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extra_terms",
+  "info": {
+    "singularName": "extra-term",
+    "pluralName": "extra-terms",
+    "displayName": "ExtraTerms",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "extra_terms_config": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::extra-terms-config.extra-terms-config"
+    },
+    "terms": {
+      "displayName": "TermCheckbox",
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.term-checkbox",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "sites": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::site.site",
+      "inversedBy": "extra_terms"
+    }
+  }
+}

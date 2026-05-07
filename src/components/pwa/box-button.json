@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_pwa_box_buttons",
+  "info": {
+    "displayName": "boxButton",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "iconLeftColor": {
+      "type": "string"
+    },
+    "iconRightColor": {
+      "type": "string"
+    },
+    "labelColor": {
+      "type": "string"
+    },
+    "valueColor": {
+      "type": "string"
+    }
+  }
+}

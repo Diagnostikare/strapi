@@ -10,6 +10,11 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "logo": {
       "type": "media",
@@ -17,77 +22,509 @@
       "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "primary_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "secondary_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "accent_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "complementary_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "text_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "slug": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "highlight_color": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "error_color": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "contact_color": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "footer_color": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "contact_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "contact_subtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "contact_highlight": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "sites": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::site.site",
       "inversedBy": "themes"
     },
-    "highlight_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "error_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "splash": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.splash",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "contact_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "footer_color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "contact_title": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "tertiaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "contact_subtitle": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "contact_highlight": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "outlineButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "dangerButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "disabledButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "defaultPillButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "selectedPillButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "defaultInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "focusInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "errorInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "disabledInput": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.input",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "wizard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.wizard",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "home": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.home",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "account": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.account",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "feelingBad": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.feeling-bad",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "interview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "myHealth": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.my-health",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "emergency": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.emergency",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "menu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.menu",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "meeting": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.meeting",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "warningModal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.warning-modal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "laboratory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "generalMedicine": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "improveHealth": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "logoMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "psychology": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "reschedule": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "meetingCancellation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.interview-workflow",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "cancellationInterview": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.cancellation",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "errorPage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.error-page",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "nutrition": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.nutrition",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "pediatric": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.pediatric",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

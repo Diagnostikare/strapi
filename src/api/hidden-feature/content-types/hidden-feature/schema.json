@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hidden_features",
+  "info": {
+    "singularName": "hidden-feature",
+    "pluralName": "hidden-features",
+    "displayName": "HiddenFeature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "key": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "hidden_feature_config": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hidden-feature-config.hidden-feature-config"
+    },
+    "sites": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::site.site",
+      "inversedBy": "hidden_features"
+    }
+  }
+}

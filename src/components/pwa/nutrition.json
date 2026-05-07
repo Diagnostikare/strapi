@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_pwa_nutritions",
+  "info": {
+    "displayName": "nutrition",
+    "icon": "oneWay"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.header"
+    },
+    "wizardNextButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    },
+    "wizardPrevButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    }
+  }
+}

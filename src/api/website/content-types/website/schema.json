@@ -10,15 +10,30 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Content": {
       "type": "dynamiczone",
       "components": [
         "webpage.carousel"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Header": {
       "type": "dynamiczone",
@@ -26,7 +41,12 @@
         "webpage.header-title",
         "webpage.header-subtitle",
         "webpage.button"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CardContainer": {
       "type": "dynamiczone",
@@ -35,26 +55,46 @@
         "webpage.header-title",
         "webpage.header-subtitle",
         "webpage.image"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "ScoreBoard": {
       "type": "dynamiczone",
       "components": [
         "webpage.score-board"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "AppSection": {
       "type": "dynamiczone",
       "components": [
         "webpage.app-block"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "TestimonialSection": {
       "type": "dynamiczone",
       "components": [
         "webpage.title",
         "webpage.card-testimonial"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Footer": {
       "type": "dynamiczone",
@@ -62,7 +102,12 @@
         "webpage.footer",
         "webpage.support",
         "webpage.certificates"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

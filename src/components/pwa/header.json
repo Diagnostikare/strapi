@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_pwa_headers",
+  "info": {
+    "displayName": "header",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    }
+  }
+}

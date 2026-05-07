@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_pwa_options",
+  "info": {
+    "displayName": "option",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "labelColor": {
+      "type": "string"
+    },
+    "valueColor": {
+      "type": "string"
+    },
+    "iconLeftColor": {
+      "type": "string"
+    },
+    "iconRightColor": {
+      "type": "string"
+    }
+  }
+}
