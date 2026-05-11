@@ -16,7 +16,6 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  chartbrew: true,
   graphql: {
     enabled: true, // Es buena práctica asegurarse de que el plugin esté habilitado
     config: {

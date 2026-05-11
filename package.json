@@ -15,7 +15,6 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@chartbrew/plugin-strapi": "^2.0.1",
     "@strapi/plugin-color-picker": "5.11.0",
     "@strapi/plugin-graphql": "5.11.0",
     "@strapi/plugin-users-permissions": "5.11.0",
