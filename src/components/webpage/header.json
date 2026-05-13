@@ -24,31 +24,6 @@
     },
     "button": {
       "type": "boolean"
-    },
-    "icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "variant": {
-      "type": "enumeration",
-      "enum": [
-        "solid",
-        "outline",
-        "link"
-      ]
-    },
-    "theme": {
-      "type": "enumeration",
-      "enum": [
-        "primary",
-        "secondary",
-        "tertiary",
-        "quaternary"
-      ]
     }
   }
 }
