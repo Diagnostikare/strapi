@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "general_permissions",
+  "info": {
+    "singularName": "general-permission",
+    "pluralName": "general-permissions",
+    "displayName": "GeneralPermission",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "group": {
+      "type": "enumeration",
+      "enum": [
+        "section",
+        "site",
+        "campaign",
+        "employee"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "key": {
+      "type": "uid",
+      "required": true
+    },
+    "org_roles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::org-role.org-role",
+      "mappedBy": "general_permissions"
+    }
+  }
+}

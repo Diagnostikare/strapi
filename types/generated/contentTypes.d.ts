@@ -738,6 +738,45 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGeneralPermissionGeneralPermission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'general_permissions';
+  info: {
+    description: '';
+    displayName: 'GeneralPermission';
+    pluralName: 'general-permissions';
+    singularName: 'general-permission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    group: Schema.Attribute.Enumeration<
+      ['section', 'site', 'campaign', 'employee']
+    >;
+    key: Schema.Attribute.UID & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::general-permission.general-permission'
+    > &
+      Schema.Attribute.Private;
+    org_roles: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::org-role.org-role'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHiddenFeatureConfigHiddenFeatureConfig
   extends Struct.CollectionTypeSchema {
   collectionName: 'hidden_feature_configs';
@@ -936,6 +975,45 @@ export interface ApiLabLab extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOrgRoleOrgRole extends Struct.CollectionTypeSchema {
+  collectionName: 'org_roles';
+  info: {
+    displayName: 'OrgRole';
+    pluralName: 'org-roles';
+    singularName: 'org-role';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    general_permissions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::general-permission.general-permission'
+    >;
+    is_system: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::org-role.org-role'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    organization: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::organization.organization'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOrganizationOrganization
   extends Struct.CollectionTypeSchema {
   collectionName: 'organizations';
@@ -960,6 +1038,7 @@ export interface ApiOrganizationOrganization
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    org_roles: Schema.Attribute.Relation<'oneToMany', 'api::org-role.org-role'>;
     organization_id: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<0>;
@@ -2558,10 +2637,12 @@ declare module '@strapi/strapi' {
       'api::extra-term.extra-term': ApiExtraTermExtraTerm;
       'api::extra-terms-config.extra-terms-config': ApiExtraTermsConfigExtraTermsConfig;
       'api::faq.faq': ApiFaqFaq;
+      'api::general-permission.general-permission': ApiGeneralPermissionGeneralPermission;
       'api::hidden-feature-config.hidden-feature-config': ApiHiddenFeatureConfigHiddenFeatureConfig;
       'api::hidden-feature.hidden-feature': ApiHiddenFeatureHiddenFeature;
       'api::home.home': ApiHomeHome;
       'api::lab.lab': ApiLabLab;
+      'api::org-role.org-role': ApiOrgRoleOrgRole;
       'api::organization.organization': ApiOrganizationOrganization;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
       'api::privacy.privacy': ApiPrivacyPrivacy;
