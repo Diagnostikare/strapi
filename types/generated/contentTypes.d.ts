@@ -755,6 +755,8 @@ export interface ApiGeneralPermissionGeneralPermission
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    field_description: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Group: (section: Vista o m\u00F3dulo de app), (campaign: Acci\u00F3n a realizar en una campa\u00F1a) (employee: Acci\u00F3n relacionada con informaci\u00F3n de empleados) (site: Acci\u00F3n relacionada con vistas o data de sites)'>;
     group: Schema.Attribute.Enumeration<
       ['section', 'site', 'campaign', 'employee']
     >;

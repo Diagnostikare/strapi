@@ -36,6 +36,10 @@
       "relation": "manyToMany",
       "target": "api::org-role.org-role",
       "mappedBy": "general_permissions"
+    },
+    "field_description": {
+      "type": "text",
+      "default": "Group: (section: Vista o módulo de app), (campaign: Acción a realizar en una campaña) (employee: Acción relacionada con información de empleados) (site: Acción relacionada con vistas o data de sites)"
     }
   }
 }
