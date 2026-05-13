@@ -592,6 +592,99 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiConsentModalConsentModal
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'consent_modals';
+  info: {
+    description: 'Privacy consent modal content for the CORA AI assistant. Body is stored as Markdown.';
+    displayName: 'Consent Modal';
+    pluralName: 'consent-modals';
+    singularName: 'consent-modal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    checkboxLabel: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaLabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ctaLoadingLabel: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::consent-modal.consent-modal'
+    >;
+    policyText: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
+    supportEmail: Schema.Attribute.Email &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    supportHeading: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    supportLinkText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExtraTermExtraTerm extends Struct.CollectionTypeSchema {
   collectionName: 'extra_terms';
   info: {
@@ -2555,6 +2648,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::ai-assistant-theme.ai-assistant-theme': ApiAiAssistantThemeAiAssistantTheme;
       'api::blog.blog': ApiBlogBlog;
+      'api::consent-modal.consent-modal': ApiConsentModalConsentModal;
       'api::extra-term.extra-term': ApiExtraTermExtraTerm;
       'api::extra-terms-config.extra-terms-config': ApiExtraTermsConfigExtraTermsConfig;
       'api::faq.faq': ApiFaqFaq;
