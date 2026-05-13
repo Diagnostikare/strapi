@@ -1084,9 +1084,14 @@ export interface WebpageHeader extends Struct.ComponentSchema {
   attributes: {
     button: Schema.Attribute.Boolean;
     href: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String;
     Subnav: Schema.Attribute.Component<'webpage.subnav', true>;
     target: Schema.Attribute.String;
+    theme: Schema.Attribute.Enumeration<
+      ['primary', 'secondary', 'tertiary', 'quaternary']
+    >;
+    variant: Schema.Attribute.Enumeration<['solid', 'outline', 'link']>;
   };
 }
 
