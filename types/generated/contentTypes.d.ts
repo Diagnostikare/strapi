@@ -848,11 +848,6 @@ export interface ApiGeneralPermissionGeneralPermission
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    field_description: Schema.Attribute.Text &
-      Schema.Attribute.DefaultTo<'Group: (section: Vista o m\u00F3dulo de app), (campaign: Acci\u00F3n a realizar en una campa\u00F1a) (employee: Acci\u00F3n relacionada con informaci\u00F3n de empleados) (site: Acci\u00F3n relacionada con vistas o data de sites)'>;
-    group: Schema.Attribute.Enumeration<
-      ['section', 'site', 'campaign', 'employee']
-    >;
     key: Schema.Attribute.UID & Schema.Attribute.Required;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -864,6 +859,10 @@ export interface ApiGeneralPermissionGeneralPermission
     org_roles: Schema.Attribute.Relation<
       'manyToMany',
       'api::org-role.org-role'
+    >;
+    permission_group: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::permission-group.permission-group'
     >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1141,6 +1140,41 @@ export interface ApiOrganizationOrganization
     sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPermissionGroupPermissionGroup
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'permission_groups';
+  info: {
+    displayName: 'PermissionGroup';
+    pluralName: 'permission-groups';
+    singularName: 'permission-group';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    general_permissions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::general-permission.general-permission'
+    >;
+    key: Schema.Attribute.UID & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::permission-group.permission-group'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2740,6 +2774,7 @@ declare module '@strapi/strapi' {
       'api::lab.lab': ApiLabLab;
       'api::org-role.org-role': ApiOrgRoleOrgRole;
       'api::organization.organization': ApiOrganizationOrganization;
+      'api::permission-group.permission-group': ApiPermissionGroupPermissionGroup;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
       'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::service-flow.service-flow': ApiServiceFlowServiceFlow;
