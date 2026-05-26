@@ -78,6 +78,39 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::site.site"
+    },
+    "app_subtitle": {
+      "type": "string"
+    },
+    "release": {
+      "type": "string"
+    },
+    "intellectual_property": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "copyright": {
+      "type": "string"
+    },
+    "certifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pwa.certifications"
+    },
+    "health_regulation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.certifications"
+    },
+    "data_protection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.certifications"
     }
   }
 }
