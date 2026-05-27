@@ -386,6 +386,7 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    address: Schema.Attribute.String;
     app_name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -393,9 +394,13 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    app_subtitle: Schema.Attribute.String;
+    certifications: Schema.Attribute.Component<'pwa.certifications', true>;
+    copyright: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    data_protection: Schema.Attribute.Component<'pwa.certifications', false>;
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -411,6 +416,8 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    health_regulation: Schema.Attribute.Component<'pwa.certifications', false>;
+    intellectual_property: Schema.Attribute.String;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'>;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
@@ -420,7 +427,9 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    owner: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    release: Schema.Attribute.String;
     sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

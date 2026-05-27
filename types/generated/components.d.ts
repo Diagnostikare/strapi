@@ -306,6 +306,19 @@ export interface PwaCancellation extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaCertifications extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_certifications';
+  info: {
+    displayName: 'Certifications';
+  };
+  attributes: {
+    badge_img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    bold_description: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface PwaChevronMenu extends Struct.ComponentSchema {
   collectionName: 'components_pwa_chevron_menus';
   info: {
@@ -1273,6 +1286,7 @@ declare module '@strapi/strapi' {
       'pwa.box-button': PwaBoxButton;
       'pwa.button': PwaButton;
       'pwa.cancellation': PwaCancellation;
+      'pwa.certifications': PwaCertifications;
       'pwa.chevron-menu': PwaChevronMenu;
       'pwa.clean-button': PwaCleanButton;
       'pwa.data-card': PwaDataCard;
