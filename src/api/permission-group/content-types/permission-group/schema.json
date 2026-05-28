@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "permission_groups",
+  "info": {
+    "singularName": "permission-group",
+    "pluralName": "permission-groups",
+    "displayName": "PermissionGroup"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "key": {
+      "type": "uid",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "general_permissions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::general-permission.general-permission",
+      "mappedBy": "permission_group"
+    }
+  }
+}

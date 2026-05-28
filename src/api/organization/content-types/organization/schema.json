@@ -37,6 +37,12 @@
       "relation": "oneToMany",
       "target": "api::site.site",
       "mappedBy": "organization"
+    },
+    "org_roles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::org-role.org-role",
+      "mappedBy": "organization"
     }
   }
 }
