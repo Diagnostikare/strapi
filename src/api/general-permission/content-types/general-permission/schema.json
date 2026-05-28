@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "general_permissions",
+  "info": {
+    "singularName": "general-permission",
+    "pluralName": "general-permissions",
+    "displayName": "GeneralPermission",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "key": {
+      "type": "uid",
+      "required": true
+    },
+    "org_roles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::org-role.org-role",
+      "mappedBy": "general_permissions"
+    },
+    "description": {
+      "type": "text"
+    },
+    "permission_group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::permission-group.permission-group",
+      "inversedBy": "general_permissions"
+    }
+  }
+}

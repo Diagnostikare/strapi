@@ -386,6 +386,7 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    address: Schema.Attribute.String;
     app_name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -393,9 +394,13 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    app_subtitle: Schema.Attribute.String;
+    certifications: Schema.Attribute.Component<'pwa.certifications', true>;
+    copyright: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    data_protection: Schema.Attribute.Component<'pwa.certifications', false>;
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -411,6 +416,8 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    health_regulation: Schema.Attribute.Component<'pwa.certifications', false>;
+    intellectual_property: Schema.Attribute.String;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'>;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
@@ -420,7 +427,9 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    owner: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    release: Schema.Attribute.String;
     sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -592,6 +601,99 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiConsentModalConsentModal
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'consent_modals';
+  info: {
+    description: 'Privacy consent modal content for the CORA AI assistant. Body is stored as Markdown.';
+    displayName: 'Consent Modal';
+    pluralName: 'consent-modals';
+    singularName: 'consent-modal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    checkboxLabel: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaLabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ctaLoadingLabel: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::consent-modal.consent-modal'
+    >;
+    policyText: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
+    supportEmail: Schema.Attribute.Email &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    supportHeading: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    supportLinkText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExtraTermExtraTerm extends Struct.CollectionTypeSchema {
   collectionName: 'extra_terms';
   info: {
@@ -732,6 +834,46 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGeneralPermissionGeneralPermission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'general_permissions';
+  info: {
+    description: '';
+    displayName: 'GeneralPermission';
+    pluralName: 'general-permissions';
+    singularName: 'general-permission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    key: Schema.Attribute.UID & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::general-permission.general-permission'
+    > &
+      Schema.Attribute.Private;
+    org_roles: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::org-role.org-role'
+    >;
+    permission_group: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::permission-group.permission-group'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -936,6 +1078,45 @@ export interface ApiLabLab extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOrgRoleOrgRole extends Struct.CollectionTypeSchema {
+  collectionName: 'org_roles';
+  info: {
+    displayName: 'OrgRole';
+    pluralName: 'org-roles';
+    singularName: 'org-role';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    general_permissions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::general-permission.general-permission'
+    >;
+    is_system: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::org-role.org-role'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    organization: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::organization.organization'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOrganizationOrganization
   extends Struct.CollectionTypeSchema {
   collectionName: 'organizations';
@@ -960,6 +1141,7 @@ export interface ApiOrganizationOrganization
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    org_roles: Schema.Attribute.Relation<'oneToMany', 'api::org-role.org-role'>;
     organization_id: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<0>;
@@ -967,6 +1149,41 @@ export interface ApiOrganizationOrganization
     sites: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPermissionGroupPermissionGroup
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'permission_groups';
+  info: {
+    displayName: 'PermissionGroup';
+    pluralName: 'permission-groups';
+    singularName: 'permission-group';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    general_permissions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::general-permission.general-permission'
+    >;
+    key: Schema.Attribute.UID & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::permission-group.permission-group'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2555,14 +2772,18 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::ai-assistant-theme.ai-assistant-theme': ApiAiAssistantThemeAiAssistantTheme;
       'api::blog.blog': ApiBlogBlog;
+      'api::consent-modal.consent-modal': ApiConsentModalConsentModal;
       'api::extra-term.extra-term': ApiExtraTermExtraTerm;
       'api::extra-terms-config.extra-terms-config': ApiExtraTermsConfigExtraTermsConfig;
       'api::faq.faq': ApiFaqFaq;
+      'api::general-permission.general-permission': ApiGeneralPermissionGeneralPermission;
       'api::hidden-feature-config.hidden-feature-config': ApiHiddenFeatureConfigHiddenFeatureConfig;
       'api::hidden-feature.hidden-feature': ApiHiddenFeatureHiddenFeature;
       'api::home.home': ApiHomeHome;
       'api::lab.lab': ApiLabLab;
+      'api::org-role.org-role': ApiOrgRoleOrgRole;
       'api::organization.organization': ApiOrganizationOrganization;
+      'api::permission-group.permission-group': ApiPermissionGroupPermissionGroup;
       'api::principal-navbar.principal-navbar': ApiPrincipalNavbarPrincipalNavbar;
       'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::service-flow.service-flow': ApiServiceFlowServiceFlow;

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_pwa_certifications",
+  "info": {
+    "displayName": "Certifications"
+  },
+  "options": {},
+  "attributes": {
+    "badge_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "bold_description": {
+      "type": "string"
+    }
+  }
+}
