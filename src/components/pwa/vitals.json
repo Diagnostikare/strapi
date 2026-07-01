@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_pwa_vitals",
+  "info": {
+    "displayName": "vitals",
+    "icon": "heart",
+    "description": "Shen.AI scan UI colors (maps 1:1 to the SDK CustomColorTheme)"
+  },
+  "options": {},
+  "attributes": {
+    "scanAccentColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "tileColor": {
+      "type": "string"
+    },
+    "buttonMainColor": {
+      "type": "string"
+    },
+    "buttonSecondaryColor": {
+      "type": "string"
+    }
+  }
+}
