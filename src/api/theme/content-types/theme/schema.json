@@ -350,6 +350,16 @@
         }
       }
     },
+    "vitals": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.vitals",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "myHealth": {
       "type": "component",
       "repeatable": false,
