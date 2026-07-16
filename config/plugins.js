@@ -19,9 +19,10 @@ module.exports = ({ env }) => ({
   graphql: {
     enabled: true, // Es buena práctica asegurarse de que el plugin esté habilitado
     config: {
-      // Aquí puedes tener otras configuraciones de GraphQL si las necesitas, como:
-      // defaultLimit: 25,
-      // maxLimit: 100,
+      // Strapi aplica un límite de 10 por defecto si "defaultLimit" no se define.
+      // Se pone en -1 para no limitar la cantidad de elementos devueltos.
+      defaultLimit: -1,
+      maxLimit: -1,
       apolloServer: {
         introspection: true, // ¡Esta es la línea clave!
       },
