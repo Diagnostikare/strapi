@@ -370,6 +370,26 @@
         }
       }
     },
+    "dashboard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.dashboard",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "healthStatus": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.health-status",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "emergency": {
       "type": "component",
       "repeatable": false,

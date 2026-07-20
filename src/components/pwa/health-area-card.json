@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_pwa_health_area_cards",
+  "info": {
+    "displayName": "healthAreaCard",
+    "icon": "heart",
+    "description": "Tarjeta de area de salud (fisica / mental / nutricion) en el seguimiento de /health-profile."
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "iconRingColor": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "subtitleColor": {
+      "type": "string"
+    },
+    "metricTileBgColor": {
+      "type": "string"
+    },
+    "metricLabelColor": {
+      "type": "string"
+    },
+    "metricValueColor": {
+      "type": "string"
+    },
+    "metricPendingValueColor": {
+      "type": "string"
+    },
+    "metricPendingDotColor": {
+      "type": "string"
+    },
+    "dividerColor": {
+      "type": "string"
+    },
+    "appointmentIconColor": {
+      "type": "string"
+    },
+    "appointmentTextColor": {
+      "type": "string"
+    },
+    "linkColor": {
+      "type": "string"
+    }
+  }
+}
