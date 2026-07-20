@@ -343,6 +343,18 @@ export interface PwaCleanButton extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaDashboard extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_dashboards';
+  info: {
+    description: "Colores de la vista dashboard. Agrupa los componentes propios de esa vista; convive con 'home' mientras se migra el resto.";
+    displayName: 'dashboard';
+    icon: 'grid';
+  };
+  attributes: {
+    miSaludBanner: Schema.Attribute.Component<'pwa.mi-salud-banner', false>;
+  };
+}
+
 export interface PwaDataCard extends Struct.ComponentSchema {
   collectionName: 'components_pwa_data_cards';
   info: {
@@ -481,6 +493,55 @@ export interface PwaHeaderWithImage extends Struct.ComponentSchema {
     button: Schema.Attribute.Component<'pwa.button', false>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     textColor: Schema.Attribute.String;
+  };
+}
+
+export interface PwaHealthAreaCard extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_health_area_cards';
+  info: {
+    description: 'Tarjeta de area de salud (fisica / mental / nutricion) en el seguimiento de /health-profile.';
+    displayName: 'healthAreaCard';
+    icon: 'heart';
+  };
+  attributes: {
+    appointmentIconColor: Schema.Attribute.String;
+    appointmentTextColor: Schema.Attribute.String;
+    bgColor: Schema.Attribute.String;
+    borderColor: Schema.Attribute.String;
+    dividerColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    iconRingColor: Schema.Attribute.String;
+    linkColor: Schema.Attribute.String;
+    metricLabelColor: Schema.Attribute.String;
+    metricPendingDotColor: Schema.Attribute.String;
+    metricPendingValueColor: Schema.Attribute.String;
+    metricTileBgColor: Schema.Attribute.String;
+    metricValueColor: Schema.Attribute.String;
+    subtitleColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
+  };
+}
+
+export interface PwaHealthStatus extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_health_statuses';
+  info: {
+    description: 'Paleta de estados de seguimiento de salud (punto + chip). Compartida por el banner del dashboard y las tarjetas de /health-profile.';
+    displayName: 'healthStatus';
+    icon: 'heart';
+  };
+  attributes: {
+    attentionChipBgColor: Schema.Attribute.String;
+    attentionChipTextColor: Schema.Attribute.String;
+    attentionDotColor: Schema.Attribute.String;
+    moderateChipBgColor: Schema.Attribute.String;
+    moderateChipTextColor: Schema.Attribute.String;
+    moderateDotColor: Schema.Attribute.String;
+    stableChipBgColor: Schema.Attribute.String;
+    stableChipTextColor: Schema.Attribute.String;
+    stableDotColor: Schema.Attribute.String;
+    unknownChipBgColor: Schema.Attribute.String;
+    unknownChipTextColor: Schema.Attribute.String;
+    unknownDotColor: Schema.Attribute.String;
   };
 }
 
@@ -637,6 +698,30 @@ export interface PwaMenu extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaMiSaludBanner extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_mi_salud_banners';
+  info: {
+    description: 'Banner de Mi Salud en el dashboard (tarjeta, badge NEW, resumen de areas y CTA).';
+    displayName: 'miSaludBanner';
+    icon: 'shield';
+  };
+  attributes: {
+    areaLabelColor: Schema.Attribute.String;
+    areaStatusTextColor: Schema.Attribute.String;
+    badgeBgColor: Schema.Attribute.String;
+    badgeTextColor: Schema.Attribute.String;
+    bgColor: Schema.Attribute.String;
+    button: Schema.Attribute.Component<'pwa.button', false>;
+    chevronBgColor: Schema.Attribute.String;
+    chevronIconColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    skeletonBarColor: Schema.Attribute.String;
+    skeletonBgColor: Schema.Attribute.String;
+    subtitleColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
+  };
+}
+
 export interface PwaMyHealth extends Struct.ComponentSchema {
   collectionName: 'components_pwa_my_healths';
   info: {
@@ -646,12 +731,21 @@ export interface PwaMyHealth extends Struct.ComponentSchema {
   };
   attributes: {
     avatarColor: Schema.Attribute.String;
+    badgeBgColor: Schema.Attribute.String;
+    badgeTextColor: Schema.Attribute.String;
     dataCard: Schema.Attribute.Component<'pwa.data-card', false>;
     dataColor: Schema.Attribute.String;
     editButton: Schema.Attribute.Component<'pwa.button', false>;
     header: Schema.Attribute.Component<'pwa.header', false>;
+    pageGradientFromColor: Schema.Attribute.String;
+    pageGradientToColor: Schema.Attribute.String;
     riskCard: Schema.Attribute.Component<'pwa.risk-card', false>;
     sectionTitleColor: Schema.Attribute.String;
+    trackingCard: Schema.Attribute.Component<'pwa.health-area-card', false>;
+    trackingFooterBadgeBorderColor: Schema.Attribute.String;
+    trackingFooterTextColor: Schema.Attribute.String;
+    trackingTitleColor: Schema.Attribute.String;
+    updateCta: Schema.Attribute.Component<'pwa.update-health-cta', false>;
     usernameColor: Schema.Attribute.String;
   };
 }
@@ -860,6 +954,24 @@ export interface PwaTermsUiText extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaUpdateHealthCta extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_update_health_ctas';
+  info: {
+    description: 'CTA para actualizar datos de salud dentro del seguimiento de /health-profile.';
+    displayName: 'updateHealthCta';
+    icon: 'pencil';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String;
+    borderColor: Schema.Attribute.String;
+    chevronBgColor: Schema.Attribute.String;
+    chevronIconColor: Schema.Attribute.String;
+    iconBgColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    labelColor: Schema.Attribute.String;
+  };
+}
+
 export interface PwaUploadFile extends Struct.ComponentSchema {
   collectionName: 'components_pwa_upload_files';
   info: {
@@ -887,6 +999,23 @@ export interface PwaUserSupport extends Struct.ComponentSchema {
     greetingColor: Schema.Attribute.String;
     textColor: Schema.Attribute.String;
     titleColor: Schema.Attribute.String;
+  };
+}
+
+export interface PwaVitals extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_vitals';
+  info: {
+    description: 'Shen.AI scan UI colors (maps 1:1 to the SDK CustomColorTheme)';
+    displayName: 'vitals';
+    icon: 'heart';
+  };
+  attributes: {
+    backgroundColor: Schema.Attribute.String;
+    buttonMainColor: Schema.Attribute.String;
+    buttonSecondaryColor: Schema.Attribute.String;
+    scanAccentColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
+    tileColor: Schema.Attribute.String;
   };
 }
 
@@ -1289,6 +1418,7 @@ declare module '@strapi/strapi' {
       'pwa.certifications': PwaCertifications;
       'pwa.chevron-menu': PwaChevronMenu;
       'pwa.clean-button': PwaCleanButton;
+      'pwa.dashboard': PwaDashboard;
       'pwa.data-card': PwaDataCard;
       'pwa.day-pill': PwaDayPill;
       'pwa.emergency': PwaEmergency;
@@ -1299,6 +1429,8 @@ declare module '@strapi/strapi' {
       'pwa.flow-step': PwaFlowStep;
       'pwa.header': PwaHeader;
       'pwa.header-with-image': PwaHeaderWithImage;
+      'pwa.health-area-card': PwaHealthAreaCard;
+      'pwa.health-status': PwaHealthStatus;
       'pwa.home': PwaHome;
       'pwa.input': PwaInput;
       'pwa.input-login': PwaInputLogin;
@@ -1308,6 +1440,7 @@ declare module '@strapi/strapi' {
       'pwa.meeting': PwaMeeting;
       'pwa.meeting-card': PwaMeetingCard;
       'pwa.menu': PwaMenu;
+      'pwa.mi-salud-banner': PwaMiSaludBanner;
       'pwa.my-health': PwaMyHealth;
       'pwa.nutrition': PwaNutrition;
       'pwa.option': PwaOption;
@@ -1324,8 +1457,10 @@ declare module '@strapi/strapi' {
       'pwa.terms-content': PwaTermsContent;
       'pwa.terms-definitions': PwaTermsDefinitions;
       'pwa.terms-ui-text': PwaTermsUiText;
+      'pwa.update-health-cta': PwaUpdateHealthCta;
       'pwa.upload-file': PwaUploadFile;
       'pwa.user-support': PwaUserSupport;
+      'pwa.vitals': PwaVitals;
       'pwa.wallet': PwaWallet;
       'pwa.warning-modal': PwaWarningModal;
       'pwa.wizard': PwaWizard;
