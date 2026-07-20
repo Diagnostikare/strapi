@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_pwa_mi_salud_banners",
+  "info": {
+    "displayName": "miSaludBanner",
+    "icon": "shield",
+    "description": "Banner de Mi Salud en el dashboard (tarjeta, badge NEW, resumen de areas y CTA)."
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "subtitleColor": {
+      "type": "string"
+    },
+    "badgeBgColor": {
+      "type": "string"
+    },
+    "badgeTextColor": {
+      "type": "string"
+    },
+    "chevronBgColor": {
+      "type": "string"
+    },
+    "chevronIconColor": {
+      "type": "string"
+    },
+    "areaLabelColor": {
+      "type": "string"
+    },
+    "areaStatusTextColor": {
+      "type": "string"
+    },
+    "skeletonBgColor": {
+      "type": "string"
+    },
+    "skeletonBarColor": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.button"
+    }
+  }
+}

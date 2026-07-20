@@ -38,6 +38,37 @@
       "type": "component",
       "repeatable": false,
       "component": "pwa.risk-card"
+    },
+    "badgeBgColor": {
+      "type": "string"
+    },
+    "badgeTextColor": {
+      "type": "string"
+    },
+    "pageGradientFromColor": {
+      "type": "string"
+    },
+    "pageGradientToColor": {
+      "type": "string"
+    },
+    "trackingTitleColor": {
+      "type": "string"
+    },
+    "trackingFooterTextColor": {
+      "type": "string"
+    },
+    "trackingFooterBadgeBorderColor": {
+      "type": "string"
+    },
+    "trackingCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.health-area-card"
+    },
+    "updateCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.update-health-cta"
     }
   }
 }
