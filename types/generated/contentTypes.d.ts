@@ -1649,6 +1649,36 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSplashSplash extends Struct.SingleTypeSchema {
+  collectionName: 'splashes';
+  info: {
+    description: '';
+    displayName: 'Splash';
+    pluralName: 'splashes';
+    singularName: 'splash';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::splash.splash'
+    > &
+      Schema.Attribute.Private;
+    logo_complete: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStrategieConfigStrategieConfig
   extends Struct.CollectionTypeSchema {
   collectionName: 'strategie_configs';
@@ -2859,6 +2889,7 @@ declare module '@strapi/strapi' {
       'api::service.service': ApiServiceService;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
+      'api::splash.splash': ApiSplashSplash;
       'api::strategie-config.strategie-config': ApiStrategieConfigStrategieConfig;
       'api::strategie.strategie': ApiStrategieStrategie;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
