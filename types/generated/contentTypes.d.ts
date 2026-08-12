@@ -1577,6 +1577,9 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'api::ai-assistant-theme.ai-assistant-theme'
     >;
     api_slug: Schema.Attribute.String;
+    app_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Diagnostikare'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
