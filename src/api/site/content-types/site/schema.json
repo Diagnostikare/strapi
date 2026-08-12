@@ -112,6 +112,11 @@
       "relation": "manyToMany",
       "target": "api::mi-salud-theme.mi-salud-theme",
       "mappedBy": "sites"
+    },
+    "app_name": {
+      "type": "string",
+      "required": true,
+      "default": "Diagnostikare"
     }
   }
 }
