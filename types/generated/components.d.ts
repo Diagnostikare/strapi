@@ -864,10 +864,13 @@ export interface PwaServiceCard extends Struct.ComponentSchema {
 export interface PwaSideNavItem extends Struct.ComponentSchema {
   collectionName: 'components_pwa_side_nav_items';
   info: {
+    description: '';
     displayName: 'side_nav_item';
     icon: 'bulletList';
   };
   attributes: {
+    check_settings: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     icon: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
