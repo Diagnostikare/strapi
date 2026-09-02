@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_pwa_support_bubbles",
+  "info": {
+    "displayName": "supportBubble",
+    "icon": "discuss",
+    "description": "Colores del SHELL de la burbuja de soporte (boton flotante, etiqueta, panel, cabecera y menu). NO cubre el interior del chat: mensajes, input, gate de registro y modal de consentimiento vienen del content-type 'AI Assistant Theme' (config JSON). Los campos vacios caen a los defaults de la PWA."
+  },
+  "options": {},
+  "attributes": {
+    "fab": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.support-bubble-fab"
+    },
+    "tooltip": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.support-bubble-tooltip"
+    },
+    "panel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.support-bubble-panel"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.support-bubble-header"
+    },
+    "menu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.support-bubble-menu"
+    }
+  }
+}

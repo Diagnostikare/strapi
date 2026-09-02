@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_pwa_support_bubble_fabs",
+  "info": {
+    "displayName": "supportBubbleFab",
+    "icon": "bell",
+    "description": "Boton flotante que abre el panel de soporte. shadowColor tine solo la capa difusa de la sombra; la de contacto es negra fija. El badge esta cableado pero sin uso hasta que haya notificaciones proactivas."
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "shadowColor": {
+      "type": "string"
+    },
+    "badgeBgColor": {
+      "type": "string"
+    },
+    "badgeTextColor": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_pwa_support_bubble_tooltips",
+  "info": {
+    "displayName": "supportBubbleTooltip",
+    "icon": "message",
+    "description": "Etiqueta de bienvenida junto al boton flotante. Se muestra una sola vez por tenant, a los 3 s sin interaccion."
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    }
+  }
+}

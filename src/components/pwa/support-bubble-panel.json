@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_pwa_support_bubble_panels",
+  "info": {
+    "displayName": "supportBubblePanel",
+    "icon": "layout",
+    "description": "Tarjeta del panel de soporte. overlayColor solo se aplica en modo bottom-sheet (viewport < 380 px); en modo popover no hay velo, para no tapar la pantalla de detras. handleColor es el asa de arrastre del sheet."
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "overlayColor": {
+      "type": "string"
+    },
+    "handleColor": {
+      "type": "string"
+    }
+  }
+}
