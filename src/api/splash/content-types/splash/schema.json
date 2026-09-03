@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "splashes",
+  "info": {
+    "singularName": "splash",
+    "pluralName": "splashes",
+    "displayName": "Splash",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "logo_complete": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "theme": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::theme.theme"
+    }
+  }
+}

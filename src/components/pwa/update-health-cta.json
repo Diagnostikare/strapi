@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_pwa_update_health_ctas",
+  "info": {
+    "displayName": "updateHealthCta",
+    "icon": "pencil",
+    "description": "CTA para actualizar datos de salud dentro del seguimiento de /health-profile."
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "iconBgColor": {
+      "type": "string"
+    },
+    "iconColor": {
+      "type": "string"
+    },
+    "labelColor": {
+      "type": "string"
+    },
+    "chevronBgColor": {
+      "type": "string"
+    },
+    "chevronIconColor": {
+      "type": "string"
+    }
+  }
+}

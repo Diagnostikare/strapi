@@ -2,7 +2,8 @@
   "collectionName": "components_pwa_side_nav_items",
   "info": {
     "displayName": "side_nav_item",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,17 +11,22 @@
       "type": "string"
     },
     "icon": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "redirect": {
       "type": "string"
+    },
+    "check_settings": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

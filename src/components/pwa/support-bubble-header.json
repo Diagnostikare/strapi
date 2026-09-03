@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_pwa_support_bubble_headers",
+  "info": {
+    "displayName": "supportBubbleHeader",
+    "icon": "apps",
+    "description": "Cabecera del panel de soporte: identidad de CORA, menu de escalamiento y cierre."
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string"
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "subtitleColor": {
+      "type": "string"
+    },
+    "menuIconColor": {
+      "type": "string"
+    },
+    "closeIconColor": {
+      "type": "string"
+    }
+  }
+}

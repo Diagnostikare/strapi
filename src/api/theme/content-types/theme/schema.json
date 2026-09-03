@@ -350,6 +350,16 @@
         }
       }
     },
+    "supportBubble": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.support-bubble",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "vitals": {
       "type": "component",
       "repeatable": false,

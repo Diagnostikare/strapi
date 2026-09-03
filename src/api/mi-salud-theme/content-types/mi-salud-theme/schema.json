@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mi_salud_themes",
+  "info": {
+    "singularName": "mi-salud-theme",
+    "pluralName": "mi-salud-themes",
+    "displayName": "Mi Salud Theme",
+    "description": "Colores de la experiencia Mi Salud (banner del dashboard y estados de seguimiento). Separado de Theme para poder versionar la vista de forma independiente."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "dashboard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.dashboard"
+    },
+    "healthStatus": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.health-status"
+    },
+    "sites": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::site.site",
+      "inversedBy": "mi_salud_themes"
+    }
+  }
+}

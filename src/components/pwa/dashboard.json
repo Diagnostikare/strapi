@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_pwa_dashboards",
+  "info": {
+    "displayName": "dashboard",
+    "icon": "grid",
+    "description": "Colores de la vista dashboard. Agrupa los componentes propios de esa vista; convive con 'home' mientras se migra el resto."
+  },
+  "options": {},
+  "attributes": {
+    "miSaludBanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pwa.mi-salud-banner"
+    }
+  }
+}
