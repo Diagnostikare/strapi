@@ -1078,6 +1078,63 @@ export interface ApiLabLab extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMiSaludThemeMiSaludTheme
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'mi_salud_themes';
+  info: {
+    description: 'Colores de la experiencia Mi Salud (banner del dashboard y estados de seguimiento). Separado de Theme para poder versionar la vista de forma independiente.';
+    displayName: 'Mi Salud Theme';
+    pluralName: 'mi-salud-themes';
+    singularName: 'mi-salud-theme';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: false;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dashboard: Schema.Attribute.Component<'pwa.dashboard', false>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    healthStatus: Schema.Attribute.Component<'pwa.health-status', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mi-salud-theme.mi-salud-theme'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
+    slug: Schema.Attribute.UID<'name'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOrgRoleOrgRole extends Struct.CollectionTypeSchema {
   collectionName: 'org_roles';
   info: {
@@ -1520,6 +1577,9 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'api::ai-assistant-theme.ai-assistant-theme'
     >;
     api_slug: Schema.Attribute.String;
+    app_name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Diagnostikare'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1539,6 +1599,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::site.site'>;
+    mi_salud_themes: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::mi-salud-theme.mi-salud-theme'
+    >;
     name: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1585,6 +1649,36 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+  };
+}
+
+export interface ApiSplashSplash extends Struct.SingleTypeSchema {
+  collectionName: 'splashes';
+  info: {
+    description: '';
+    displayName: 'Splash';
+    pluralName: 'splashes';
+    singularName: 'splash';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::splash.splash'
+    > &
+      Schema.Attribute.Private;
+    logo_complete: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    theme: Schema.Attribute.Relation<'oneToOne', 'api::theme.theme'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -2114,6 +2208,12 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    vitals: Schema.Attribute.Component<'pwa.vitals', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     warningModal: Schema.Attribute.Component<'pwa.warning-modal', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2781,6 +2881,7 @@ declare module '@strapi/strapi' {
       'api::hidden-feature.hidden-feature': ApiHiddenFeatureHiddenFeature;
       'api::home.home': ApiHomeHome;
       'api::lab.lab': ApiLabLab;
+      'api::mi-salud-theme.mi-salud-theme': ApiMiSaludThemeMiSaludTheme;
       'api::org-role.org-role': ApiOrgRoleOrgRole;
       'api::organization.organization': ApiOrganizationOrganization;
       'api::permission-group.permission-group': ApiPermissionGroupPermissionGroup;
@@ -2791,6 +2892,7 @@ declare module '@strapi/strapi' {
       'api::service.service': ApiServiceService;
       'api::side-navbar.side-navbar': ApiSideNavbarSideNavbar;
       'api::site.site': ApiSiteSite;
+      'api::splash.splash': ApiSplashSplash;
       'api::strategie-config.strategie-config': ApiStrategieConfigStrategieConfig;
       'api::strategie.strategie': ApiStrategieStrategie;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;

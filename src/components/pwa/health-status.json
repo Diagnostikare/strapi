@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_pwa_health_statuses",
+  "info": {
+    "displayName": "healthStatus",
+    "icon": "heart",
+    "description": "Paleta de estados de seguimiento de salud (punto + chip). Compartida por el banner del dashboard y las tarjetas de /health-profile."
+  },
+  "options": {},
+  "attributes": {
+    "stableDotColor": {
+      "type": "string"
+    },
+    "stableChipBgColor": {
+      "type": "string"
+    },
+    "stableChipTextColor": {
+      "type": "string"
+    },
+    "moderateDotColor": {
+      "type": "string"
+    },
+    "moderateChipBgColor": {
+      "type": "string"
+    },
+    "moderateChipTextColor": {
+      "type": "string"
+    },
+    "attentionDotColor": {
+      "type": "string"
+    },
+    "attentionChipBgColor": {
+      "type": "string"
+    },
+    "attentionChipTextColor": {
+      "type": "string"
+    },
+    "unknownDotColor": {
+      "type": "string"
+    },
+    "unknownChipBgColor": {
+      "type": "string"
+    },
+    "unknownChipTextColor": {
+      "type": "string"
+    }
+  }
+}
