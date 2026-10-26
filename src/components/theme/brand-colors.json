@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_theme_brand_colors",
+  "info": {
+    "displayName": "BrandColors",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "brand_primary": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$",
+      "required": true
+    },
+    "brand_accent": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$",
+      "required": true
+    },
+    "brand_accent_strong": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$",
+      "required": true
+    },
+    "brand_soft": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$",
+      "required": true
+    },
+    "button_disabled": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$",
+      "required": true
+    },
+    "button_health_disabled": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$",
+      "required": true
+    }
+  }
+}

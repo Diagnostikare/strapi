@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_theme_color_overrides",
+  "info": {
+    "displayName": "ColorOverrides",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header_button": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+    },
+    "chart_range": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+    }
+  }
+}
