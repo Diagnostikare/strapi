@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "theme_v2s",
+  "info": {
+    "singularName": "theme-v2",
+    "pluralName": "theme-v2s",
+    "displayName": "Theme V2",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sites": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::site.site",
+      "inversedBy": "theme_v2s"
+    },
+    "brand_colors": {
+      "type": "component",
+      "repeatable": false,
+      "component": "theme.brand-colors",
+      "required": true
+    },
+    "color_overrides": {
+      "type": "component",
+      "repeatable": false,
+      "component": "theme.color-overrides"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

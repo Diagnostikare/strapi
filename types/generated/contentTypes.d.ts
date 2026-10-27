@@ -1639,6 +1639,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::strategie.strategie'
     >;
+    theme_v2s: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::theme-v2.theme-v2'
+    >;
     themes: Schema.Attribute.Relation<'manyToMany', 'api::theme.theme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1862,6 +1866,39 @@ export interface ApiTermsPageTermsPage extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiThemeV2ThemeV2 extends Struct.CollectionTypeSchema {
+  collectionName: 'theme_v2s';
+  info: {
+    description: '';
+    displayName: 'Theme V2';
+    pluralName: 'theme-v2s';
+    singularName: 'theme-v2';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    brand_colors: Schema.Attribute.Component<'theme.brand-colors', false> &
+      Schema.Attribute.Required;
+    color_overrides: Schema.Attribute.Component<'theme.color-overrides', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::theme-v2.theme-v2'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    sites: Schema.Attribute.Relation<'manyToMany', 'api::site.site'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2188,6 +2225,12 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
         };
       }>;
     splash: Schema.Attribute.Component<'pwa.splash', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    supportBubble: Schema.Attribute.Component<'pwa.support-bubble', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2896,6 +2939,7 @@ declare module '@strapi/strapi' {
       'api::strategie-config.strategie-config': ApiStrategieConfigStrategieConfig;
       'api::strategie.strategie': ApiStrategieStrategie;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
+      'api::theme-v2.theme-v2': ApiThemeV2ThemeV2;
       'api::theme.theme': ApiThemeTheme;
       'api::webpage.webpage': ApiWebpageWebpage;
       'api::website.website': ApiWebsiteWebsite;

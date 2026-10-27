@@ -909,6 +909,97 @@ export interface PwaSupport extends Struct.ComponentSchema {
   };
 }
 
+export interface PwaSupportBubble extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_support_bubbles';
+  info: {
+    description: "Colores del SHELL de la burbuja de soporte (boton flotante, etiqueta, panel, cabecera y menu). NO cubre el interior del chat: mensajes, input, gate de registro y modal de consentimiento vienen del content-type 'AI Assistant Theme' (config JSON). Los campos vacios caen a los defaults de la PWA.";
+    displayName: 'supportBubble';
+    icon: 'discuss';
+  };
+  attributes: {
+    fab: Schema.Attribute.Component<'pwa.support-bubble-fab', false>;
+    header: Schema.Attribute.Component<'pwa.support-bubble-header', false>;
+    menu: Schema.Attribute.Component<'pwa.support-bubble-menu', false>;
+    panel: Schema.Attribute.Component<'pwa.support-bubble-panel', false>;
+    tooltip: Schema.Attribute.Component<'pwa.support-bubble-tooltip', false>;
+  };
+}
+
+export interface PwaSupportBubbleFab extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_support_bubble_fabs';
+  info: {
+    description: 'Boton flotante que abre el panel de soporte. shadowColor tine solo la capa difusa de la sombra; la de contacto es negra fija. El badge esta cableado pero sin uso hasta que haya notificaciones proactivas.';
+    displayName: 'supportBubbleFab';
+    icon: 'bell';
+  };
+  attributes: {
+    badgeBgColor: Schema.Attribute.String;
+    badgeTextColor: Schema.Attribute.String;
+    bgColor: Schema.Attribute.String;
+    iconColor: Schema.Attribute.String;
+    shadowColor: Schema.Attribute.String;
+  };
+}
+
+export interface PwaSupportBubbleHeader extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_support_bubble_headers';
+  info: {
+    description: 'Cabecera del panel de soporte: identidad de CORA, menu de escalamiento y cierre.';
+    displayName: 'supportBubbleHeader';
+    icon: 'apps';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String;
+    borderColor: Schema.Attribute.String;
+    closeIconColor: Schema.Attribute.String;
+    menuIconColor: Schema.Attribute.String;
+    subtitleColor: Schema.Attribute.String;
+    titleColor: Schema.Attribute.String;
+  };
+}
+
+export interface PwaSupportBubbleMenu extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_support_bubble_menus';
+  info: {
+    description: 'Menu de escalamiento del panel (FAQs / WhatsApp). El icono de cada item hereda itemLabelColor via currentColor, por eso no hay campo de color de icono.';
+    displayName: 'supportBubbleMenu';
+    icon: 'bulletList';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String;
+    dividerColor: Schema.Attribute.String;
+    itemLabelColor: Schema.Attribute.String;
+  };
+}
+
+export interface PwaSupportBubblePanel extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_support_bubble_panels';
+  info: {
+    description: 'Tarjeta del panel de soporte. overlayColor solo se aplica en modo bottom-sheet (viewport < 380 px); en modo popover no hay velo, para no tapar la pantalla de detras. handleColor es el asa de arrastre del sheet.';
+    displayName: 'supportBubblePanel';
+    icon: 'layout';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String;
+    borderColor: Schema.Attribute.String;
+    handleColor: Schema.Attribute.String;
+    overlayColor: Schema.Attribute.String;
+  };
+}
+
+export interface PwaSupportBubbleTooltip extends Struct.ComponentSchema {
+  collectionName: 'components_pwa_support_bubble_tooltips';
+  info: {
+    description: 'Etiqueta de bienvenida junto al boton flotante. Se muestra una sola vez por tenant, a los 3 s sin interaccion.';
+    displayName: 'supportBubbleTooltip';
+    icon: 'message';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String;
+    textColor: Schema.Attribute.String;
+  };
+}
+
 export interface PwaTermCheckbox extends Struct.ComponentSchema {
   collectionName: 'components_pwa_term_checkboxes';
   info: {
@@ -1075,6 +1166,48 @@ export interface PwaWizard extends Struct.ComponentSchema {
     successIcon: Schema.Attribute.String;
     termsColor: Schema.Attribute.String;
     textColor: Schema.Attribute.String;
+  };
+}
+
+export interface ThemeBrandColors extends Struct.ComponentSchema {
+  collectionName: 'components_theme_brand_colors';
+  info: {
+    description: '';
+    displayName: 'BrandColors';
+  };
+  attributes: {
+    brand_accent: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    brand_accent_strong: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    brand_primary: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    brand_soft: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button_disabled: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    button_health_disabled: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface ThemeColorOverrides extends Struct.ComponentSchema {
+  collectionName: 'components_theme_color_overrides';
+  info: {
+    description: '';
+    displayName: 'ColorOverrides';
+  };
+  attributes: {
+    chart_range: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    header_button: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -1456,6 +1589,12 @@ declare module '@strapi/strapi' {
       'pwa.side-nav-item': PwaSideNavItem;
       'pwa.splash': PwaSplash;
       'pwa.support': PwaSupport;
+      'pwa.support-bubble': PwaSupportBubble;
+      'pwa.support-bubble-fab': PwaSupportBubbleFab;
+      'pwa.support-bubble-header': PwaSupportBubbleHeader;
+      'pwa.support-bubble-menu': PwaSupportBubbleMenu;
+      'pwa.support-bubble-panel': PwaSupportBubblePanel;
+      'pwa.support-bubble-tooltip': PwaSupportBubbleTooltip;
       'pwa.term-checkbox': PwaTermCheckbox;
       'pwa.terms-content': PwaTermsContent;
       'pwa.terms-definitions': PwaTermsDefinitions;
@@ -1467,6 +1606,8 @@ declare module '@strapi/strapi' {
       'pwa.wallet': PwaWallet;
       'pwa.warning-modal': PwaWarningModal;
       'pwa.wizard': PwaWizard;
+      'theme.brand-colors': ThemeBrandColors;
+      'theme.color-overrides': ThemeColorOverrides;
       'webpage.app-block': WebpageAppBlock;
       'webpage.award': WebpageAward;
       'webpage.button': WebpageButton;
